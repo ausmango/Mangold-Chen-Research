@@ -1,0 +1,23 @@
+Loading Moondream2 FP16 baseline...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Traceback (most recent call last):
+  File "/home/charlotte/research/experiments/moondream_fp16.py", line 23, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 597, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5432, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, hf_quantizer)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 6105, in caching_allocator_warmup
+    _ = torch.empty(byte_count // factor, dtype=torch.float16, device=device, requires_grad=False)
+RuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at "/opt/pytorch/c10/cuda/CUDACachingAllocator.cpp":1131, please report a bug to PyTorch. 
