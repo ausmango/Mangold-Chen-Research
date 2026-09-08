@@ -4,6 +4,7 @@ from pathlib import Path
 import torch
 from PIL import Image, ImageDraw
 from transformers import AutoModelForCausalLM
+import transformers.modeling_utils as modeling_utils
 
 ROOT = Path(__file__).resolve().parents[1]
 IMAGE_DIR = ROOT / "data" / "sample-images"
@@ -20,6 +21,10 @@ torch.cuda.empty_cache()
 torch.cuda.reset_peak_memory_stats()
 start = time.perf_counter()
 
+
+# Skip Transformers' optional allocator warm-up on memory-constrained Jetson.
+# This affects loading strategy only, not model inference.
+modeling_utils.caching_allocator_warmup = lambda *args, **kwargs: None
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_ID,
     revision=REVISION,
