@@ -1,0 +1,63 @@
+{
+  "configuration": "official_4bit",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "torchao_version": "0.11.0",
+  "tasks": [
+    {
+      "task": "bird_short_caption",
+      "latency_seconds": 14.0626
+    },
+    {
+      "task": "bird_normal_caption",
+      "latency_seconds": 13.001
+    },
+    {
+      "task": "bird_long_caption",
+      "latency_seconds": 19.4479
+    },
+    {
+      "task": "potholes_query",
+      "latency_seconds": 5.981
+    },
+    {
+      "task": "cable_trip_query",
+      "latency_seconds": 6.0659
+    },
+    {
+      "task": "driving_gaze_face_detection",
+      "latency_seconds": 5.6811
+    },
+    {
+      "task": "driving_gaze_person_pointing",
+      "latency_seconds": 5.0362
+    }
+  ],
+  "load_time_seconds": 25.9449,
+  "cuda_free_before_gib": 5.1679,
+  "cuda_free_after_load_gib": 3.341,
+  "cuda_consumed_after_load_gib": 1.8269,
+  "model_memory_footprint_gib": 1.8969,
+  "pytorch_allocated_gib": 2.2561,
+  "pytorch_peak_allocated_gib": 2.5718,
+  "outputs": {
+    "short_caption": " A hummingbird hovers near a tall flower with orange and red blossoms, displaying its green and gray plumage against a blurred green background.",
+    "normal_caption": " A hummingbird with a dark gray/black head and wings is captured in mid-flight, hovering near a vibrant red and orange flower. The hummingbird's wings are spread wide, showcasing its agility and speed. The flower, a tall and slender plant with a long, slender stem, is adorned with numerous small, bright orange flowers. The background is a soft, out-of-focus beige/yellowish color, providing a natural backdrop to the scene.",
+    "long_caption": " The image shows a hummingbird hovering near a tall flower with vibrant orange and red blossoms. The hummingbird, characterized by its iridescent green, gray, and dark green plumage, is captured in mid-flight with its wings spread wide, displaying its distinctive long beak and slender, elongated legs. The hummingbird's wings are slightly blurred, indicating its rapid movement. The background is softly blurred, featuring a soft, warm yellowish tone with gentle gradations of color, creating a serene and natural setting. The flower stalk is slender and green, with dried, beige-colored petals densely covering the flower head. The overall composition highlights the contrast between the hummingbird's vivid colors and the delicate, dried flower stalk, emphasizing the beauty of nature and wildlife interaction.",
+    "potholes_answer": " There is one pothole in the image.",
+    "cable_trip_answer": " The person is falling because they have stepped on a loose electrical cord.",
+    "face_detections": [
+      {
+        "x_min": 0.15001234412193298,
+        "y_min": 0.09089593589305878,
+        "x_max": 0.348034530878067,
+        "y_max": 0.4969946891069412
+      }
+    ],
+    "person_points": [
+      {
+        "x": 0.203125,
+        "y": 0.4072265625
+      }
+    ]
+  }
+}

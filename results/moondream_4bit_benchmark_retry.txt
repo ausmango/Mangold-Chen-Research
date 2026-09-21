@@ -1,0 +1,122 @@
+Loading Moondream2 OFFICIAL 4-BIT...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+OFFICIAL 4-BIT MODEL LOADED
+Load time: 25.9449 seconds
+Model footprint: 1.8969 GiB
+CUDA consumed after load: 1.8269 GiB
+
+=== SHORT CAPTION: bird.png ===
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+INFO:pyvips:VIPS: residual reduceh by 0.697417
+INFO:pyvips:VIPS: reduceh: 9 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.01613
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Latency: 14.0626 seconds
+ A hummingbird hovers near a tall flower with orange and red blossoms, displaying its green and gray plumage against a blurred green background.
+
+=== NORMAL CAPTION: bird.png ===
+INFO:pyvips:VIPS: residual reduceh by 0.697417
+INFO:pyvips:VIPS: reduceh: 9 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.01613
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+Latency: 13.0010 seconds
+ A hummingbird with a dark gray/black head and wings is captured in mid-flight, hovering near a vibrant red and orange flower. The hummingbird's wings are spread wide, showcasing its agility and speed. The flower, a tall and slender plant with a long, slender stem, is adorned with numerous small, bright orange flowers. The background is a soft, out-of-focus beige/yellowish color, providing a natural backdrop to the scene.
+
+=== LONG CAPTION: bird.png ===
+INFO:pyvips:VIPS: residual reduceh by 0.697417
+INFO:pyvips:VIPS: reduceh: 9 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.01613
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+Latency: 19.4479 seconds
+ The image shows a hummingbird hovering near a tall flower with vibrant orange and red blossoms. The hummingbird, characterized by its iridescent green, gray, and dark green plumage, is captured in mid-flight with its wings spread wide, displaying its distinctive long beak and slender, elongated legs. The hummingbird's wings are slightly blurred, indicating its rapid movement. The background is softly blurred, featuring a soft, warm yellowish tone with gentle gradations of color, creating a serene and natural setting. The flower stalk is slender and green, with dried, beige-colored petals densely covering the flower head. The overall composition highlights the contrast between the hummingbird's vivid colors and the delicate, dried flower stalk, emphasizing the beauty of nature and wildlife interaction.
+
+=== QUERY: How many potholes are there in the image? ===
+INFO:pyvips:VIPS: residual scale 1.92267 x 1.69921
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 3 workers
+INFO:pyvips:VIPS: residual reducev by 0.997361
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.504
+INFO:pyvips:VIPS: reduceh: 13 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+Latency: 5.9810 seconds
+ There is one pothole in the image.
+
+=== QUERY: Why is the person falling? ===
+INFO:pyvips:VIPS: residual scale 1.92157 x 1.57843
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: residual reducev by 0.926471
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.617647
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+Latency: 6.0659 seconds
+ The person is falling because they have stepped on a loose electrical cord.
+
+=== OBJECT DETECTION: face ===
+INFO:pyvips:VIPS: residual scale 1.56089 x 1.79842
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.747036
+INFO:pyvips:VIPS: reducev: 9 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.64837
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+Latency: 5.6811 seconds
+Found 1 face(s)
+[{'x_min': 0.15001234412193298, 'y_min': 0.09089593589305878, 'x_max': 0.348034530878067, 'y_max': 0.4969946891069412}]
+Saved: /home/charlotte/research/results/4bit_rendered/driving-gaze_faces.png
+
+=== POINTING: person ===
+INFO:pyvips:VIPS: residual scale 1.56089 x 1.79842
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 1 workers
+INFO:pyvips:VIPS: residual reducev by 0.747036
+INFO:pyvips:VIPS: reducev: 9 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.64837
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+Latency: 5.0362 seconds
+Found 1 person(s)
+[{'x': 0.203125, 'y': 0.4072265625}]
+Saved: /home/charlotte/research/results/4bit_rendered/driving-gaze_people.png
+
+=== FINAL MEMORY ===
+PyTorch allocated: 2.2561 GiB
+PyTorch peak allocated: 2.5718 GiB
+Metrics saved: /home/charlotte/research/results/moondream_4bit_metrics.json
+
+OFFICIAL 4-BIT IMAGE BENCHMARK COMPLETED
