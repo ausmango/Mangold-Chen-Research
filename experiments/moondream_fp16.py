@@ -7,7 +7,7 @@ from transformers import AutoModelForCausalLM
 import transformers.modeling_utils as modeling_utils
 
 ROOT = Path(__file__).resolve().parents[1]
-IMAGE_DIR = ROOT / "data" / "sample-images"
+IMAGE_DIR = ROOT / "data" / "sample_images"
 RESULTS_DIR = ROOT / "results"
 
 MODEL_ID = "vikhyatk/moondream2"
@@ -72,7 +72,7 @@ def timed_inference(name, operation):
 
 
 # 1. Normal caption — guide section 4.3
-bird = Image.open(IMAGE_DIR / "bird.jpg").convert("RGB")
+bird = Image.open(IMAGE_DIR / "bird.png").convert("RGB")
 
 caption_result = timed_inference(
     "Normal caption",
@@ -110,7 +110,7 @@ print(cable_result["answer"])
 
 
 # 4. Face detection — guide section 4.6
-driving = Image.open(IMAGE_DIR / "driving-gaze.jpg").convert("RGB")
+driving = Image.open(IMAGE_DIR / "driving-gaze.png").convert("RGB")
 
 detection_result = timed_inference(
     "Face detection",

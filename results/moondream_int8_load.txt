@@ -1,0 +1,28 @@
+Loading Moondream2 INT8...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+BitsAndBytes: 0.48.0
+
+INT8 MODEL LOADED
+Model: vikhyatk/moondream2
+Revision: 2025-04-14
+Load time: 50.93 seconds
+CUDA free before: 5.11 GiB
+CUDA free after: 2.36 GiB
+CUDA memory consumed: 2.74 GiB
+PyTorch allocated: 1.93 GiB
+PyTorch peak allocated: 1.99 GiB
+Model memory footprint: 1.91 GiB
+Device: cuda:0

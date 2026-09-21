@@ -1,0 +1,46 @@
+Loading Moondream2 INT8...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+INT8 MODEL LOADED
+Load time: 51.0268 seconds
+Model footprint: 1.9141 GiB
+CUDA consumed after load: 3.0460 GiB
+
+=== SHORT CAPTION: bird.png ===
+Traceback (most recent call last):
+  File "/home/charlotte/research/experiments/moondream_int8.py", line 96, in <module>
+    short_caption = timed_call(
+  File "/home/charlotte/research/experiments/moondream_int8.py", line 36, in timed_call
+    result = operation()
+  File "/home/charlotte/research/experiments/moondream_int8.py", line 98, in <lambda>
+    lambda: model.caption(bird, length="short")["caption"],
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/moondream.py", line 391, in caption
+    image = self.encode_image(image)
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/moondream.py", line 204, in encode_image
+    img_emb = self._run_vision_encoder(image)
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/moondream.py", line 176, in _run_vision_encoder
+    outputs = self._vis_enc(all_crops)
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/moondream.py", line 149, in _vis_enc
+    return vision_encoder(x, self.vision, self.config.vision)
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/vision.py", line 67, in vision_encoder
+    x = linear(x, w.patch_emb)
+  File "/home/charlotte/.cache/huggingface/modules/transformers_modules/vikhyatk/moondream2/797e1e4728e49ce676920e72e42cd0cb3948f504/layers.py", line 19, in linear
+    return F.linear(x, w.weight, w.bias)
+RuntimeError: self and mat2 must have the same dtype, but got Half and Char
