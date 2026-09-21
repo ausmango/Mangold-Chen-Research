@@ -1,0 +1,61 @@
+Loading official 4-bit model...
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- image_crops.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- layers.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- config.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- vision.py
+- layers.py
+- config.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- utils.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- rope.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- text.py
+- rope.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- region.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- moondream.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit:
+- hf_moondream.py
+- image_crops.py
+- vision.py
+- utils.py
+- text.py
+- region.py
+- moondream.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Traceback (most recent call last):
+  File "<stdin>", line 15, in <module>
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 597, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5432, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, hf_quantizer)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 6105, in caching_allocator_warmup
+    _ = torch.empty(byte_count // factor, dtype=torch.float16, device=device, requires_grad=False)
+RuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at "/opt/pytorch/c10/cuda/CUDACachingAllocator.cpp":1131, please report a bug to PyTorch. 
