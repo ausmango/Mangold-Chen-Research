@@ -1,0 +1,5 @@
+
+# Local dependencies, generated Python files, and reference copies
+dependencies/
+__pycache__/
+references/
