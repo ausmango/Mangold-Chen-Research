@@ -1,0 +1,21 @@
+Loading official Moondream 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+MODEL LOADED
+Load time: 26.4160 seconds
+Model footprint: 1.8969 GiB
+CUDA consumed after load: 1.8209 GiB
+
+Model loaded successfully. Start construction Video 1 from the beginning, then press Enter to begin camera capture...
+Opening NVIDIA CSI camera...
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, execute:805 Failed to create CaptureSession
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+Camera opened: 1280x720, reported FPS: 30.00
+Waiting for first camera frame...

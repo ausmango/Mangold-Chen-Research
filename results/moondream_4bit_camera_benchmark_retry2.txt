@@ -1,0 +1,147 @@
+Loading official Moondream 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+MODEL LOADED
+Load time: 25.5831 seconds
+Model footprint: 1.8969 GiB
+CUDA consumed after load: 1.8129 GiB
+
+Model loaded successfully. Start construction Video 1 from the beginning, then press Enter to begin camera capture...
+Opening NVIDIA CSI camera...
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3280 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3280 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 59.999999 
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+Camera opened: 1280x720, reported FPS: 30.00
+Camera pipeline initialized.
+
+Starting paired live-frame tests...
+Task 1: Generic short caption
+Task 2 prompt: Describe what is happening in this construction scene. Identify visible workers, equipment, activities, and any potential safety concerns.
+
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+(Argus) Error InsufficientMemory:  (propagating from src/eglstream/ImageImpl.cpp, function initialize(), line 482)
+(Argus) Error InsufficientMemory:  (propagating from src/eglstream/ImageImpl.cpp, function copyToNvBuffer(), line 523)
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, threadExecute:691 IImageNativeBuffer not supported by Image.
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, threadFunction:245 (propagating)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+=== FRAME 1/6 ===
+Captured: 2026-09-28T23:19:20.853415+00:00
+Approximate video time: 0.0007 seconds
+Camera capture latency: 0.0007 seconds
+Saved: /home/charlotte/research/results/camera_frames/frame_001.jpg
+Generic caption latency: 14.2527 seconds
+Generic caption: A black desk lamp casts a warm glow on a beige wall, with a coat rack and a partially visible black object in the background.
+Construction query latency: 13.0681 seconds
+Construction description: The image shows a dimly lit room with a black desk lamp casting a warm, orange light. A coat rack with four hooks is mounted on the wall above the desk. The room appears to be a small, possibly residential, space. There are no visible workers or equipment present in the image. The lighting suggests it might be nighttime or a low-light indoor setting. There are no apparent safety concerns visible in the image.
+Combined model latency: 27.3208 seconds
+End-to-end latency: 27.6405 seconds
+
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+=== FRAME 2/6 ===
+Captured: 2026-09-28T23:19:48.494072+00:00
+Approximate video time: 27.6414 seconds
+Camera capture latency: 0.0006 seconds
+Saved: /home/charlotte/research/results/camera_frames/frame_002.jpg
+Generic caption latency: 7.1229 seconds
+Generic caption: A black monitor displays a blurred image of a person in a red jacket, with a black tripod and white wall in the background.
+Construction query latency: 13.0405 seconds
+Construction description: The image shows a construction site viewed through a curved, black, flat-screen television. The television displays a construction vehicle, likely a bulldozer or excavator, in an orange color. The vehicle is positioned in front of a building under construction. Workers are visible in the background, wearing safety gear. The scene appears to be nighttime, with the lighting focused on the television screen. There are no visible safety concerns in the image.
+Combined model latency: 20.1634 seconds
+End-to-end latency: 20.1775 seconds
+
