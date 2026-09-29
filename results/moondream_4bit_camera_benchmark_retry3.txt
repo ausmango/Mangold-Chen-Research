@@ -1,0 +1,149 @@
+Loading official Moondream 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+MODEL LOADED
+Load time: 26.0223 seconds
+Model footprint: 1.8969 GiB
+CUDA consumed after load: 1.7900 GiB
+
+Model loaded successfully. Start construction Video 1 from the beginning, then press Enter to begin camera capture...
+Opening NVIDIA CSI camera...
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3280 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3280 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 59.999999 
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+Camera opened: 1280x720, reported FPS: 30.00
+Camera pipeline initialized.
+
+Starting paired live-frame tests...
+Task 1: Generic short caption
+Task 2 prompt: Describe what is happening in this construction scene. Identify visible workers, equipment, activities, and any potential safety concerns.
+
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+(Argus) Error InsufficientMemory:  (propagating from src/eglstream/ImageImpl.cpp, function initialize(), line 482)
+(Argus) Error InsufficientMemory:  (propagating from src/eglstream/ImageImpl.cpp, function copyToNvBuffer(), line 523)
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, threadExecute:691 IImageNativeBuffer not supported by Image.
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, threadFunction:245 (propagating)
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 1 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+=== FRAME 1/6 ===
+Captured: 2026-09-28T23:34:53.047792+00:00
+Approximate video time: 0.0010 seconds
+Camera capture latency: 0.0010 seconds
+Saved: /home/charlotte/research/results/camera_frames/frame_001.jpg
+Generic caption latency: 14.2960 seconds
+Generic caption: A red excavator, equipped with a bucket and shovel, is parked on a dirt lot, with a building and trees in the background.
+Construction query latency: 14.8674 seconds
+Construction description: A red excavator is parked on a dirt lot, partially obscured by a fisheye lens. The excavator is positioned in a construction site, with some buildings and trees visible in the background. A worker is visible in the cab of the excavator, operating the machinery. The excavator appears to be parked in a muddy or wet area, and there are some safety concerns, such as the possibility of slipping on the wet ground. The excavator's operator is wearing safety gear, including a helmet and protective clothing.
+Combined model latency: 29.1634 seconds
+End-to-end latency: 29.5277 seconds
+
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 3 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: residual reducev by 0.894444
+INFO:pyvips:VIPS: reducev: 7 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.91875
+INFO:pyvips:VIPS: reduceh: 7 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: residual reducev by 0.525
+INFO:pyvips:VIPS: reducev: 13 point mask
+INFO:pyvips:VIPS: reducev: using vector path
+INFO:pyvips:VIPS: residual reduceh by 0.295312
+INFO:pyvips:VIPS: reduceh: 21 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+=== FRAME 2/6 ===
+Captured: 2026-09-28T23:35:22.575307+00:00
+Approximate video time: 29.5286 seconds
+Camera capture latency: 0.0006 seconds
+Saved: /home/charlotte/research/results/camera_frames/frame_002.jpg
+Generic caption latency: 6.9566 seconds
+Generic caption: A red and black Kobalt XK1654 mini excavator digs into a pile of dirt in a residential backyard.
+Construction query latency: 78.3490 seconds
+Construction description: A small orange excavator is parked on a residential property, digging into the ground. A worker is visible in the driver's seat, operating the excavator. The excavator is positioned in a residential area, with a house and some landscaping visible in the background. The excavator is equipped with a bucket attachment, and the worker appears to be using a shovel to move dirt. The excavator is parked on a paved area, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked on a paved area, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked on a paved area, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked on a paved area, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a house, and there is some dirt and debris visible in the excavator's bucket. The excavator is parked in front of a house, and there is a person visible in the driver's seat. The excavator is parked in front of a
+Combined model latency: 85.3056 seconds
+End-to-end latency: 85.3212 seconds
+
