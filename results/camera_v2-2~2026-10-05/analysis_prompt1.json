@@ -1,0 +1,53 @@
+{
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "torch": "2.8.0",
+  "torchao": "0.11.0",
+  "transformers": "4.57.6",
+  "prompt": "Inspect this construction image for visible safety concerns. Describe the workers, equipment, and activity. Check for objects or cables obstructing walking paths, uneven ground, workers near machinery, and people visibly stumbling or falling. For each clearly visible concern, state what it is and where it appears. If no concern is clearly visible, say so. Do not assume movement, missing protective equipment, or hidden hazards. Answer in at most three concise sentences without repetition.",
+  "settings": {
+    "max_tokens": 96,
+    "temperature": 0
+  },
+  "load_seconds": 21.51091012500001,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_free_before_load_gib": 4.388984680175781,
+  "cuda_free_after_load_gib": 3.0882301330566406,
+  "cuda_free_difference_gib": 1.3007545471191406,
+  "status": "failed",
+  "frames": [],
+  "error": "RuntimeError('NVML_SUCCESS == r INTERNAL ASSERT FAILED at \"/opt/pytorch/c10/cuda/CUDACachingAllocator.cpp\":1131, please report a bug to PyTorch. ')",
+  "cuda_peak_allocated_gib": 2.212780475616455,
+  "video_statistics": [
+    {
+      "video_number": 1,
+      "completed_frames": 0,
+      "mean_inference_seconds": null,
+      "total_inference_seconds": 0
+    },
+    {
+      "video_number": 2,
+      "completed_frames": 0,
+      "mean_inference_seconds": null,
+      "total_inference_seconds": 0
+    },
+    {
+      "video_number": 3,
+      "completed_frames": 0,
+      "mean_inference_seconds": null,
+      "total_inference_seconds": 0
+    },
+    {
+      "video_number": 4,
+      "completed_frames": 0,
+      "mean_inference_seconds": null,
+      "total_inference_seconds": 0
+    },
+    {
+      "video_number": 5,
+      "completed_frames": 0,
+      "mean_inference_seconds": null,
+      "total_inference_seconds": 0
+    }
+  ]
+}

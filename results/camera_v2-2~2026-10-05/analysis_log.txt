@@ -1,0 +1,316 @@
+Loading official 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+Video 1 frame 1: 14.68s
+The excavator is tilted and appears to be stuck in mud. Workers are visible in the cab, and there are visible obstacles in the mud, including a person who appears to be falling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 1 frame 2: 7.56s
+The excavator is tilted, indicating a potential hazard. Workers are present but not clearly visible. The excavator is on uneven ground, and there are visible obstacles in the path.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+
+Video 1 frame 3: 8.44s
+The excavator is tilted on its side, indicating a potential mechanical issue. The workers are visible in the cab, but their activity is unclear. The excavator is on uneven ground, and there are visible obstacles in the path.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 1 frame 4: 7.55s
+The excavator is tilted and appears to be stuck in the mud. Workers are visible in the background, and there are visible obstacles in the path, including uneven ground and debris.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+
+Video 1 frame 5: 9.09s
+A man is operating a small excavator on a dirt slope. The excavator is positioned on uneven ground, and there are visible obstacles in the path, including a pile of dirt and a metal object. Workers are present, but no protective equipment is clearly visible.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 1 frame 6: 7.66s
+There are no workers visible in the image. The ground appears uneven and potentially slippery. There is no visible machinery or machinery-related hazard. There are no people visibly stumbling or falling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+
+Video 2 frame 1: 8.51s
+A worker in a blue shirt and jeans is standing near a window in a partially constructed wooden structure. A ladder is leaning against the wall. Wooden planks and lumber are present on the floor. A ladder is leaning against the wall.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+
+Video 2 frame 2: 8.31s
+A man wearing safety glasses is carrying a wooden plank in a partially constructed wooden structure. A ladder is leaning against the wall, and a saw is visible in the background. There are some electrical cords and debris on the floor.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 2 frame 3: 9.28s
+A man wearing safety glasses and gloves is working on a wooden structure in a construction site. He is using a power tool and appears to be working on a wooden plank. There are wooden beams and planks scattered around the site, and some workers are visible in the background.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 2 frame 4: 8.27s
+A worker in a blue shirt and blue pants is using a saw to cut wooden planks. A ladder is leaning against the wall. A wooden platform is present, and there are some cables and debris on the floor.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 2 frame 5: 8.77s
+The worker is using a power tool, likely a nail gun, to work on a wooden plank. There are wooden planks on a workbench, and a ladder is leaning against the wall. There are no visible safety concerns in this construction scene.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 2 frame 6: 8.82s
+A worker is visible in the doorway of a partially constructed wooden frame structure. A ladder is leaning against the wall. A wooden workbench is present in the foreground. A person wearing a blue shirt and blue pants is standing near a piece of machinery.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+
+Video 3 frame 1: 9.53s
+Three workers wearing hard hats are using a long hose to pump concrete into a foundation. A large concrete structure is partially covered with a tarp. A person in the background is visible near a piece of machinery. The ground appears uneven and there are some cables or cords obstructing walking paths.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 3 frame 2: 9.08s
+Workers are using a pressure washer to clean a large, dark-colored structure. A worker in a red helmet is spraying water from a hose. The ground is uneven and appears to be wet. There are people in the background, some wearing safety vests.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 3 frame 3: 8.58s
+Workers are using a hose to pump water into a pool. A worker is kneeling on the ground near a pool pump. A worker is kneeling on the ground near a pool pump. A worker is kneeling on the ground near a pool pump.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+
+Video 3 frame 4: 7.92s
+Three workers wearing hard hats are working on a concrete structure. They are using a long hose or pipe. The ground is uneven and appears wet. There are cables or cords visible in the background.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+
+Video 3 frame 5: 6.81s
+Workers are present, but one worker is visibly stumbling. Equipment includes a wooden platform and a tarp. The ground appears uneven and dusty.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 3 frame 6: 8.43s
+A young man wearing a baseball cap is seen outdoors, appearing to be eating ice cream. He is standing near a clothesline with clothes hanging on it. There are trees and a body of water visible in the background.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 4 frame 1: 6.10s
+There are no workers or machinery visible in the image. There are no visible hazards or obstructions.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+
+Video 4 frame 2: 7.82s
+A worker is standing on a metal beam secured by a rope. There are piles of metal beams and construction equipment in the background. A person is visible in the distance, seemingly falling or stumbling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 4 frame 3: 8.60s
+A worker is seen on a metal beam, seemingly working on a construction site. A safety line is visible, indicating a potential hazard. There are piles of construction materials and equipment in the background, and some workers are visible in the distance.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 4 frame 4: 7.57s
+Workers are visible on a metal beam structure. A person is working on the beam, possibly using a tool. There are metal beams and a pile of construction materials in the background.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 4 frame 5: 8.59s
+A worker is seen walking across a metal beam suspended by a rope. The beam appears to be part of a construction site. The worker is wearing safety gear, including a helmet and harness. There are no visible safety concerns in this image.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+INFO:pyvips:VIPS: threadpool completed with 4 workers
+
+Video 4 frame 6: 8.43s
+A worker in a safety harness is climbing a metal beam. A metal beam is visible in the foreground, and a person is visible in the background, seemingly falling. The worker is using a rope or cable to ascend the beam.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 1: 7.73s
+Workers are visible in the back of the bulldozer, operating it. The bulldozer is positioned on uneven ground. There are workers near the machinery, and one person appears to be stumbling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 2: 7.52s
+Workers are visible in the background, operating the machinery. A person is seen near the front of the bulldozer, seemingly involved in the operation. The ground appears uneven and muddy.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 3: 7.28s
+Workers are visible in the background, operating machinery. A person is seen near a piece of machinery. A person is visible in the background, seemingly falling or stumbling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 4: 7.98s
+Workers are visible in the background, operating machinery. A large, overturned piece of equipment is present in the foreground. A person is seen near the machinery, and another person appears to be falling or stumbling.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 5: 7.17s
+Workers are visible in the background, seemingly operating machinery. A large, overturned piece of equipment is present in the foreground. The ground appears uneven and potentially wet.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 5 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 5 frame 6: 7.62s
+There are no workers visible in the image. The ground appears uneven and potentially slippery. There is no visible machinery or machinery-related hazard. There are no people visibly stumbling or falling.
+
+Results: /home/charlotte/research/results/camera_v2-2~2026-10-05/analysis.json
+Report: /home/charlotte/research/results/camera_v2-2~2026-10-05/report.md

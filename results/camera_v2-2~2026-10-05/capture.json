@@ -1,0 +1,343 @@
+{
+  "design": "CSI recording followed by independent frame analysis",
+  "requested_videos": 5,
+  "requested_frames_per_video": 6,
+  "camera_output": "640x360",
+  "videos": [
+    {
+      "number": 1,
+      "label": "Red Machine",
+      "source": "https://drive.google.com/file/d/1Kh8cFl-OckC_hMw1OA0Ld7OBrvnlOBMn/view",
+      "duration_requested_seconds": 60.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "video_01/frame_001.jpg",
+          "target_seconds": 5.0,
+          "elapsed_seconds": 5.027220591000059,
+          "sampling_lateness_seconds": 0.027220591000059358,
+          "camera_read_seconds": 0.014788167999995494,
+          "captured_utc": "2026-10-05T22:30:42.662335+00:00"
+        },
+        {
+          "number": 2,
+          "path": "video_01/frame_002.jpg",
+          "target_seconds": 15.0,
+          "elapsed_seconds": 15.024179960000083,
+          "sampling_lateness_seconds": 0.024179960000083156,
+          "camera_read_seconds": 0.01625222500001655,
+          "captured_utc": "2026-10-05T22:30:52.635140+00:00"
+        },
+        {
+          "number": 3,
+          "path": "video_01/frame_003.jpg",
+          "target_seconds": 25.0,
+          "elapsed_seconds": 25.022426329000155,
+          "sampling_lateness_seconds": 0.02242632900015451,
+          "camera_read_seconds": 0.01571122700011074,
+          "captured_utc": "2026-10-05T22:31:02.635608+00:00"
+        },
+        {
+          "number": 4,
+          "path": "video_01/frame_004.jpg",
+          "target_seconds": 35.0,
+          "elapsed_seconds": 35.02068810300011,
+          "sampling_lateness_seconds": 0.02068810300011137,
+          "camera_read_seconds": 0.015686460000097213,
+          "captured_utc": "2026-10-05T22:31:12.632965+00:00"
+        },
+        {
+          "number": 5,
+          "path": "video_01/frame_005.jpg",
+          "target_seconds": 45.0,
+          "elapsed_seconds": 45.01832477500011,
+          "sampling_lateness_seconds": 0.018324775000110094,
+          "camera_read_seconds": 0.014566060000106518,
+          "captured_utc": "2026-10-05T22:31:22.631318+00:00"
+        },
+        {
+          "number": 6,
+          "path": "video_01/frame_006.jpg",
+          "target_seconds": 55.0,
+          "elapsed_seconds": 55.01716432400008,
+          "sampling_lateness_seconds": 0.017164324000077613,
+          "camera_read_seconds": 0.016576015000055122,
+          "captured_utc": "2026-10-05T22:31:32.628959+00:00"
+        }
+      ],
+      "recording": "video_01/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 1801,
+      "capture_wall_seconds": 60.01608572000009
+    },
+    {
+      "number": 2,
+      "label": "Video 2",
+      "source": "https://drive.google.com/file/d/1V_I9_77qyGNHI0bDMz9p4ZmCIl6WVMUd/view",
+      "duration_requested_seconds": 35.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "video_02/frame_001.jpg",
+          "target_seconds": 2.9166666666666665,
+          "elapsed_seconds": 2.9308167350000076,
+          "sampling_lateness_seconds": 0.014150068333341093,
+          "camera_read_seconds": 0.015485256000147274,
+          "captured_utc": "2026-10-05T22:32:46.281622+00:00"
+        },
+        {
+          "number": 2,
+          "path": "video_02/frame_002.jpg",
+          "target_seconds": 8.75,
+          "elapsed_seconds": 8.763190058999953,
+          "sampling_lateness_seconds": 0.01319005899995318,
+          "camera_read_seconds": 0.014231186999950296,
+          "captured_utc": "2026-10-05T22:32:52.114434+00:00"
+        },
+        {
+          "number": 3,
+          "path": "video_02/frame_003.jpg",
+          "target_seconds": 14.583333333333334,
+          "elapsed_seconds": 14.596357804000036,
+          "sampling_lateness_seconds": 0.01302447066670176,
+          "camera_read_seconds": 0.015423209000118732,
+          "captured_utc": "2026-10-05T22:32:57.948840+00:00"
+        },
+        {
+          "number": 4,
+          "path": "video_02/frame_004.jpg",
+          "target_seconds": 20.416666666666668,
+          "elapsed_seconds": 20.427402182999913,
+          "sampling_lateness_seconds": 0.010735516333244988,
+          "camera_read_seconds": 0.012665082000012262,
+          "captured_utc": "2026-10-05T22:33:03.779487+00:00"
+        },
+        {
+          "number": 5,
+          "path": "video_02/frame_005.jpg",
+          "target_seconds": 26.25,
+          "elapsed_seconds": 26.25929520999989,
+          "sampling_lateness_seconds": 0.009295209999891085,
+          "camera_read_seconds": 0.01417086899982678,
+          "captured_utc": "2026-10-05T22:33:09.610450+00:00"
+        },
+        {
+          "number": 6,
+          "path": "video_02/frame_006.jpg",
+          "target_seconds": 32.083333333333336,
+          "elapsed_seconds": 32.091452034999975,
+          "sampling_lateness_seconds": 0.008118701666639083,
+          "camera_read_seconds": 0.01604677399996035,
+          "captured_utc": "2026-10-05T22:33:15.441574+00:00"
+        }
+      ],
+      "recording": "video_02/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 1050,
+      "capture_wall_seconds": 35.02380068699995
+    },
+    {
+      "number": 3,
+      "label": "sVideo 3",
+      "source": "https://drive.google.com/file/d/1eAHZRBoRS9tW2u75KlQIVbTEe4AUtwJH/view",
+      "duration_requested_seconds": 19.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "video_03/frame_001.jpg",
+          "target_seconds": 1.5833333333333333,
+          "elapsed_seconds": 1.5994195989999298,
+          "sampling_lateness_seconds": 0.016086265666596544,
+          "camera_read_seconds": 0.013111463999848638,
+          "captured_utc": "2026-10-05T22:34:05.499076+00:00"
+        },
+        {
+          "number": 2,
+          "path": "video_03/frame_002.jpg",
+          "target_seconds": 4.75,
+          "elapsed_seconds": 4.7645336719999705,
+          "sampling_lateness_seconds": 0.014533671999970466,
+          "camera_read_seconds": 0.014011960000061663,
+          "captured_utc": "2026-10-05T22:34:08.663132+00:00"
+        },
+        {
+          "number": 3,
+          "path": "video_03/frame_003.jpg",
+          "target_seconds": 7.916666666666667,
+          "elapsed_seconds": 7.931063545999905,
+          "sampling_lateness_seconds": 0.014396879333237855,
+          "camera_read_seconds": 0.01423605999980282,
+          "captured_utc": "2026-10-05T22:34:11.832854+00:00"
+        },
+        {
+          "number": 4,
+          "path": "video_03/frame_004.jpg",
+          "target_seconds": 11.083333333333334,
+          "elapsed_seconds": 11.097012545000098,
+          "sampling_lateness_seconds": 0.01367921166676389,
+          "camera_read_seconds": 0.012947109000151613,
+          "captured_utc": "2026-10-05T22:34:14.997103+00:00"
+        },
+        {
+          "number": 5,
+          "path": "video_03/frame_005.jpg",
+          "target_seconds": 14.25,
+          "elapsed_seconds": 14.26267069100004,
+          "sampling_lateness_seconds": 0.012670691000039369,
+          "camera_read_seconds": 0.012067510999941078,
+          "captured_utc": "2026-10-05T22:34:18.164246+00:00"
+        },
+        {
+          "number": 6,
+          "path": "video_03/frame_006.jpg",
+          "target_seconds": 17.416666666666668,
+          "elapsed_seconds": 17.429046797999945,
+          "sampling_lateness_seconds": 0.012380131333276978,
+          "camera_read_seconds": 0.011928915999988021,
+          "captured_utc": "2026-10-05T22:34:21.331083+00:00"
+        }
+      ],
+      "recording": "video_03/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 570,
+      "capture_wall_seconds": 19.02963257600004
+    },
+    {
+      "number": 4,
+      "label": "Video 4",
+      "source": "https://drive.google.com/file/d/1Z4rXvQwLszuOFTq0TfLRgwRaF1T0j-d3/view",
+      "duration_requested_seconds": 25.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "video_04/frame_001.jpg",
+          "target_seconds": 2.0833333333333335,
+          "elapsed_seconds": 2.0976154390000374,
+          "sampling_lateness_seconds": 0.01428210566670396,
+          "camera_read_seconds": 0.014394756000001507,
+          "captured_utc": "2026-10-05T22:35:14.984325+00:00"
+        },
+        {
+          "number": 2,
+          "path": "video_04/frame_002.jpg",
+          "target_seconds": 6.25,
+          "elapsed_seconds": 6.2638034569999945,
+          "sampling_lateness_seconds": 0.013803456999994523,
+          "camera_read_seconds": 0.013949755999874469,
+          "captured_utc": "2026-10-05T22:35:19.151720+00:00"
+        },
+        {
+          "number": 3,
+          "path": "video_04/frame_003.jpg",
+          "target_seconds": 10.416666666666666,
+          "elapsed_seconds": 10.42930127600016,
+          "sampling_lateness_seconds": 0.01263460933349414,
+          "camera_read_seconds": 0.012823047999972914,
+          "captured_utc": "2026-10-05T22:35:23.316978+00:00"
+        },
+        {
+          "number": 4,
+          "path": "video_04/frame_004.jpg",
+          "target_seconds": 14.583333333333334,
+          "elapsed_seconds": 14.594993741000053,
+          "sampling_lateness_seconds": 0.011660407666719053,
+          "camera_read_seconds": 0.012950058999877001,
+          "captured_utc": "2026-10-05T22:35:27.482237+00:00"
+        },
+        {
+          "number": 5,
+          "path": "video_04/frame_005.jpg",
+          "target_seconds": 18.75,
+          "elapsed_seconds": 18.76124242500009,
+          "sampling_lateness_seconds": 0.011242425000091316,
+          "camera_read_seconds": 0.012742342999899847,
+          "captured_utc": "2026-10-05T22:35:31.650111+00:00"
+        },
+        {
+          "number": 6,
+          "path": "video_04/frame_006.jpg",
+          "target_seconds": 22.916666666666668,
+          "elapsed_seconds": 22.927508406000015,
+          "sampling_lateness_seconds": 0.010841739333347533,
+          "camera_read_seconds": 0.016064163999999437,
+          "captured_utc": "2026-10-05T22:35:35.815470+00:00"
+        }
+      ],
+      "recording": "video_04/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 750,
+      "capture_wall_seconds": 25.02698122700008
+    },
+    {
+      "number": 5,
+      "label": "Video 5",
+      "source": "https://drive.google.com/file/d/1ok9RtYCoPQZHGZcAsuAdVDmx9ElNl464/view",
+      "duration_requested_seconds": 11.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "video_05/frame_001.jpg",
+          "target_seconds": 0.9166666666666666,
+          "elapsed_seconds": 0.9326269159998901,
+          "sampling_lateness_seconds": 0.015960249333223486,
+          "camera_read_seconds": 0.012897867999981827,
+          "captured_utc": "2026-10-05T22:36:12.240368+00:00"
+        },
+        {
+          "number": 2,
+          "path": "video_05/frame_002.jpg",
+          "target_seconds": 2.75,
+          "elapsed_seconds": 2.764778390999936,
+          "sampling_lateness_seconds": 0.014778390999936164,
+          "camera_read_seconds": 0.011172236999982488,
+          "captured_utc": "2026-10-05T22:36:14.074305+00:00"
+        },
+        {
+          "number": 3,
+          "path": "video_05/frame_003.jpg",
+          "target_seconds": 4.583333333333333,
+          "elapsed_seconds": 4.5980041380000785,
+          "sampling_lateness_seconds": 0.014670804666745418,
+          "camera_read_seconds": 0.015546109000069919,
+          "captured_utc": "2026-10-05T22:36:15.902863+00:00"
+        },
+        {
+          "number": 4,
+          "path": "video_05/frame_004.jpg",
+          "target_seconds": 6.416666666666667,
+          "elapsed_seconds": 6.431250059999911,
+          "sampling_lateness_seconds": 0.01458339333324421,
+          "camera_read_seconds": 0.017358558999831075,
+          "captured_utc": "2026-10-05T22:36:17.736635+00:00"
+        },
+        {
+          "number": 5,
+          "path": "video_05/frame_005.jpg",
+          "target_seconds": 8.25,
+          "elapsed_seconds": 8.263560296999913,
+          "sampling_lateness_seconds": 0.01356029699991268,
+          "camera_read_seconds": 0.013007054999889078,
+          "captured_utc": "2026-10-05T22:36:19.571416+00:00"
+        },
+        {
+          "number": 6,
+          "path": "video_05/frame_006.jpg",
+          "target_seconds": 10.083333333333334,
+          "elapsed_seconds": 10.097754869000028,
+          "sampling_lateness_seconds": 0.014421535666693686,
+          "camera_read_seconds": 0.016987672000141174,
+          "captured_utc": "2026-10-05T22:36:21.402859+00:00"
+        }
+      ],
+      "recording": "video_05/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 330,
+      "capture_wall_seconds": 11.03117245999988
+    }
+  ]
+}
