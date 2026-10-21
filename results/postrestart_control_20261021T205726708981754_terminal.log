@@ -1,0 +1,75 @@
+Loading official 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+
+Video 1 frame 1: 11.83s
+A small excavator is stuck in muddy soil.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 1 frame 3: 4.97s
+A small excavator is stuck in a ditch.
+INFO:pyvips:VIPS: residual reduceh by 0.590625
+INFO:pyvips:VIPS: reduceh: 11 point mask
+INFO:pyvips:VIPS: reduceh: using vector path
+INFO:pyvips:VIPS: residual scale 1.05
+INFO:pyvips:VIPS: threadpool completed with 2 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+INFO:pyvips:VIPS: threadpool completed with 6 workers
+
+Video 1 frame 5: 5.82s
+The excavator is in a precarious position on a slope, indicating potential instability or uneven terrain.
+
+Results: /home/charlotte/research/results/postrestart_control_20261021T205726708981754/analysis.json
+Report: /home/charlotte/research/results/postrestart_control_20261021T205726708981754/report.md
+{
+  "created_utc": "2026-10-21T20:57:26.928347+00:00",
+  "mode": "saved_image_control_no_camera",
+  "status": "finished",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "requested_frames": 3,
+  "source_baseline": "/home/charlotte/research/results/camera_v2-2~2026-10-05",
+  "capture_to_answer_seconds": null,
+  "frame_age_seconds": null,
+  "limitation": "Historical images, not live capture or temporal event detection. Original capture timestamps/elapsed times are provenance only. Generated hazard claims are unverified.",
+  "completed_frames": 3,
+  "mean_inference_seconds": 7.538950823000003,
+  "load_seconds": 25.2017015,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_peak_allocated_gib": 2.497654438018799,
+  "ram_samples": 145,
+  "peak_system_ram_mb": 5383,
+  "finished_utc": "2026-10-21T20:58:40.421714+00:00"
+}

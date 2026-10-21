@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-21T20:57:26.928347+00:00",
+  "mode": "saved_image_control_no_camera",
+  "status": "finished",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "requested_frames": 3,
+  "source_baseline": "/home/charlotte/research/results/camera_v2-2~2026-10-05",
+  "capture_to_answer_seconds": null,
+  "frame_age_seconds": null,
+  "limitation": "Historical images, not live capture or temporal event detection. Original capture timestamps/elapsed times are provenance only. Generated hazard claims are unverified.",
+  "completed_frames": 3,
+  "mean_inference_seconds": 7.538950823000003,
+  "load_seconds": 25.2017015,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_peak_allocated_gib": 2.497654438018799,
+  "ram_samples": 145,
+  "peak_system_ram_mb": 5383,
+  "finished_utc": "2026-10-21T20:58:40.421714+00:00"
+}

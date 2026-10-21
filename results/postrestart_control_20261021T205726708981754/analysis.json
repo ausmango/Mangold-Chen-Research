@@ -1,0 +1,77 @@
+{
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "torch": "2.8.0",
+  "torchao": "0.11.0",
+  "transformers": "4.57.6",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "load_seconds": 25.2017015,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_free_before_load_gib": 5.154380798339844,
+  "cuda_free_after_load_gib": 3.387359619140625,
+  "cuda_free_difference_gib": 1.7670211791992188,
+  "status": "finished",
+  "frames": [
+    {
+      "video_number": 1,
+      "video_label": "Red Machine",
+      "number": 1,
+      "path": "frames/frame_001.jpg",
+      "target_seconds": 5.0,
+      "elapsed_seconds": 5.027220591000059,
+      "sampling_lateness_seconds": 0.027220591000059358,
+      "camera_read_seconds": 0.014788167999995494,
+      "captured_utc": "2026-10-05T22:30:42.662335+00:00",
+      "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_001.jpg",
+      "description": "A small excavator is stuck in muddy soil.",
+      "inference_seconds": 11.832453230999988,
+      "cuda_allocated_gib": 2.256554126739502,
+      "cuda_peak_allocated_gib": 2.497654438018799
+    },
+    {
+      "video_number": 1,
+      "video_label": "Red Machine",
+      "number": 3,
+      "path": "frames/frame_003.jpg",
+      "target_seconds": 25.0,
+      "elapsed_seconds": 25.022426329000155,
+      "sampling_lateness_seconds": 0.02242632900015451,
+      "camera_read_seconds": 0.01571122700011074,
+      "captured_utc": "2026-10-05T22:31:02.635608+00:00",
+      "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_003.jpg",
+      "description": "A small excavator is stuck in a ditch.",
+      "inference_seconds": 4.968175895000002,
+      "cuda_allocated_gib": 2.256554126739502,
+      "cuda_peak_allocated_gib": 2.497654438018799
+    },
+    {
+      "video_number": 1,
+      "video_label": "Red Machine",
+      "number": 5,
+      "path": "frames/frame_005.jpg",
+      "target_seconds": 45.0,
+      "elapsed_seconds": 45.01832477500011,
+      "sampling_lateness_seconds": 0.018324775000110094,
+      "camera_read_seconds": 0.014566060000106518,
+      "captured_utc": "2026-10-05T22:31:22.631318+00:00",
+      "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_005.jpg",
+      "description": "The excavator is in a precarious position on a slope, indicating potential instability or uneven terrain.",
+      "inference_seconds": 5.8162233430000185,
+      "cuda_allocated_gib": 2.256554126739502,
+      "cuda_peak_allocated_gib": 2.497654438018799
+    }
+  ],
+  "cuda_peak_allocated_gib": 2.497654438018799,
+  "video_statistics": [
+    {
+      "video_number": 1,
+      "completed_frames": 3,
+      "mean_inference_seconds": 7.538950823000003,
+      "total_inference_seconds": 22.61685246900001
+    }
+  ]
+}

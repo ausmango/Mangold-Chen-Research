@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-10-21T20:23:16.003831+00:00",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "mode": "camera_only",
+  "wait_for_start": true,
+  "source_label": "Video 1 - Red Machine (camera setup check)",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+  "requested_duration_seconds": 20.0,
+  "status": "finished",
+  "design": "Periodic live image analysis, not verified temporal event detection",
+  "timestamp_definition": "Host monotonic and UTC immediately after camera.read; not sensor exposure time",
+  "timing_definition": "Inference includes query image encoding and decoding; frame age includes frame saving/preparation; completion excludes result disk write",
+  "frames": [],
+  "capture_started_utc": "2026-10-21T20:23:29.391170+00:00",
+  "recording": "camera.avi",
+  "stop_reason": "duration",
+  "capture_max_gap_seconds": 0.2022654450000232,
+  "capture_wall_seconds": 20.017710017000013,
+  "recording_statistics": {
+    "submitted_frames": 596,
+    "nominal_fps": 30,
+    "mean_write_seconds": 0.017004472974832176,
+    "max_write_seconds": 0.023653660000036325
+  },
+  "captured_frames": 596,
+  "finished_utc": "2026-10-21T20:23:49.503945+00:00",
+  "completed_frames": 0,
+  "summary": {
+    "inference_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "frame_age_at_inference_start_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "capture_to_completed_answer_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "camera_capture": {
+    "delivered_frames": 596,
+    "first_to_last_seconds": 19.996003094000002,
+    "measured_fps": 29.755946586072273,
+    "fps_definition": "(delivered frames - 1) / (last - first delivery timestamp); excludes alignment preview",
+    "max_delivery_gap_seconds": 0.2022654450000232,
+    "mean_read_seconds": 0.014060184157718111,
+    "requested_fps": 30
+  },
+  "system_ram": {
+    "source": "tegrastats, 500 ms sampling; whole system, including other processes",
+    "samples": 62,
+    "peak_used_mb": 3456,
+    "total_mb": 7620
+  }
+}
