@@ -121,6 +121,22 @@ is still unresolved. Review evidence:
 The supervisor design is proposed, not an implemented or demonstrated fix.
 OpenCV windows remain on the main thread of the process that owns capture.
 
+### Current issues: hardware is not the only possible cause
+
+| Issue | Evidence / status |
+|---|---|
+| Camera/GPU allocation pressure | Argus reports `InsufficientMemory`, but the exact allocation constraint is unresolved; total RAM alone does not establish the cause. |
+| Blocking native camera calls | `camera.read()`/cleanup can stall; the main thread cannot service preview or stop checks while blocked. |
+| Incomplete stop handling | A stop event cannot reliably interrupt native calls; the join loop has no overall deadline. External timeout limits the attempt, not the underlying fault. |
+| Driver/runtime interaction | Argus, CUDA and allocator behavior may contribute; a hardware-capacity limit versus software interaction has not been isolated. |
+| Initialization and transient memory | Model loading, cache setup and first-use quantization can have different peaks; steady model footprint does not capture them all. Phase-level diagnosis is still needed. |
+| Benchmark orchestration | An expired wall-clock cutoff previously stopped analysis during loading. Missing terminal metadata automation also interrupted workflow. These were software/workflow issues, not proof of insufficient hardware. |
+| Comparison workload | Two prompts per selected image delay new observations; shorter labels also change answer usefulness. Neither should be confused with deployment-style live performance. |
+
+**Conclusion:** no evidence yet establishes that this Jetson is fundamentally
+incapable of concurrent operation. Smaller models may help, but recovery,
+initialization, runtime behavior and workload design also need controlled tests.
+
 ## 6. Additional improvement topics, ranked by relevance
 
 | Priority | Topic | Why discuss it | Evidence or uncertainty |
@@ -229,4 +245,5 @@ establish safe or accurate hazard detection.
 **Completed today:** evidence review, parameter calculations, primary-source
 comparison and concurrency design review. **Not completed:** new-model inference,
 a working concurrency fix, new latency gains, or accuracy validation. No camera
-runs, model downloads, dependency changes, commits or pushes.
+runs, model downloads or dependency changes. This document update was committed
+with explicit user authorization; no push was requested.
