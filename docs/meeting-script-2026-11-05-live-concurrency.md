@@ -1,248 +1,232 @@
-# Meeting script: model choice and live concurrency — November 5, 2026
+# Research discussion: achieving concurrent live descriptions
 
-Read the spoken sections in order, pausing for discussion. They are intended for
-approximately 10–13 minutes at a conversational pace. The comparison table and
-source notes are reference material; you do not need to read every cell aloud.
-This is a research/design update, not a new benchmark or a claimed working fix.
+**Priority:** keep CSI capture and preview running while one AI worker describes
+the newest available image. Model replacement is one possible way to meet that
+goal; it is not the entire concurrency solution.
 
-## 1. Open with the priority and the established progress
+## 1. Established results and the unresolved gap
 
-The main priority now is concurrency: keeping the camera running while the AI
-provides descriptions, rather than recording everything and analyzing it later.
+| Evidence | Result | Interpretation |
+|---|---:|---|
+| October 5 inference | 30/30 images; mean **8.3241 s** | Completed recording-then-analysis baseline |
+| October 22 inference | 30/30 images; mean **4.4612 s** | **46.41% lower latency**, **1.866× throughput** |
+| Image encoding + prefix preparation | **3.9174 s; 87.81%** of inference | Main measured computational cost; includes visual processing and language-model image prefill |
+| Query + generation | **0.5437 s; 12.19%** | Further shortening has limited remaining runtime benefit |
+| Peak whole-system RAM | **5401 MB** vs 5400 MB previously | Essentially unchanged, not a RAM-efficiency improvement |
+| Model footprint / peak CUDA allocation | **1.8969 / 2.4977 GiB** | Separate measurements, not additive to system RAM |
+| Camera alone | **29.76 FPS** in a completed recording check | Capture throughput works independently |
+| Concurrent camera + Moondream | Argus buffer allocation failed; **zero live answers** in latest attempt | Still an unresolved hardware/software integration problem |
 
-We already have a useful baseline. Across 30 camera-captured images, mean
-inference fell from 8.32 seconds to 4.46 seconds, a 46.4% reduction in latency.
-However, that successful run was sequential. It also replaced detailed answers
-with short labels, and the images were newly captured, so the percentage does
-not isolate one optimization or demonstrate equal accuracy.
+The 46.41% latency change is descriptive: fresh camera images and a much shorter
+prompt/output task changed between sessions. It does not establish equal answer
+quality or isolate one optimization. **No new benchmark was run on November 5.**
 
-I am keeping that result as the established baseline. I have not run a new model
-benchmark this session. The progress today is reviewing the concurrency failure,
-comparing smaller model candidates, and defining a live-first implementation
-and evaluation plan.
+**Discussion point:** the next milestone is a working live pipeline, rather than
+another reduction in offline answer length.
 
-## 2. How similar are the proposed models to Moondream?
+## 2. How large is the step from 2 billion to 450 million parameters?
 
-They are similar in purpose: they are vision-language models that take visual
-information and a text question and generate language. We would still aim to ask
-about workers, equipment, activities, and clearly visible concerns.
+A parameter is a learned numerical weight. It is a measure of model scale, not
+a direct measure of accuracy, memory use or response time.
 
-They are not smaller versions of our exact checkpoint. They have different
-architectures, training, image processors, and interfaces. We would need a model
-adapter rather than simply changing the name in the current `model.query` call.
-We also cannot assume their strengths on construction scenes match Moondream's.
+| Model | Nominal parameter class | Fraction of nominal 2B baseline | Reduction in parameter count | Role |
+|---|---:|---:|---:|---|
+| Current Moondream | **2,000M** | 100% | Reference | Preserve as measured baseline |
+| LFM2-VL-450M | **450M** | **22.5%** | **77.5% fewer** | First smaller live-image candidate |
+| SmolVLM2-500M | **500M** | **25.0%** | **75.0% fewer** | Candidate for sampled video/multi-frame context |
+| SmolVLM2-256M | **256M** | **12.8%** | **87.2% fewer** | Lower-capacity control, not initial preference |
 
-Our current model is the official 4-bit Moondream 2B-class release. It has already
-completed our saved-image tasks, giving us a known reference for both runtime
-and output limitations. I do not recommend deleting or replacing that baseline.
+**2B → 450M is a substantial capacity change:** the nominal reference has about
+**4.44 times as many parameters**. These calculations use advertised size classes,
+not exact tensor counts, and are **not predicted speed or accuracy percentages**.
 
-The first alternative I would investigate is the original Liquid AI
-LFM2-VL-450M. Its published specification includes an 86-million-parameter vision
-encoder and adjustable image-token controls, and its documented Transformers
-requirement is 4.57 or newer. That makes it a candidate for our installed version
-family, not a confirmed compatible deployment. The newer LFM2.5 version has a
-higher software requirement, so it is not the first choice for preserving our
-current setup. [Model source](https://huggingface.co/LiquidAI/LFM2-VL-450M).
+A crucial distinction: our current model is already quantized to a 4-bit release,
+whereas candidate examples use BF16. BF16 stores 16 bits per value. Fewer weights
+can therefore use more bits each. Working memory also includes visual features,
+caches, temporary tensors and camera buffers. **77.5% fewer parameters does not
+mean 77.5% less RAM or 4.44× faster inference.** The current vision path is not
+uniformly INT4 simply because the release name says “4-bit.”
 
-The other main candidate is SmolVLM2-500M. It supports images, multiple images,
-and video input. That makes it worth considering if we later want a short window
-of visual context. Video support does not mean it can continuously understand
-every camera frame or detect a fall reliably. [Model source](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct).
+## 3. Similar purpose, different architecture and deployment
 
-## 3. A smaller model may sacrifice capability—but size is not the whole answer
-
-The concern about smaller models is valid. They can miss subtle details, confuse
-objects, or give less complete explanations. But I would not assume that accuracy
-always decreases predictably with parameter count. Training data, visual
-processing, precision, and the specific task also matter.
-
-For example, Hugging Face reports a Video-MME score of 42.2 for its 500M variant
-and 33.7 for its 256M variant. That illustrates a capability tradeoff within one
-family. It does not measure construction-hazard accuracy, and it does not rank
-either one against our Moondream run. [Published evaluation](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct).
-
-The choice should therefore be the smallest model that gives useful, sufficiently
-supported descriptions while operating live—not simply the smallest download.
-A fluent wrong answer is not progress. Equally, a detailed answer that arrives
-after a changing scene has become irrelevant has limited practical value.
-
-I would separate two milestones. First, demonstrate reliable concurrency with
-responses that are clearly marked as experimental. Then establish whether the
-descriptions meet our quality needs. Concurrency is the first engineering gate;
-quality remains a separate gate before claiming useful hazard monitoring.
-
-## 4. What concurrency would actually look like
-
-The camera should capture and preview continuously. The inference worker takes
-the newest available frame, processes it, and returns a description. While it
-works, arriving frames replace the pending frame rather than building a backlog.
-Once the worker finishes, it selects the newest frame again.
-
-For illustration, at 30 camera frames per second, a 4.46-second processing period
-spans roughly 134 camera frames. Processing every old frame in order would make
-answers increasingly stale. Skipping intermediate frames is therefore a normal
-part of this latest-frame design, not evidence that we are understanding the
-entire video sequence.
-
-The display should show the live image, the last completed answer, and the age
-of the frame used for that answer. Otherwise a smooth preview can make a stale
-description look current. The number I care about is actual camera-to-answer
-delay and how often useful updates arrive, not only camera FPS.
-
-## 5. Why the current attempt failed, and what we can improve
-
-The saved concurrent attempt reported camera-buffer allocation errors while
-Moondream was loading. Codex was closed, so we now know closing it was not the
-complete solution. It helped model-only memory headroom, but did not establish
-stable operation with the camera active.
-
-The Jetson shares physical memory between the CPU, GPU, camera and other
-processes. Some available total RAM does not guarantee every required allocation
-will succeed. We have not isolated the exact allocation constraint, so I would
-not claim that a smaller model is a guaranteed fix.
-
-The software also needs stronger failure handling. A native camera read can
-block the main thread. Setting a stop flag does not necessarily interrupt that
-call, and the current worker-join loop can wait without an overall deadline.
-
-My proposed design is a supervised capture process and one separate inference
-process. The capture process owns its preview on its main thread. They exchange
-only the latest frame through bounded shared memory, along with its sequence
-number and timestamp. An independent supervisor monitors progress and handles
-worker failures with explicit shutdown deadlines.
-
-This provides better isolation and recovery. It does not create extra physical
-RAM. It also has not yet been implemented and validated as a fix. We should
-change one factor at a time instead of changing the model, camera settings and
-runtime together and then guessing what helped.
-
-## 6. Why I am shifting attention away from shorter prompts
-
-Our measurements show that the image-and-prefix stage averages 3.92 seconds,
-while the query and text-generation stage averages 0.54 seconds. About 88% of
-our inference time is therefore spent preparing the visual information.
-
-Image encoding means converting pixels into internal visual features the
-language model can use. Our measured interval also includes preparing the image
-prefix for the language model, so it is not a pure vision-encoder measurement.
-We need finer profiling before attributing all of that time to one component.
-
-Even eliminating the whole query stage would save only about another 12% if
-encoding did not change. That is why increasingly short answers are unlikely
-to produce the next major improvement. They can also remove the explanations
-we actually want.
-
-The better hypothesis is to reduce visual-processing cost and memory demand
-while restoring a useful short sentence. Options to investigate include a smaller
-visual model, supported visual-token controls, and later backend optimization.
-Reducing resolution blindly is not enough: the current crop layout may remain
-the same, and small objects can become less visible.
-
-## 7. What the cache helps with—and what it does not
-
-Moondream already uses KV caching during text generation. It also allows an
-encoded image to be reused for several questions about that same image.
-We did not newly enable that mechanism.
-
-Same-image reuse is useful for a prompt comparison: encode once, then ask two
-questions serially. But it makes us spend longer on that observation before
-selecting another frame. For the first live demonstration, I recommend one
-prompt per selected image rather than two comparison prompts.
-
-A cached image must not stand in for a changed scene. Reusing it indiscriminately
-could make the system answer quickly about something that is no longer visible.
-We should improve freshness through current-frame selection, not hide the cost
-by repeatedly describing an old frame.
-
-## 8. What I would implement and test next
-
-The first trial should be deliberately simple: one camera, one model worker,
-one latest-frame slot, and one descriptive prompt. Leave full video recording
-off initially so we can isolate live inference. That is a test simplification,
-not proof that recording caused the earlier loading failure.
-
-To separate causes, first validate the supervised capture path with a deliberately
-delayed dummy worker. Then keep that camera path fixed and try one real model at
-a time. If the same allocation failure persists, preserve the failed attempt;
-do not interpret process separation as proof that memory pressure is fixed.
-
-We should ask for one useful sentence, such as the visible worker or equipment
-and any clearly supported concern. A common 32-token output cap gives more room
-than the short-label benchmark. Exact prompts, model revisions and preprocessing
-must be recorded; the same token cap does not make different tokenizers identical.
-
-The first milestone is a supervised two-minute live session that produces at
-least five descriptions while camera sequences keep advancing. That is a proposed
-acceptance criterion, not a result or proof of real-time safety performance.
-
-Then measure capture FPS, source-frame age, image-processing time, complete-answer
-delay, memory peaks and update frequency. Report typical and slower-case latency,
-including the first-use result. Separately review the images for supported,
-unsupported and missed details. We should also test whether a failed worker can
-be reported and stopped without freezing the interface.
-
-Only after that works should we add full recording and, if needed, a small
-multi-frame window. Multiple frames may help with changing activities, but they
-add processing and memory cost. More temporal context is not free.
-
-## 9. How this relates to NVIDIA-style live demonstrations
-
-NVIDIA's Live VLM WebUI is a useful architectural reference because it separates
-camera interaction from the model backend and exposes a frame-processing
-interval. A live interface does not tell us that a model examines every frame,
-or that its hardware and camera path match ours. We have not identified the
-exact video, so I would not quote its speed as our expected performance.
-[Source](https://github.com/NVIDIA-AI-IOT/live-vlm-webui).
-
-A later alternative is a fast detector and tracker for narrowly defined visible
-conditions, with a VLM providing selected explanations. That would require its
-own validation; detecting a person or excavator is not automatically detecting
-a dangerous interaction.
-
-## 10. Close with the decision and the limits
-
-My recommendation is to keep Moondream as our documented baseline, prototype
-supervised latest-frame concurrency, and first evaluate LFM2-VL-450M for live
-single-frame descriptions. SmolVLM2-500M is the next candidate if temporal input
-becomes a priority. I would not jump straight to the 256M model just because it
-is smaller.
-
-The research progress is a clearer diagnosis, sourced model options, and a
-live-first validation plan. The latest measured speedup is still the previous
-46.4% latency reduction. We are not claiming that a new model is faster or more
-accurate on our device yet.
-
-The decision I would like guidance on is: what level of description quality
-must we preserve while making concurrency work, and is live periodic description
-the next milestone before we attempt temporal hazard recognition?
-
-## Reference table: current model versus candidates
-
-All prospective models are untested on this CSI setup. Parameter class is not a
-checkpoint-size, RAM, speed or accuracy measurement. Larger text context also
-does not imply lower visual latency.
-
-| Model | Similarity to current task | Important difference | Local evidence / role |
+| Aspect | Current Moondream | LFM2-VL-450M | SmolVLM2-500M |
 |---|---|---|---|
-| [Official Moondream 2B-class 4-bit](https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit) | Current image caption/query model | Quantized release with model-specific `.query` and encoded-image API | 30/30 saved images; 4.4612 s mean; 1.8969 GiB footprint; 5401 MB system RAM peak. Concurrent attempt failed. |
-| [LiquidAI/LFM2-VL-450M](https://huggingface.co/LiquidAI/LFM2-VL-450M) | Image-and-text descriptions/questions | Different backbone/processor; 86M vision encoder, visual-token controls; LFM license | Card supports Transformers 4.57+; first lower-disruption candidate, runtime unverified. |
-| [SmolVLM2-500M-Video-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct) | Image questions plus multi-image/video input | Idefics3-based; separate processing/API; Apache-2.0 | Video-context candidate; verify dependencies and current attention backend. |
-| [SmolVLM2-256M-Video-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM2-256M-Video-Instruct) | Same broad task family as 500M sibling | Lower-capacity alternative; published video scores lower within this family | Optional capacity control, not the initial default. |
+| Exact release | `moondream/moondream-2b-2025-04-14-4bit` | `LiquidAI/LFM2-VL-450M` | `HuggingFaceTB/SmolVLM2-500M-Video-Instruct` |
+| Similarity | Image descriptions and questions | Same broad image-and-text purpose | Same purpose plus multi-image/video inputs |
+| Distinguishing feature | Existing custom `.query()` and EncodedImage interface | Published **86M vision encoder**; adjustable visual-token budget | Idefics3-based video-capable family |
+| What changes in code | Existing adapter | Different processor/chat template and generation adapter | Different processor/chat template and generation adapter |
+| Software gate | Working Transformers 4.57.6 stack | Card supports **4.57+**; actual checkpoint execution untested here | Card example uses FlashAttention 2; verify a compatible installed-backend path |
+| License | Apache-2.0 | LFM Open License | Apache-2.0 |
+| Measured on this Jetson | Saved-image inference succeeds; concurrent attempt fails | **Not tested** | **Not tested** |
 
-Source-specific notes: the original Liquid model card states it is not intended
-for safety-critical decisions. None of these general-purpose model cards is
-validation of construction-hazard accuracy. The newer
-[LFM2.5-VL-450M](https://huggingface.co/LiquidAI/LFM2.5-VL-450M) card requires
-Transformers 5.1+, so it is deferred rather than upgrading our working stack.
+Sources: [Moondream release](https://huggingface.co/moondream/moondream-2b-2025-04-14-4bit),
+[Liquid AI specification](https://huggingface.co/LiquidAI/LFM2-VL-450M),
+[SmolVLM2 specification](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct).
 
-## Evidence to open if asked
+These candidates are not smaller copies of Moondream. Training and architecture
+differ. Their labels/descriptions could be similar in form but different in
+completeness or correctness. No local checkpoint size, footprint, latency or
+hazard-quality measurement exists for either candidate.
 
-- [Completed October 22 metrics](../results/camera_analysis_20261022T163529601772802/analysis_fast.json)
-- [Completed October 5 metrics](../results/camera_v2-2~2026-10-05/analysis.json)
-- [Concurrent attempt: no completed images](../results/live_compare_20261022T160402845773289/video_01/analysis.json)
-- [Concurrent Argus error log](../results/live_compare_20261022T160402845773289/video_1_terminal.log)
-- [Full November 5 research review](research-log/2026-11-05-live-inference-research.md)
+The newer [LFM2.5-VL-450M](https://huggingface.co/LiquidAI/LFM2.5-VL-450M)
+requires Transformers 5.1+ per its card. It is deferred rather than upgrading our
+working installation. A supported version family is not proof of runtime success.
 
-All proposed improvements are hypotheses/design choices. No new benchmarks,
-model installs, dependency changes, camera runs, commits or pushes occurred while
-preparing this script.
+## 4. The smaller-model caveat: what quality could we lose?
+
+| Risk | Why it matters here | How to evaluate |
+|---|---|---|
+| Missing small/partly hidden details | Cables, equipment edges, workers in clutter | Review the actual input image against each claim |
+| Naming an object instead of a concern | “Ladder” does not explain unsafe placement | Score whether the sentence identifies a supported condition/location |
+| Unsupported inference | Model may invent movement or missing protection | Separate supported, unsupported and missed details |
+| Insufficient temporal evidence | One image cannot establish how a person moved | Separate current-image descriptions from event-detection claims |
+| Overconfident answers | A fluent response may be wrong | Require uncertainty where evidence is unclear |
+
+Parameter count alone does not determine task accuracy. As a concrete within-
+family example, published Video-MME scores are **42.2 for SmolVLM2-500M** versus
+**33.7 for 256M**, an **8.5-point difference**. These are external video-benchmark
+scores—not construction-hazard accuracy, and not a comparison with our Moondream
+results. [Published evaluation](https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct).
+
+**Decision rule:** concurrency is the first engineering gate. A working live
+prototype remains experimental until description quality is checked. Choose the
+smallest adequate model, not simply the smallest available. Liquid AI explicitly
+states its original model is not intended for safety-critical decisions.
+
+## 5. Concurrency needs changes beyond the model
+
+**Target flow:**
+
+```text
+CSI capture + preview ──► replaceable latest-frame slot ──► one inference worker
+          ▲                                                    │
+          └──── latest completed answer + source-frame age ◄────┘
+                 independent supervisor watches both
+```
+
+| Current issue | Proposed improvement | What it does NOT establish |
+|---|---|---|
+| Argus camera buffers fail while model is resident/loading | Measure camera-open, model-load, prefix initialization and first-query memory separately; compare smaller working sets | Total available RAM alone does not diagnose the exact failed allocation |
+| Native `camera.read()` or release can block | Capture/UI process separated from inference; independent heartbeat/watchdog | Process separation does not create physical RAM or guarantee a driver fix |
+| Stop flag may not be checked; join can wait indefinitely | Bounded shutdown with explicit termination escalation | A kernel-level uninterruptible call may still delay exit |
+| Processing old frames causes stale answers | One replaceable latest-frame slot with sequence/time; no inference backlog | Skipped frames may contain events we miss |
+| Two prompts delay the next observation | One descriptive prompt per frame for live acceptance | Paired prompt comparison belongs in a separate study |
+
+The latest failed live run had Codex absent. Closing Codex helped earlier model-
+only headroom but was not a complete concurrency solution. The exact root cause
+is still unresolved. Review evidence:
+[partial metrics](../results/live_compare_20261022T160402845773289/video_01/analysis.json),
+[Argus errors](../results/live_compare_20261022T160402845773289/video_1_terminal.log).
+
+The supervisor design is proposed, not an implemented or demonstrated fix.
+OpenCV windows remain on the main thread of the process that owns capture.
+
+## 6. Additional improvement topics, ranked by relevance
+
+| Priority | Topic | Why discuss it | Evidence or uncertainty |
+|---|---|---|---|
+| **1** | Reliable concurrent capture and recovery | The application must keep observing while AI runs and report failures clearly | Existing native-call/stop issues identified by source review |
+| **2** | Smaller visual workload | Our measured image/prefix stage dominates total time | Smaller encoder/token budgets are hypotheses to test, not guaranteed gains |
+| **3** | Recording overhead | Full AVI recording competes for per-frame CPU time | Completed camera-only test: mean writer call **17.00 ms**, about **51.0%** of a 33.33 ms/30-FPS frame budget |
+| **4** | Finer stage profiling | Separate preprocessing, visual encoder, image-prefix prefill and decoding | Current 3.92 s encoding timer combines several components |
+| **5** | Image-token / region budgets | Process fewer visual pieces or a relevant region | Can hide small hazards; cropping may remove context |
+| **6** | Scene-change or event-triggered queries | Reduce repeated descriptions of nearly unchanged scenes | Triggers can miss subtle changes; use a bounded refresh interval and label stale results |
+| **7** | First partial text / streaming | Can show an answer beginning earlier | Does not eliminate encoding or guarantee quicker completed answers |
+| **8** | Encoder compilation/backend optimization | Potentially targets the costly stage without changing the task | Existing model has a compile path; startup cost, memory peaks and compatibility are untested |
+| **9** | Detector/tracker + selective VLM explanation | Frequent narrow observations, occasional language explanations | Requires defined conditions, new validation and a separate integration plan |
+
+Recording measurements come from a **different camera-only run**, not concurrent
+inference. The 17 ms writer call is not 51% of model inference time. Disabling
+recording is useful for workload isolation, but the previous allocation failure
+occurred before the writer opened; it is not a proven fix. [Recording metrics](../results/camera_setup_20261021T202315853338873_20s/analysis.json).
+
+An illustrative cost calculation: if the measured image/prefix stage became
+2× faster while query time stayed fixed, total time would be about
+`3.9174/2 + 0.5437 = 2.5024 s` (**43.91% lower** than 4.4612 s).
+This is a hypothetical scenario, not a new measurement or model prediction.
+
+## 7. Cache: retain the useful distinction
+
+| Mechanism | Useful for | Limitation |
+|---|---|---|
+| Existing text KV cache | Avoid repeated attention computation for prior tokens during generation | Already implemented; not a new contribution |
+| Encoded-image prefix reuse | Several questions about one fixed image without repeating its encoding | Does not represent a changed camera scene |
+| Latest-frame mailbox | Prevent old frames accumulating while inference is busy | Improves freshness, not the cost of an individual query |
+| Conditional refresh of an old answer | Potential UI/workload optimization | Must show answer age and refresh periodically; not new visual evidence |
+
+For a first concurrent demonstration, one query per latest frame is preferable
+to multiple questions about one image. Caching an old scene must not be reported
+as faster analysis of the current scene.
+
+## 8. What “live” means and how we should measure it
+
+At 30 FPS, a 4.46-second processing interval spans roughly **134 camera frames**.
+That is an illustration based on our offline average, not measured live timing.
+A live design can skip old images while keeping preview responsive. It does not
+therefore understand every frame or establish temporal hazard recognition.
+
+| Metric | Question it answers |
+|---|---|
+| Capture FPS / maximum gap | Is the camera still observing smoothly? |
+| Source-frame age when inference starts | Did the worker select current evidence? |
+| Camera delivery → completed answer | How long until the observation becomes available? |
+| First partial text delay | How soon does visible output begin? |
+| Answer age displayed on screen | Could the current caption describe an outdated situation? |
+| Useful answers per minute | How frequently does the system provide relevant updates? |
+| P50/P95 latency + first-use result | What is typical delay, and how bad are slower responses? |
+| Peak system RAM / current and peak CUDA | Is the combined workload sustainable? |
+| Supported / unsupported / missed claims | Is the language useful and justified by the image? |
+
+NVIDIA's [Live VLM WebUI](https://github.com/NVIDIA-AI-IOT/live-vlm-webui)
+is a reference for separating camera interaction from a backend and controlling
+frame interval. It is not evidence that the exact model/camera/hardware in a demo
+matches our CSI configuration. NVIDIA's
+[DeepStream inference plugin](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinfer.html)
+supports TensorRT detection/classification/segmentation workflows; this is not an
+automatic conversion of Moondream or a prevalidated hazard detector.
+
+## 9. Proposed next experiment: live first, quality second, richer context later
+
+| Stage | Proposed work | Pass condition / evidence |
+|---|---|---|
+| A. Reliability | Capture/preview with a delayed dummy worker and induced failure | No growing frame queue; supervisor reports and bounds worker failure |
+| B. Concurrency | One real VLM, same camera path, one descriptive prompt, no AVI initially | Proposed two-minute session with at least five completed answers while capture sequences advance |
+| C. Quality | Human review of analyzed images and one-sentence answers | Supported detail and location; uncertainty when unclear; explicit misses/unsupported claims |
+| D. Performance | Same camera/image budget and common 32-token cap across candidates | Actual delay, quality, output length and RAM compared; no percentage forecast |
+| E. Added functionality | Reintroduce full recording; later bounded multi-frame context | Recheck memory, response age and stability after each change |
+
+These are proposed gates, not completed tests. Start with a fresh spawned
+inference worker rather than forking after CUDA initialization. Preserve the
+working dependencies and pinned Moondream baseline; change one factor at a time.
+If current packages cannot support a candidate, defer it or plan a separate
+approved environment instead of upgrading the working stack.
+
+Suggested one-sentence prompt for restoring detail:
+
+> Describe the visible workers or equipment and any clearly visible safety concern in one short sentence. If unclear, say so. Do not infer hidden hazards or movement between frames.
+
+## 10. Decisions to discuss with the professor
+
+- **Primary milestone:** reliable live periodic descriptions before temporal event detection?
+- **Required content:** equipment/activity only, or concern + location + visible evidence?
+- **Acceptable quality loss:** what omissions would make a smaller model unsuitable?
+- **Latency objective:** what answer delay and worst-case freshness are useful for this application?
+- **Model order:** LFM2-VL-450M first for the current version family; SmolVLM2-500M next if temporal input is needed?
+- **Architecture scope:** direct VLM descriptions first, or a narrow detector/tracker with selective explanations?
+
+**Current recommendation:** preserve Moondream as reference, validate a supervised
+latest-frame pipeline, then evaluate one smaller candidate with useful sentences.
+Concurrency is the first engineering gate; a successful live demo alone does not
+establish safe or accurate hazard detection.
+
+## Evidence and status
+
+- [October 22 completed metrics](../results/camera_analysis_20261022T163529601772802/analysis_fast.json)
+- [October 5 completed metrics](../results/camera_v2-2~2026-10-05/analysis.json)
+- [Detailed historical comparison](research-log/2026-10-22-camera-benchmark-comparison.md)
+- [November 5 research review and source-level findings](research-log/2026-11-05-live-inference-research.md)
+
+**Completed today:** evidence review, parameter calculations, primary-source
+comparison and concurrency design review. **Not completed:** new-model inference,
+a working concurrency fix, new latency gains, or accuracy validation. No camera
+runs, model downloads, dependency changes, commits or pushes.

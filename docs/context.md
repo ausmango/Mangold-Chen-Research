@@ -1,5 +1,15 @@
 # Research context — updated 2026-11-05
 
+> **Professor-facing revision:** `docs/meeting-script-2026-11-05-live-concurrency.md`
+> now contains data tables/bullets rather than read-aloud instructions and long
+> prose. Nominal 2B→450M = 77.5% fewer parameters (450M is 22.5% of baseline;
+> ratio 4.44), not a predicted RAM/latency/accuracy change. Added live failure
+> recovery, recording overhead, visual-token budgets, freshness metrics, change
+> triggers, streaming, backend and detector/tracker topics. Existing camera-only
+> writer mean 17.00 ms is ~51% of a 30-FPS frame budget, not model inference and
+> not the cause of the recorded pre-writer allocation failure. No new benchmarks.
+
+
 > **Expanded November 5 meeting script:**
 > `docs/meeting-script-2026-11-05-live-concurrency.md` provides a ~10–13-minute
 > read-aloud explanation and sourced Moondream/LFM2-VL-450M/SmolVLM2 comparison.

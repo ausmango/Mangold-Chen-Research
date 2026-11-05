@@ -1,7 +1,7 @@
 # November 5 meeting brief — live inference research
 
-For the expanded read-aloud discussion (~10–13 minutes) and direct model
-comparison, use [the live-concurrency meeting script](meeting-script-2026-11-05-live-concurrency.md).
+For the professor-facing data tables, model-size comparison and concurrency
+roadmap, use [the live-concurrency discussion document](meeting-script-2026-11-05-live-concurrency.md).
 This page remains the shorter version.
 
 
