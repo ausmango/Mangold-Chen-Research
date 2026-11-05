@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-22T16:23:13.699507+00:00",
+  "status": "initializing",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "design": "Sequential six-frame-per-video capture followed by paired independent-image queries",
+  "profiles": {
+    "compact16": {
+      "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+      "settings": {
+        "max_tokens": 16,
+        "temperature": 0
+      }
+    }
+  },
+  "requested_images": 30,
+  "requested_queries": 30,
+  "frames": [],
+  "limitations": "Generated claims are unverified. Not temporal event detection or real-time inference. Capture-to-answer includes offline recording/waiting. Retokenized answer length is not exact generation-token instrumentation.",
+  "timing": "Synchronized encode plus query = inference; query receives the encoded image. Each profile re-encodes independently. No disk writes in inference interval. Rotating/reversing profile order, one model, one serial query at a time.",
+  "capture_statistics": [
+    {
+      "video_number": 1,
+      "label": "Red Machine",
+      "saved_samples": 6,
+      "recorded_frames": 1800,
+      "measured_delivery_fps": 29.983892532929072,
+      "max_delivery_gap_seconds": 0.11139300000000052
+    },
+    {
+      "video_number": 2,
+      "label": "Video 2",
+      "saved_samples": 6,
+      "recorded_frames": 1050,
+      "measured_delivery_fps": 30.014479625890825,
+      "max_delivery_gap_seconds": 0.03678000000000026
+    },
+    {
+      "video_number": 3,
+      "label": "sVideo 3",
+      "saved_samples": 6,
+      "recorded_frames": 570,
+      "measured_delivery_fps": 30.01223275398999,
+      "max_delivery_gap_seconds": 0.03601799999999855
+    },
+    {
+      "video_number": 4,
+      "label": "Video 4",
+      "saved_samples": 6,
+      "recorded_frames": 750,
+      "measured_delivery_fps": 30.010948987877743,
+      "max_delivery_gap_seconds": 0.03723299999999874
+    },
+    {
+      "video_number": 5,
+      "label": "Video 5",
+      "saved_samples": 6,
+      "recorded_frames": 330,
+      "measured_delivery_fps": 30.012045868258063,
+      "max_delivery_gap_seconds": 0.03646700000000003
+    }
+  ],
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "torchao": "0.11.0",
+    "Pillow": "11.3.0"
+  },
+  "cuda_free_before_load_gib": 4.971946716308594
+}

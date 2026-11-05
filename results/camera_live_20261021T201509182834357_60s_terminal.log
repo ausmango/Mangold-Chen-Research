@@ -1,0 +1,44 @@
+Loading pinned official 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Traceback (most recent call last):
+  File "/home/charlotte/research/experiments/moondream_4bit_camera_live.py", line 94, in worker
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 597, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5468, in _load_pretrained_model
+    _error_msgs, disk_offload_index = load_shard_file(args)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 843, in load_shard_file
+    disk_offload_index = _load_state_dict_into_meta_model(
+  File "/home/charlotte/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/charlotte/.local/lib/python3.10/site-packages/transformers/modeling_utils.py", line 748, in _load_state_dict_into_meta_model
+    param = param[...]
+RuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at "/opt/pytorch/c10/cuda/CUDACachingAllocator.cpp":1131, please report a bug to PyTorch. 
+
+{"status": "failed", "camera_capture": {"delivered_frames": 0, "first_to_last_seconds": 0.0, "measured_fps": null, "fps_definition": "(delivered frames - 1) / (last - first delivery timestamp); excludes alignment preview", "max_delivery_gap_seconds": null, "mean_read_seconds": null, "requested_fps": 30}, "recording_statistics": {"submitted_frames": 0, "nominal_fps": null, "mean_write_seconds": null, "max_write_seconds": null}, "system_ram": {"source": "tegrastats, 500 ms sampling; whole system, including other processes", "samples": 61, "peak_used_mb": 3606, "total_mb": 7620}}
+Results preserved: /home/charlotte/research/results/camera_live_20261021T201509182834357_60s/analysis.json

@@ -1,0 +1,33 @@
+{
+  "number": 6,
+  "path": "video_04/frame_006.jpg",
+  "target_seconds": 22.916666666666668,
+  "elapsed_seconds": 22.922995355999973,
+  "sampling_lateness_seconds": 0.006328689333304993,
+  "camera_read_seconds": 0.01589518999998063,
+  "captured_utc": "2026-10-22T16:22:51.765331+00:00",
+  "source_path": "/home/charlotte/research/results/camera_fast_20261022T161952378124366/video_04/frame_006.jpg",
+  "pair_index": 23,
+  "profile": "compact16",
+  "video_number": 4,
+  "video_label": "Video 4",
+  "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+  "settings": {
+    "max_tokens": 16,
+    "temperature": 0
+  },
+  "status": "complete",
+  "order_within_pair": 1,
+  "answer": " Metal beams",
+  "inference_started_utc": "2026-10-22T16:38:01.845746+00:00",
+  "completed_utc": "2026-10-22T16:38:06.030016+00:00",
+  "image_encode_seconds": 3.6879163840000047,
+  "query_seconds": 0.4958987489999913,
+  "inference_seconds": 4.183815132999996,
+  "frame_age_at_inference_start_seconds": 910.080415,
+  "capture_to_completed_answer_seconds": 914.264230133,
+  "answer_retokenized_tokens": 2,
+  "possible_token_cap_reached": false,
+  "cuda_allocated_gib": 2.256554126739502,
+  "cuda_peak_allocated_gib": 2.497654438018799
+}

@@ -1,0 +1,58 @@
+2026-10-21T16:52:28-04:00
+ 16:52:28 up 1 min,  1 user,  load average: 3.03, 1.18, 0.43
+               total        used        free      shared  buff/cache   available
+Mem:            7619        2175        3257          29        2186        5191
+Swap:           8191           0        8191
+MemTotal:        7802568 kB
+MemFree:         3335616 kB
+MemAvailable:    5316208 kB
+Buffers:           63464 kB
+Cached:          2083460 kB
+SwapCached:            0 kB
+Active:           574984 kB
+Inactive:        3187152 kB
+Active(anon):       3604 kB
+Inactive(anon):  1677616 kB
+Active(file):     571380 kB
+Inactive(file):  1509536 kB
+Unevictable:       35432 kB
+Mlocked:              32 kB
+SwapTotal:       8388604 kB
+SwapFree:        8388604 kB
+Dirty:               516 kB
+Writeback:             0 kB
+AnonPages:       1576880 kB
+Mapped:           658544 kB
+Shmem:             30592 kB
+KReclaimable:      92536 kB
+Slab:             194756 kB
+SReclaimable:      92536 kB
+SUnreclaim:       102220 kB
+    PID    PPID COMMAND           RSS
+   3236    3194 codex           516920
+   2449    1766 gnome-shell     409916
+   3194    3168 codex           382160
+   1898    1892 Xorg            146084
+   2553       1 packagekitd     113980
+   3285    3194 codex           94612
+   2661    2425 gnome-software  84456
+   1644       1 dockerd         82228
+   2637    2425 evolution-alarm 65780
+   2949    2449 gjs             59056
+   3144    1766 gnome-terminal- 57376
+   2586    1766 xdg-desktop-por 54652
+   1143       1 containerd      48316
+    712       1 snapd           46648
+   2666    2425 python3         42284
+   2859    1766 tracker-miner-f 39624
+   2493    1766 goa-daemon      38920
+   1123       1 ollama          32244
+   2481    1766 evolution-sourc 31100
+   2508    1766 evolution-calen 30620
+   1838    1766 pulseaudio      30444
+   2811       1 fwupd           29668
+   2627    1766 gsd-power       28860
+   2626    1766 gsd-media-keys  28296
+PYTORCH_CUDA_ALLOC_CONF=<unset>
+PYTORCH_ALLOC_CONF=<unset>
+CUDA_VISIBLE_DEVICES=<unset>

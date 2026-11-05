@@ -1,0 +1,30 @@
+2026-10-22T12:04:02-04:00
+ 12:04:02 up 2 min,  1 user,  load average: 0.88, 0.66, 0.27
+               total        used        free      shared  buff/cache   available
+Mem:            7619        1477        4429          29        1712        5887
+Swap:           8191           0        8191
+    PID    PPID COMMAND           RSS
+   2450    1760 gnome-shell     423780
+   2686    2426 gnome-software  153960
+   1881    1875 Xorg            142712
+   2550       1 packagekitd     117380
+   1643       1 dockerd         78896
+   2672    2426 evolution-alarm 65756
+   2917    2450 gjs             61628
+   2588    1760 xdg-desktop-por 57392
+   3089    1760 gnome-terminal- 51748
+   1150       1 containerd      50008
+    710       1 snapd           46472
+   2693    2426 python3         42072
+   2862    1760 tracker-miner-f 41292
+   2495    1760 goa-daemon      39048
+   1124       1 ollama          32852
+   2481    1760 evolution-sourc 31144
+   2510    1760 evolution-calen 30648
+   1802    1760 pulseaudio      30460
+   2616    1760 gsd-color       29796
+   2789       1 fwupd           29636
+   3347    2426 update-notifier 29504
+   2549    1760 evolution-addre 29256
+   2622    1760 gsd-media-keys  28412
+   2801    1760 gjs             28408

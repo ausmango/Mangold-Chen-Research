@@ -1,4 +1,103 @@
-# Research context — updated 2026-10-21
+# Research context — updated 2026-11-05
+
+> **Expanded November 5 meeting script:**
+> `docs/meeting-script-2026-11-05-live-concurrency.md` provides a ~10–13-minute
+> read-aloud explanation and sourced Moondream/LFM2-VL-450M/SmolVLM2 comparison.
+> User prioritizes concurrency above further offline benchmark tuning. Smaller
+> models may sacrifice capability; size does not determine domain accuracy.
+> Recommend validating supervised latest-frame capture first, then one candidate
+> at a time, while preserving Moondream as baseline. No new model performance,
+> working concurrency, hardware tests or dependency changes claimed.
+
+
+> **November 5 research-only update:** User had 30 minutes before leaving;
+> no new benchmarks/camera/GPU inference, downloads, installs or dependency
+> changes were performed. Read `docs/meeting-brief-2026-11-05.md` and
+> `docs/research-log/2026-11-05-live-inference-research.md`.
+> Latest measured result remains October 22: 4.4612 s mean, 46.41% lower than
+> October 5 with changed task/input conditions. 87.81% is image/prefix processing;
+> this includes visual encoding and text prefill, not a pure vision timer.
+> Static review found blocking native camera calls and unbounded total join wait;
+> proposal is independently supervised capture/UI and one inference process with
+> a latest-frame mailbox. Process separation does not solve physical RAM limits
+> by itself and has not been implemented/validated as a fix.
+> Model shortlist: original LiquidAI/LFM2-VL-450M (card supports Transformers
+> 4.57+, 86M encoder, visual token controls) first live-image candidate;
+> HuggingFaceTB/SmolVLM2-500M-Video-Instruct for multi-frame/video capability;
+> SmolVLM2-256M lower-capacity control. Newer LFM2.5-VL-450M requires 5.1+ per
+> card, so defer without changing the working 4.57.6 stack. All untested locally.
+> Cached Moondream source builds BF16 ordinary vision linear layers; “4-bit”
+> does not imply every vision operation is INT4. Existing KV caching is not new.
+> Proposed next milestone is a small-model supervised two-minute LIVE trial with
+> at least five useful answers, not another record-first primary benchmark.
+> No commits/pushes. Old benchmark evidence remains unchanged.
+
+
+> **COMPLETED October 22 inference:** User-run
+> `results/camera_analysis_20261022T163529601772802` finished 30/30 compact16
+> queries, exit 0, using preserved October 22 CSI images (all hashes verified).
+> Mean 4.4612 s vs October 5 8.3241 s: **46.41% lower latency**, **1.866x speed**
+> (**86.59% greater serial throughput**). Total 133.8347 s vs 249.7241 s.
+> Mean encoding 3.9174 s (87.81%); query 0.5437 s (12.19%). First query
+> 11.3289 s; remaining 29 mean 4.2243 s. Load 25.3014 s, footprint 1.8969 GiB,
+> peak CUDA 2.4977 GiB, peak whole-system RAM 5401 MB (358 samples).
+> New shorter outputs are often object labels, not verified hazard explanations;
+> fresh captures/different prompt prevent controlled causal attribution.
+> Final report with all 30 answers:
+> `docs/research-log/2026-10-22-camera-benchmark-comparison.md`.
+> Capture was earlier, inference resumed later: actual capture-to-answer mean
+> 930.32 s includes offline waiting, NOT real-time responsiveness. Original
+> timed-out attempt preserved. Concurrent allocation remains unresolved.
+
+
+> **Next authorized user action:** User wants to finish inference on today's
+> saved 30 images. Prepared `bash experiments/analyze_recorded_frames.sh`.
+> Close Codex and run in a standalone terminal; no restart or video playback
+> required. Copies only saved images/timestamps/manifest into a fresh
+> `results/camera_analysis_<UTC>/` attempt, preserves original recordings and
+> timed-out analysis. Loads pinned model, compact16 only, 900-second timeout
+> independent of expired noon deadline. Syntax/source validation passed;
+> assistant did not launch model or camera. Inspect new results then update
+> October 22 report with actual answers/performance percentages.
+
+
+> **Latest verified outcome, October 22:** Run
+> `results/camera_fast_20261022T161952378124366` completed all five recordings,
+> 4500 frames and 30 JPEG samples; capture exit 0, weighted FPS 30.0012.
+> Inference did NOT complete: analysis exit 124 at 12:24 while model loading,
+> `analysis_fast.json` frames empty and stale `initializing`. Only ~46 seconds
+> remained for analysis after captures. Do not claim a new latency gain or 30
+> completed answers. Report: `docs/research-log/2026-10-22-camera-benchmark-comparison.md`.
+> Valid prior 3-image control improvement is 29.79% lower matched-image latency,
+> not a new 30-image result. Reuse captured images later rather than refilming;
+> preserve original partial results. No new hardware run launched by assistant.
+
+
+> **Urgent October 22 12:17 update:** User accepted October 5 sequential workflow
+> after concurrent Argus allocation failed again. Capture stalled at old terminal
+> metadata prompts; removed all metadata entry by automatically supplying the
+> five baseline names/source/durations. `run_camera_fast_benchmark.sh` now uses
+> foreground timeout for capture and **compact16 only (30 queries)** for remaining
+> time. Run `bash experiments/run_camera_fast_benchmark.sh 12:24` after stopping
+> old attempt. Only press S in preview per video. Reference short32 comparison
+> can be run later on the saved images; this urgent run is not paired. Syntax,
+> shell syntax and automatic-five-preset validation passed; no hardware launched.
+
+
+> **October 22 corrected active task:** User clarified actual concurrent CSI
+> recording/preview and latest-frame inference, not capture-then-analyze.
+> Use `bash experiments/run_live_prompt_compare.sh 12:23` after restart with
+> Codex closed. Five familiar clips; one serial worker compares yesterday's
+> short32 with compact16 on the same latest frame, encoding once and reusing
+> existing same-image prefix cache. No new KV cache enabling or cross-frame reuse.
+> Optional second argument `candidate-only` measures freshest single-prompt mode.
+> Runbook: `docs/live-prompt-compare-runbook.md`. External timeouts guard native
+> hangs, no automatic retries. All 13 CPU-only tests and syntax checks pass.
+> No hardware run launched or performance gain measured. Log measured findings
+> only after user confirms actual results. Older offline runbook is superseded
+> for this task; six completed observations per short clip are not guaranteed.
+
+
 
 > **Latest result:** `results/postrestart_control_20261021T205726708981754`
 > succeeded, 3/3 saved images, exit 0. Mean inference 7.5390 s; matched-image

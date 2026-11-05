@@ -1,0 +1,29 @@
+2026-10-22T12:35:29-04:00
+               total        used        free      shared  buff/cache   available
+Mem:            7619        1453        4455          38        1711        5907
+Swap:           8191           0        8191
+    PID    PPID COMMAND           RSS
+   2451    1710 gnome-shell     414892
+   1818    1811 Xorg            158064
+   2542       1 packagekitd     115604
+   2663    2425 gnome-software  84344
+   1646       1 dockerd         83276
+   3229    1710 nautilus        69036
+   2641    2425 evolution-alarm 67332
+   2950    2451 gjs             59832
+   3267    1710 gedit           55804
+   2604    1710 xdg-desktop-por 55444
+   3187    1710 gnome-terminal- 51260
+   1158       1 containerd      48432
+    720       1 snapd           46172
+   2667    2425 python3         42076
+   2857    1710 tracker-miner-f 41412
+   2493    1710 goa-daemon      40984
+   2480    1710 evolution-sourc 33160
+   1793    1710 pulseaudio      32180
+   1128       1 ollama          32096
+   2509    1710 evolution-calen 30488
+   2668    2615 ibus-extension- 29896
+   2790       1 fwupd           29880
+   2549    1710 evolution-addre 29356
+   2623    1710 gsd-power       28912

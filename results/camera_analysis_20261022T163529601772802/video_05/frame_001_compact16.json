@@ -1,0 +1,33 @@
+{
+  "number": 1,
+  "path": "video_05/frame_001.jpg",
+  "target_seconds": 0.9166666666666666,
+  "elapsed_seconds": 0.9295788379999976,
+  "sampling_lateness_seconds": 0.012912171333331002,
+  "camera_read_seconds": 0.013958836999961477,
+  "captured_utc": "2026-10-22T16:23:02.528509+00:00",
+  "source_path": "/home/charlotte/research/results/camera_fast_20261022T161952378124366/video_05/frame_001.jpg",
+  "pair_index": 24,
+  "profile": "compact16",
+  "video_number": 5,
+  "video_label": "Video 5",
+  "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+  "settings": {
+    "max_tokens": 16,
+    "temperature": 0
+  },
+  "status": "complete",
+  "order_within_pair": 1,
+  "answer": " Forklift",
+  "inference_started_utc": "2026-10-22T16:38:06.045608+00:00",
+  "completed_utc": "2026-10-22T16:38:10.234093+00:00",
+  "image_encode_seconds": 3.6902343319999886,
+  "query_seconds": 0.4977512860000104,
+  "inference_seconds": 4.187985617999999,
+  "frame_age_at_inference_start_seconds": 903.517099,
+  "capture_to_completed_answer_seconds": 907.705084618,
+  "answer_retokenized_tokens": 2,
+  "possible_token_cap_reached": false,
+  "cuda_allocated_gib": 2.256554126739502,
+  "cuda_peak_allocated_gib": 2.497654438018799
+}

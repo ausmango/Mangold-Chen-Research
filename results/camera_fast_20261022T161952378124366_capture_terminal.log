@@ -1,0 +1,94 @@
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3280 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3280 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 59.999999 
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+
+Video 1: enter title or filename: Red Machine [automatic preset]
+Source URL or identifier (optional): https://drive.google.com/file/d/1Kh8cFl-OckC_hMw1OA0Ld7OBrvnlOBMn/view [automatic preset]
+Playback duration in seconds: 60.0 [automatic preset]
+Align camera. Pause video at its beginning.
+Press S in preview, then immediately start playback. Q quits.
+Saved sample 1/6 at 5.03s
+Saved sample 2/6 at 15.03s
+Saved sample 3/6 at 25.03s
+Saved sample 4/6 at 35.02s
+Saved sample 5/6 at 45.01s
+Saved sample 6/6 at 55.00s
+Video 1 saved. Stop playback.
+
+Video 2: enter title or filename: Video 2 [automatic preset]
+Source URL or identifier (optional): https://drive.google.com/file/d/1V_I9_77qyGNHI0bDMz9p4ZmCIl6WVMUd/view [automatic preset]
+Playback duration in seconds: 35.0 [automatic preset]
+Align camera. Pause video at its beginning.
+Press S in preview, then immediately start playback. Q quits.
+Saved sample 1/6 at 2.93s
+Saved sample 2/6 at 8.76s
+Saved sample 3/6 at 14.59s
+Saved sample 4/6 at 20.42s
+Saved sample 5/6 at 26.25s
+Saved sample 6/6 at 32.12s
+Video 2 saved. Stop playback.
+
+Video 3: enter title or filename: sVideo 3 [automatic preset]
+Source URL or identifier (optional): https://drive.google.com/file/d/1eAHZRBoRS9tW2u75KlQIVbTEe4AUtwJH/view [automatic preset]
+Playback duration in seconds: 19.0 [automatic preset]
+Align camera. Pause video at its beginning.
+Press S in preview, then immediately start playback. Q quits.
+Saved sample 1/6 at 1.60s
+Saved sample 2/6 at 4.76s
+Saved sample 3/6 at 7.93s
+Saved sample 4/6 at 11.09s
+Saved sample 5/6 at 14.26s
+Saved sample 6/6 at 17.42s
+Video 3 saved. Stop playback.
+
+Video 4: enter title or filename: Video 4 [automatic preset]
+Source URL or identifier (optional): https://drive.google.com/file/d/1Z4rXvQwLszuOFTq0TfLRgwRaF1T0j-d3/view [automatic preset]
+Playback duration in seconds: 25.0 [automatic preset]
+Align camera. Pause video at its beginning.
+Press S in preview, then immediately start playback. Q quits.
+Saved sample 1/6 at 2.10s
+Saved sample 2/6 at 6.26s
+Saved sample 3/6 at 10.43s
+Saved sample 4/6 at 14.59s
+Saved sample 5/6 at 18.76s
+Saved sample 6/6 at 22.92s
+Video 4 saved. Stop playback.
+
+Video 5: enter title or filename: Video 5 [automatic preset]
+Source URL or identifier (optional): https://drive.google.com/file/d/1ok9RtYCoPQZHGZcAsuAdVDmx9ElNl464/view [automatic preset]
+Playback duration in seconds: 11.0 [automatic preset]
+Align camera. Pause video at its beginning.
+Press S in preview, then immediately start playback. Q quits.
+Saved sample 1/6 at 0.93s
+Saved sample 2/6 at 2.76s
+Saved sample 3/6 at 4.60s
+Saved sample 4/6 at 6.43s
+Saved sample 5/6 at 8.26s
+Saved sample 6/6 at 10.09s
+Video 5 saved. Stop playback.
+GST_ARGUS: Cleaning up
+CONSUMER: Done Success
+GST_ARGUS: Done Success
+
+Capture finished: /home/charlotte/research/results/camera_fast_20261022T161952378124366
+The AVI uses nominal 30 FPS; CSV timestamps preserve actual timing.

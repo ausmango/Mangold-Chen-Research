@@ -1,0 +1,53 @@
+Loading pinned official 4-bit model...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Error generated. /dvs/git/dirty/git-master_linux/multimedia/nvgstreamer/gst-nvarguscamera/gstnvarguscamerasrc.cpp, execute:805 Failed to create CaptureSession
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+Align camera; pause source video at its beginning. Press S, then start playback. Q quits.
+Traceback (most recent call last):
+  File "/home/charlotte/research/experiments/moondream_4bit_camera_live.py", line 321, in main
+    align_preview(camera, stop)
+  File "/home/charlotte/research/experiments/moondream_4bit_camera_live.py", line 242, in align_preview
+    raise RuntimeError("CSI camera stopped during alignment")
+RuntimeError: CSI camera stopped during alignment
+
+{"status": "failed", "camera_capture": {"delivered_frames": 0, "first_to_last_seconds": 0.0, "measured_fps": null, "fps_definition": "(delivered frames - 1) / (last - first delivery timestamp); excludes alignment preview", "max_delivery_gap_seconds": null, "mean_read_seconds": null, "requested_fps": 30}, "recording_statistics": {"submitted_frames": 0, "nominal_fps": null, "mean_write_seconds": null, "max_write_seconds": null}, "system_ram": {"source": "tegrastats, 500 ms sampling; whole system, including other processes", "samples": 95, "peak_used_mb": 5083, "total_mb": 7620}}
+Results preserved: /home/charlotte/research/results/camera_live_20261021T203203283424919_60s/analysis.json

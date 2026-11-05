@@ -1,0 +1,47 @@
+{
+  "videos": [
+    {
+      "number": 1,
+      "label": "Red Machine",
+      "source": "https://drive.google.com/file/d/1Kh8cFl-OckC_hMw1OA0Ld7OBrvnlOBMn/view",
+      "duration_requested_seconds": 60.0,
+      "status": "complete",
+      "frames": [
+        {
+          "number": 1,
+          "path": "frames/frame_001.jpg",
+          "target_seconds": 5.0,
+          "elapsed_seconds": 5.027220591000059,
+          "sampling_lateness_seconds": 0.027220591000059358,
+          "camera_read_seconds": 0.014788167999995494,
+          "captured_utc": "2026-10-05T22:30:42.662335+00:00",
+          "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_001.jpg"
+        },
+        {
+          "number": 3,
+          "path": "frames/frame_003.jpg",
+          "target_seconds": 25.0,
+          "elapsed_seconds": 25.022426329000155,
+          "sampling_lateness_seconds": 0.02242632900015451,
+          "camera_read_seconds": 0.01571122700011074,
+          "captured_utc": "2026-10-05T22:31:02.635608+00:00",
+          "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_003.jpg"
+        },
+        {
+          "number": 5,
+          "path": "frames/frame_005.jpg",
+          "target_seconds": 45.0,
+          "elapsed_seconds": 45.01832477500011,
+          "sampling_lateness_seconds": 0.018324775000110094,
+          "camera_read_seconds": 0.014566060000106518,
+          "captured_utc": "2026-10-05T22:31:22.631318+00:00",
+          "source_path": "/home/charlotte/research/results/camera_v2-2~2026-10-05/video_01/frame_005.jpg"
+        }
+      ],
+      "recording": "video_01/camera.avi",
+      "recording_nominal_fps": 30,
+      "recorded_frames": 1801,
+      "capture_wall_seconds": 60.01608572000009
+    }
+  ]
+}

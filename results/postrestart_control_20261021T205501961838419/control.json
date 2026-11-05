@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-21T20:55:02.180520+00:00",
+  "mode": "saved_image_control_no_camera",
+  "status": "failed",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "requested_frames": 3,
+  "source_baseline": "/home/charlotte/research/results/camera_v2-2~2026-10-05",
+  "capture_to_answer_seconds": null,
+  "frame_age_seconds": null,
+  "limitation": "Historical images, not live capture or temporal event detection. Original capture timestamps/elapsed times are provenance only. Generated hazard claims are unverified.",
+  "error": "Traceback (most recent call last):\n  File \"/home/charlotte/research/experiments/moondream_4bit_saved_control.py\", line 62, in main\n    baseline.analyze(run)\n  File \"/home/charlotte/research/experiments/moondream_4bit_camera_v2.py\", line 196, in analyze\n    print(\"Loading official 4-bit model...\", flush=True)\nBrokenPipeError: [Errno 32] Broken pipe\n",
+  "ram_samples": 27,
+  "peak_system_ram_mb": 3392,
+  "finished_utc": "2026-10-21T20:55:16.340749+00:00"
+}

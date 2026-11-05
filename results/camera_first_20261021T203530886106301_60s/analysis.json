@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-21T20:35:31.013287+00:00",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "mode": "live_inference",
+  "initialization_order": "camera_verified_before_model",
+  "wait_for_start": true,
+  "source_label": "Video 1 - Red Machine (camera-first initialization)",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+  "requested_duration_seconds": 60.0,
+  "status": "model_ready",
+  "design": "Periodic live image analysis, not verified temporal event detection",
+  "timestamp_definition": "Host monotonic and UTC immediately after camera.read; not sensor exposure time",
+  "timing_definition": "Inference includes query image encoding and decoding; frame age includes frame saving/preparation; completion excludes result disk write",
+  "frames": [],
+  "load_seconds": 21.00886992400001,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_free_before_load_gib": 3.7251014709472656,
+  "cuda_free_after_load_gib": 2.4606895446777344,
+  "cuda_allocated_after_load_gib": 1.908092975616455,
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "torchao": "0.11.0",
+    "Pillow": "11.3.0"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-10-21T20:14:23.985565+00:00",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "mode": "camera_only",
+  "wait_for_start": true,
+  "source_label": "Video 1 - Red Machine (camera setup check)",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+  "requested_duration_seconds": 20.0,
+  "status": "stopped",
+  "design": "Periodic live image analysis, not verified temporal event detection",
+  "timestamp_definition": "Host monotonic and UTC immediately after camera.read; not sensor exposure time",
+  "timing_definition": "Inference includes query image encoding and decoding; frame age includes frame saving/preparation; completion excludes result disk write",
+  "frames": [],
+  "stop_reason": "alignment_stopped",
+  "capture_wall_seconds": 0,
+  "recording_statistics": {
+    "submitted_frames": 0,
+    "nominal_fps": 30,
+    "mean_write_seconds": null,
+    "max_write_seconds": null
+  },
+  "captured_frames": 0,
+  "finished_utc": "2026-10-21T20:14:44.022967+00:00",
+  "completed_frames": 0,
+  "summary": {
+    "inference_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "frame_age_at_inference_start_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "capture_to_completed_answer_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "camera_capture": {
+    "delivered_frames": 0,
+    "first_to_last_seconds": 0.0,
+    "measured_fps": null,
+    "fps_definition": "(delivered frames - 1) / (last - first delivery timestamp); excludes alignment preview",
+    "max_delivery_gap_seconds": null,
+    "mean_read_seconds": null,
+    "requested_fps": 30
+  },
+  "system_ram": {
+    "source": "tegrastats, 500 ms sampling; whole system, including other processes",
+    "samples": 38,
+    "peak_used_mb": 2740,
+    "total_mb": 7620
+  }
+}

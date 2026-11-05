@@ -1,0 +1,7 @@
+{
+  "design": "CSI recording followed by independent frame analysis",
+  "requested_videos": 5,
+  "requested_frames_per_video": 6,
+  "camera_output": "640x360",
+  "videos": []
+}

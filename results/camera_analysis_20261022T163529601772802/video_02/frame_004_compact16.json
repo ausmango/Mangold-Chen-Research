@@ -1,0 +1,33 @@
+{
+  "number": 4,
+  "path": "video_02/frame_004.jpg",
+  "target_seconds": 20.416666666666668,
+  "elapsed_seconds": 20.419509656000002,
+  "sampling_lateness_seconds": 0.0028429893333346,
+  "camera_read_seconds": 0.015559594999984938,
+  "captured_utc": "2026-10-22T16:21:33.762259+00:00",
+  "source_path": "/home/charlotte/research/results/camera_fast_20261022T161952378124366/video_02/frame_004.jpg",
+  "pair_index": 9,
+  "profile": "compact16",
+  "video_number": 2,
+  "video_label": "Video 2",
+  "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+  "settings": {
+    "max_tokens": 16,
+    "temperature": 0
+  },
+  "status": "complete",
+  "order_within_pair": 1,
+  "answer": " Ladder",
+  "inference_started_utc": "2026-10-22T16:37:02.689602+00:00",
+  "completed_utc": "2026-10-22T16:37:06.876244+00:00",
+  "image_encode_seconds": 3.6866220800000065,
+  "query_seconds": 0.49961207000001195,
+  "inference_seconds": 4.186234150000018,
+  "frame_age_at_inference_start_seconds": 928.927343,
+  "capture_to_completed_answer_seconds": 933.1135771500001,
+  "answer_retokenized_tokens": 2,
+  "possible_token_cap_reached": false,
+  "cuda_allocated_gib": 2.256554126739502,
+  "cuda_peak_allocated_gib": 2.497654438018799
+}

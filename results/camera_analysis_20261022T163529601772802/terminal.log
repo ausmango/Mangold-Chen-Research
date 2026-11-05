@@ -1,0 +1,118 @@
+Loading pinned official 4-bit model (camera must be closed)...
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+/home/charlotte/.local/lib/python3.10/site-packages/torch/__init__.py:1612: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /opt/pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+NvMapMemAllocInternalTagged: 1075072515 error 12
+NvMapMemHandleAlloc: error 0
+Video 1 frame 1 compact16: 11.329s (encode 10.499s, query 0.830s) |  Unstable excavator
+Video 1 frame 2 compact16: 4.192s (encode 3.693s, query 0.499s) |  Digging
+Video 1 frame 3 compact16: 4.366s (encode 3.685s, query 0.681s) |  Unstable excavator
+Video 1 frame 4 compact16: 4.378s (encode 3.689s, query 0.688s) |  Uneven ground
+Video 1 frame 5 compact16: 4.360s (encode 3.687s, query 0.673s) |  Unstable excavator
+Video 1 frame 6 compact16: 4.280s (encode 3.689s, query 0.591s) |  Orange excavator
+Video 2 frame 1 compact16: 4.184s (encode 3.691s, query 0.492s) |  Ladder
+Video 2 frame 2 compact16: 4.188s (encode 3.688s, query 0.500s) |  Ladder
+Video 2 frame 3 compact16: 4.196s (encode 3.694s, query 0.501s) |  Ladder
+Video 2 frame 4 compact16: 4.186s (encode 3.687s, query 0.500s) |  Ladder
+Video 2 frame 5 compact16: 4.184s (encode 3.688s, query 0.497s) |  Ladder
+Video 2 frame 6 compact16: 4.203s (encode 3.688s, query 0.515s) |  Ladder
+Video 3 frame 1 compact16: 4.168s (encode 3.685s, query 0.482s) |  Holes
+Video 3 frame 2 compact16: 4.190s (encode 3.696s, query 0.493s) |  Unclear
+Video 3 frame 3 compact16: 4.182s (encode 3.696s, query 0.487s) |  Unclear
+Video 3 frame 4 compact16: 4.192s (encode 3.694s, query 0.498s) |  Concrete
+Video 3 frame 5 compact16: 4.274s (encode 3.694s, query 0.580s) |  Unstable structure
+Video 3 frame 6 compact16: 4.091s (encode 3.685s, query 0.406s) |  Tree
+Video 4 frame 1 compact16: 4.198s (encode 3.700s, query 0.498s) |  Metal beam
+Video 4 frame 2 compact16: 4.277s (encode 3.694s, query 0.584s) |  Person on beam
+Video 4 frame 3 compact16: 4.182s (encode 3.687s, query 0.495s) |  Metal beams
+Video 4 frame 4 compact16: 4.279s (encode 3.685s, query 0.594s) |  Person on beam
+Video 4 frame 5 compact16: 4.364s (encode 3.694s, query 0.670s) |  Person on a beam
+Video 4 frame 6 compact16: 4.184s (encode 3.688s, query 0.496s) |  Metal beams
+Video 5 frame 1 compact16: 4.188s (encode 3.690s, query 0.498s) |  Forklift
+Video 5 frame 2 compact16: 4.178s (encode 3.691s, query 0.487s) |  Unclear
+Video 5 frame 3 compact16: 4.288s (encode 3.696s, query 0.593s) |  Tractor overturned
+Video 5 frame 4 compact16: 4.186s (encode 3.692s, query 0.494s) |  Tires
+Video 5 frame 5 compact16: 4.180s (encode 3.692s, query 0.488s) |  Tires
+Video 5 frame 6 compact16: 4.186s (encode 3.687s, query 0.500s) |  Unclear
+{
+  "status": "finished",
+  "comparison": {},
+  "statistics": {
+    "compact16": {
+      "completed": 30,
+      "videos": {
+        "1": {
+          "completed": 6,
+          "mean_seconds": 5.4840870473333325
+        },
+        "2": {
+          "completed": 6,
+          "mean_seconds": 4.1901624423333415
+        },
+        "3": {
+          "completed": 6,
+          "mean_seconds": 4.182874746166671
+        },
+        "4": {
+          "completed": 6,
+          "mean_seconds": 4.247485777333334
+        },
+        "5": {
+          "completed": 6,
+          "mean_seconds": 4.201172164666677
+        }
+      },
+      "inference_seconds": {
+        "mean": 4.461156435566671,
+        "min": 4.090797463000001,
+        "max": 11.328946408000007,
+        "total": 133.83469306700013
+      },
+      "image_encode_seconds": {
+        "mean": 3.9174370254333346,
+        "min": 3.6845825230000173,
+        "max": 10.498966910000007,
+        "total": 117.52311076300003
+      },
+      "query_seconds": {
+        "mean": 0.5437194101333366,
+        "min": 0.4062149399999839,
+        "max": 0.8299794980000001,
+        "total": 16.311582304000098
+      },
+      "frame_age_at_inference_start_seconds": {
+        "mean": 925.8606802,
+        "min": 903.517099,
+        "max": 971.415397,
+        "total": 27775.820406
+      },
+      "capture_to_completed_answer_seconds": {
+        "mean": 930.3218366355667,
+        "min": 907.705084618,
+        "max": 981.3000284080001,
+        "total": 27909.655099066997
+      },
+      "mean_excluding_first_image_seconds": 4.2243360916896595
+    }
+  },
+  "system_ram": {
+    "samples": 358,
+    "peak_used_mb": 5401,
+    "total_mb": 7620,
+    "error": null
+  }
+}
+All answers and metrics: /home/charlotte/research/results/camera_analysis_20261022T163529601772802/analysis_fast.json

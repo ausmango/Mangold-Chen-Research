@@ -1,0 +1,50 @@
+2026-10-21T16:30:55-04:00
+ 16:30:55 up 4 min,  1 user,  load average: 0.71, 0.88, 0.44
+               total        used        free      shared  buff/cache   available
+Mem:            7619        2355        3077          29        2187        5010
+Swap:           8191           0        8191
+MemTotal:        7802572 kB
+MemFree:         3150884 kB
+MemAvailable:    5130580 kB
+Buffers:           63584 kB
+Cached:          2081108 kB
+SwapCached:            0 kB
+Active:           618028 kB
+Inactive:        3341440 kB
+Active(anon):       3228 kB
+Inactive(anon):  1877484 kB
+Active(file):     614800 kB
+Inactive(file):  1463956 kB
+Unevictable:       35432 kB
+Mlocked:              32 kB
+SwapTotal:       8388604 kB
+SwapFree:        8388604 kB
+Dirty:               644 kB
+Writeback:            32 kB
+AnonPages:       1653220 kB
+Mapped:           662104 kB
+Shmem:             30516 kB
+KReclaimable:      95388 kB
+Slab:             198344 kB
+SReclaimable:      95388 kB
+SUnreclaim:       102956 kB
+    PID COMMAND           RSS
+   3676 codex           540540
+   4064 codex           425404
+   2440 gnome-shell     415412
+   1876 Xorg            156392
+   2538 packagekitd     113908
+   3723 codex           87396
+   2656 gnome-software  84516
+   1632 dockerd         81016
+   2643 evolution-alarm 67796
+   2941 gjs             59304
+   2574 xdg-desktop-por 57416
+   4022 gnome-terminal- 53416
+    706 snapd           53412
+   1131 containerd      52428
+   2658 python3         42128
+   2847 tracker-miner-f 41008
+   2479 goa-daemon      40976
+   2468 evolution-sourc 31224
+   1118 ollama          30692

@@ -1,0 +1,33 @@
+{
+  "number": 4,
+  "path": "video_04/frame_004.jpg",
+  "target_seconds": 14.583333333333334,
+  "elapsed_seconds": 14.592631441000009,
+  "sampling_lateness_seconds": 0.009298107666674937,
+  "camera_read_seconds": 0.011234596999997848,
+  "captured_utc": "2026-10-22T16:22:43.439674+00:00",
+  "source_path": "/home/charlotte/research/results/camera_fast_20261022T161952378124366/video_04/frame_004.jpg",
+  "pair_index": 21,
+  "profile": "compact16",
+  "video_number": 4,
+  "video_label": "Video 4",
+  "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+  "settings": {
+    "max_tokens": 16,
+    "temperature": 0
+  },
+  "status": "complete",
+  "order_within_pair": 1,
+  "answer": " Person on beam",
+  "inference_started_utc": "2026-10-22T16:37:53.173734+00:00",
+  "completed_utc": "2026-10-22T16:37:57.453340+00:00",
+  "image_encode_seconds": 3.68483009900001,
+  "query_seconds": 0.5943182319999778,
+  "inference_seconds": 4.279148330999988,
+  "frame_age_at_inference_start_seconds": 909.73406,
+  "capture_to_completed_answer_seconds": 914.013208331,
+  "answer_retokenized_tokens": 3,
+  "possible_token_cap_reached": false,
+  "cuda_allocated_gib": 2.256554126739502,
+  "cuda_peak_allocated_gib": 2.497654438018799
+}

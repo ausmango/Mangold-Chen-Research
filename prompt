@@ -1,0 +1,2 @@
+cd /home/charlotte/research
+bash experiments/analyze_recorded_frames.sh

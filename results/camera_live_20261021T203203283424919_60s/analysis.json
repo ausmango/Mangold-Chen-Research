@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-21T20:32:03.426314+00:00",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "mode": "live_inference",
+  "wait_for_start": true,
+  "source_label": "Video 1 - Red Machine (October 5 baseline)",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+  "requested_duration_seconds": 60.0,
+  "status": "failed",
+  "design": "Periodic live image analysis, not verified temporal event detection",
+  "timestamp_definition": "Host monotonic and UTC immediately after camera.read; not sensor exposure time",
+  "timing_definition": "Inference includes query image encoding and decoding; frame age includes frame saving/preparation; completion excludes result disk write",
+  "frames": [],
+  "load_seconds": 26.098512453000012,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_free_before_load_gib": 4.530754089355469,
+  "cuda_free_after_load_gib": 2.4161376953125,
+  "cuda_allocated_after_load_gib": 1.908092975616455,
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "torchao": "0.11.0",
+    "Pillow": "11.3.0"
+  },
+  "cuda_allocated_gib": 1.908092975616455,
+  "cuda_peak_allocated_gib": 1.908092975616455,
+  "main_error": "Traceback (most recent call last):\n  File \"/home/charlotte/research/experiments/moondream_4bit_camera_live.py\", line 321, in main\n    align_preview(camera, stop)\n  File \"/home/charlotte/research/experiments/moondream_4bit_camera_live.py\", line 242, in align_preview\n    raise RuntimeError(\"CSI camera stopped during alignment\")\nRuntimeError: CSI camera stopped during alignment\n",
+  "capture_wall_seconds": 0,
+  "recording_statistics": {
+    "submitted_frames": 0,
+    "nominal_fps": null,
+    "mean_write_seconds": null,
+    "max_write_seconds": null
+  },
+  "captured_frames": 0,
+  "finished_utc": "2026-10-21T20:32:55.552706+00:00",
+  "completed_frames": 0,
+  "summary": {
+    "inference_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "frame_age_at_inference_start_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    },
+    "capture_to_completed_answer_seconds": {
+      "mean": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "camera_capture": {
+    "delivered_frames": 0,
+    "first_to_last_seconds": 0.0,
+    "measured_fps": null,
+    "fps_definition": "(delivered frames - 1) / (last - first delivery timestamp); excludes alignment preview",
+    "max_delivery_gap_seconds": null,
+    "mean_read_seconds": null,
+    "requested_fps": 30
+  },
+  "system_ram": {
+    "source": "tegrastats, 500 ms sampling; whole system, including other processes",
+    "samples": 95,
+    "peak_used_mb": 5083,
+    "total_mb": 7620
+  }
+}

@@ -1,5 +1,16 @@
 # Meeting evidence — prepared October 21 for October 22, 2026
 
+> **October 22 completion update:** All 30 new CSI-captured samples were
+> subsequently analyzed successfully in
+> `results/camera_analysis_20261022T163529601772802` (exit 0). Mean inference
+> **4.4612 s**, **46.41% lower** than October 5's 8.3241 s; peak RAM 5401 MB,
+> footprint 1.8969 GiB, peak CUDA 2.4977 GiB. Sequential capture then inference;
+> no concurrent/live response success. Outputs are terse and quality unverified.
+> Full current report: [October 22 comparison](2026-10-22-camera-benchmark-comparison.md).
+> The material below is earlier experiment history; this update supersedes its
+> statement that only the three-image control had completed.
+
+
 ## Outcome
 
 Camera-only recording completed near 30 FPS. After the user quit Codex, the

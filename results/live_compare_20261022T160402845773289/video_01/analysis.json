@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-10-22T16:04:15.173875+00:00",
+  "model": "moondream/moondream-2b-2025-04-14-4bit",
+  "revision": "a89c59223ef8b5bb7826780728eeec172727ca84",
+  "mode": "live_inference",
+  "initialization_order": "camera_verified_before_model",
+  "wait_for_start": true,
+  "source_label": "Construction Video 1 (live prompt comparison)",
+  "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+  "requested_duration_seconds": 60.0,
+  "status": "model_ready",
+  "design": "Periodic live image analysis, not verified temporal event detection",
+  "timestamp_definition": "Host monotonic and UTC immediately after camera.read; not sensor exposure time",
+  "timing_definition": "Inference includes query image encoding and decoding; frame age includes frame saving/preparation; completion excludes result disk write",
+  "frames": [],
+  "profiles": {
+    "short32": {
+      "prompt": "Identify clearly visible construction hazards in one short sentence. If none are clear, say so. Do not infer movement or hidden hazards.",
+      "settings": {
+        "max_tokens": 32,
+        "temperature": 0
+      }
+    },
+    "compact16": {
+      "prompt": "Name the clearest visible construction hazard in at most six words. If unclear, say 'none clear'. Do not infer motion or hidden hazards.",
+      "settings": {
+        "max_tokens": 16,
+        "temperature": 0
+      }
+    }
+  },
+  "pairs": [],
+  "cache_design": "Existing per-image EncodedImage prefix reused for two serial queries; discarded before selecting next image. No cross-frame cache.",
+  "comparison_warning": "Two-prompt benchmarking reduces update rate. Standalone-equivalent = shared encoding + own query; this estimate excludes the other prompt, not actual wall delay. Capture-to-answer is measured actual wall delay.",
+  "cuda_free_before_load_gib": 4.836627960205078,
+  "load_seconds": 25.81712281899999,
+  "model_footprint_gib": 1.8968705832958221,
+  "cuda_free_after_load_gib": 2.7725563049316406,
+  "cuda_allocated_after_load_gib": 1.908092975616455,
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "torchao": "0.11.0",
+    "Pillow": "11.3.0"
+  }
+}
