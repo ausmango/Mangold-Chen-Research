@@ -1,0 +1,12 @@
+{
+  "finished_utc": "2026-11-12T17:57:55.603075+00:00",
+  "downloads_complete": true,
+  "cuda_runtime_build": "complete",
+  "cpu_quantization": "complete",
+  "camera_capture_run": false,
+  "gpu_inference_run": false,
+  "scout_engine_export_run": false,
+  "first_test_command": "bash experiments/run_scout_inspector.sh --camera csi --duration 60 --preview",
+  "camera": "Read-only enumeration found IMX219 CSI; USB remains selectable",
+  "one_time_gpu_step": "First user launch exports YOLO TensorRT FP16 before starting Inspector"
+}

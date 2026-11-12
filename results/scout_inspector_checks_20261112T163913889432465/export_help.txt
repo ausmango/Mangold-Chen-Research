@@ -1,0 +1,18 @@
+usage: export_scout.py [-h] --weights WEIGHTS --revision REVISION --output
+                       OUTPUT [--precision {fp16,int8}] [--imgsz IMGSZ]
+                       [--workspace-gib WORKSPACE_GIB]
+                       [--calibration-data CALIBRATION_DATA]
+
+Explicit hardware export utility. Never invoked by pipeline/preflight.
+
+options:
+  -h, --help            show this help message and exit
+  --weights WEIGHTS     Existing local YOLO11n or YOLOv8n .pt file
+  --revision REVISION   Exact source checkpoint release/commit provenance
+  --output OUTPUT
+  --precision {fp16,int8}
+  --imgsz IMGSZ
+  --workspace-gib WORKSPACE_GIB
+  --calibration-data CALIBRATION_DATA
+                        Local dataset YAML; INT8 requires representative local
+                        images

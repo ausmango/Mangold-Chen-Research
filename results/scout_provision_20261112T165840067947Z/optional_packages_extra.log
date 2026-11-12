@@ -1,0 +1,16 @@
+Collecting protobuf==4.25.8
+  Downloading protobuf-4.25.8-cp37-abi3-manylinux2014_aarch64.whl.metadata (541 bytes)
+Collecting py-cpuinfo==9.0.0
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Downloading protobuf-4.25.8-cp37-abi3-manylinux2014_aarch64.whl (294 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Installing collected packages: py-cpuinfo, protobuf
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 3.12.4
+    Not uninstalling protobuf at /usr/lib/python3/dist-packages, outside environment /home/charlotte/research/.venv-scout
+    Can't uninstall 'protobuf'. No files were found to uninstall.
+
+Successfully installed protobuf-4.25.8 py-cpuinfo-9.0.0
+
+[notice] A new release of pip is available: 26.2.1 -> 26.3
+[notice] To update, run: /home/charlotte/research/.venv-scout/bin/python -m pip install --upgrade pip

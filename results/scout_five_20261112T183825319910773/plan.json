@@ -1,0 +1,36 @@
+{
+  "baseline_manifest": "results/camera_v2-2~2026-10-05/capture.json",
+  "design": "Live person-gated CSI trials; variable completed samples, not fixed six per video",
+  "videos": [
+    {
+      "number": 1,
+      "label": "Red Machine",
+      "source": "https://drive.google.com/file/d/1Kh8cFl-OckC_hMw1OA0Ld7OBrvnlOBMn/view",
+      "duration_seconds": 60.0
+    },
+    {
+      "number": 2,
+      "label": "Video 2",
+      "source": "https://drive.google.com/file/d/1V_I9_77qyGNHI0bDMz9p4ZmCIl6WVMUd/view",
+      "duration_seconds": 35.0
+    },
+    {
+      "number": 3,
+      "label": "sVideo 3",
+      "source": "https://drive.google.com/file/d/1eAHZRBoRS9tW2u75KlQIVbTEe4AUtwJH/view",
+      "duration_seconds": 19.0
+    },
+    {
+      "number": 4,
+      "label": "Video 4",
+      "source": "https://drive.google.com/file/d/1Z4rXvQwLszuOFTq0TfLRgwRaF1T0j-d3/view",
+      "duration_seconds": 25.0
+    },
+    {
+      "number": 5,
+      "label": "Video 5",
+      "source": "https://drive.google.com/file/d/1ok9RtYCoPQZHGZcAsuAdVDmx9ElNl464/view",
+      "duration_seconds": 11.0
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+WARNING: The directory '/home/charlotte/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+ultralytics 8.3.162 requires opencv-python, which is not installed.

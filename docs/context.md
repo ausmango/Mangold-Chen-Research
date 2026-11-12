@@ -1,3 +1,169 @@
+# Basic flow/results report and recording guide — November 12, 2026
+
+Current concise report: `docs/research-log/2026-11-12-live-analysis-summary.md`.
+It covers the new two-model flow, actual quantization, initial concurrency/RAM
+measurements, saved image/answer examples, unsupported claims and open limitations.
+It intentionally contains no launch instructions or presentation directions.
+
+Screen-recording setup is separate: `docs/recording-a-live-demo.md`.
+SimpleScreenRecorder is installed and the desktop session is X11. Recommended
+lightweight demonstration: 15 FPS, 1280×720 or smaller, H.264 ultrafast, no audio,
+new MKV filename. No recorder, camera or GPU inference was launched in this task.
+Recording overhead must be labelled separately from clean benchmark timing.
+
+Saved evidence currently shows the initial 9-answer live trial and a later
+4-answer Video 1 trial; the five-video batch has not been established complete.
+Manual review found plausible broad captions alongside unsupported details in
+both runs. User perceived the later run as less accurate; no labelled accuracy
+comparison has been performed. Existing logs have no continuous screen video.
+
+---
+
+# Five-video batch resume — November 12, 2026
+
+Batch `results/scout_five_20261112T183825319910773`: Video 1 completed with four
+answers, mean inference 1.9270 s, answer delay 2.1876 s, 28.6565 FPS and sampled
+whole-system RAM peak 5190 MB. Video 2 failed before model/camera start because
+port 8080 could not be rebound. Video 1 server log records cleanup; later port
+bind tests succeed. Corrected preflight with SO_REUSEADDR for recently closed
+sockets, retaining active-listener rejection. Added non-overwriting batch resume:
+```bash
+bash experiments/run_scout_five_videos.sh --resume results/scout_five_20261112T183825319910773 --from-video 2
+```
+No hardware relaunched. Keep Video 1 and failed Video 2 evidence. Repeated clip
+attempts receive new session folders and terminal log names. Full batch remains
+incomplete until Videos 2–5 finish.
+
+---
+
+# TensorRT build fix — November 12, 2026
+
+The original PyTorch-resident TensorRT export failed before any camera benchmark
+with NvMap allocation errors and Cask GEMM tactic failure; sampled whole-system
+RAM reached 5,787 MB. Its interrupted exporter PID was stopped explicitly.
+
+**Resolved build:** `experiments/build_scout_from_onnx.py` reuses the successful
+local ONNX export in standalone `trtexec`, without Torch loaded, workspace 128 MiB,
+builder optimization level 0, avgTiming 1. The build passed in 46.1992 seconds,
+sampled whole-system RAM peak 4,678 MB. This is setup evidence, not a live speedup.
+Engine is 9,463,447 bytes, with a metadata prefix preserving COCO names. GPU
+synthetic Scout inference passed, 80 classes including person. Local preflight
+passes. Evidence: `results/scout_standalone_device_20261112T181215607080372/fix_summary.json` and logs alongside.
+
+The managed launcher reuses this completed engine; future rebuilds use the
+standalone helper. No camera capture or real Inspector query has been run by the
+agent. Camera + Inspector concurrency remains for the user's first live test:
+```bash
+cd /home/charlotte/research
+bash experiments/run_scout_inspector.sh --camera csi --duration 60 --preview
+```
+This now skips the export stage. The low-effort engine is not maximally tuned;
+record the export manifest with any performance report. Existing stack unchanged.
+
+---
+
+# Ready for user-run hardware test — November 12, 2026
+
+Downloads, isolated Python setup, CUDA-enabled llama.cpp build and CPU text
+quantization are complete. No camera capture or GPU inference was launched.
+Connected camera identified through sysfs as **IMX219 CSI**, not USB. A selectable
+CSI adapter preserves the exact historical camera_v2 GStreamer pipeline; USB
+selection remains available and excludes the CSI node. 15 new CPU tests and
+13 legacy tests pass. Setup evidence:
+`results/scout_provision_20261112T165840067947Z/provision-status.json`.
+
+Run when positioned/ready:
+```bash
+cd /home/charlotte/research
+bash experiments/run_scout_inspector.sh --camera csi --duration 60 --preview
+```
+First launch performs the deferred YOLO TensorRT FP16 engine export, then starts
+its owned Inspector server and timed client. No additional downloads are needed.
+For an actual USB webcam instead use `--camera usb` after connecting it.
+Local smoke trigger is person presence; stand in view. Timer starts with first
+camera frame; no S-key wait. See `docs/scout-inspector-quickstart.md`.
+
+Quantized text file is 303,253,504 bytes. Requested Q4_K_M required higher-precision
+fallback for 193/291 tensors because many dimensions are 960 rather than multiples
+of 256; log reports 5.89 bits/weight. It is **not uniformly INT4**. The separate
+F16 projector is 199,470,624 bytes. File sizes do not establish loaded memory,
+latency or a sub-400 MB runtime. Actual GPU behavior remains untested.
+
+---
+
+# Provisioning update — November 12, 2026
+
+User authorized downloads and isolated setup, then explicitly said the camera is
+**not ready** and they will run the test themselves. No camera capture, Scout
+GPU export, GPU model inference or benchmark has been launched.
+
+Downloaded pinned YOLO11n checkpoint plus matching SmolVLM2-500M F16 text GGUF and
+vision projector. Provenance: `models/provision-manifest.json`; public source and
+SHA256 evidence copied to
+`results/scout_provision_20261112T165840067947Z/download-manifest.json`.
+llama.cpp source pinned to `2a4daf0e08d6a9b6993ee0d4a9a3cfc35a6f405c`.
+CUDA runtime build is in progress; text-model Q4_K_M quantization awaits the
+quantizer build. Optional Python packages are isolated in `.venv-scout`, using
+existing host Torch 2.8.0 / TensorRT 10.3.0. No host stack upgrade.
+
+The user-facing launcher is `experiments/run_scout_inspector.sh`; read
+`docs/scout-inspector-quickstart.md`. It will perform a one-time GPU Scout export
+on first user invocation, then own the Inspector server and a timed live run.
+Local first-test rules use person presence; example config retains proximity.
+An offline evidence summarizer reports latency, frame age, answer delay and
+camera deliveries overlapping completed inference windows. Native projector
+metadata specifies 512-square input despite the 384-square submitted image;
+visual-token reduction from submitted size alone is unproven.
+
+Prior notes below describe the state before provisioning.
+
+---
+
+# Current scope — November 12, 2026
+
+Implemented a separate USB Scout & Inspector path, preserving legacy CSI/Moondream
+scripts and all results. Entry point: `main.py`. Runtime, adapters, strict config,
+latest-frame queue and trigger rules: `src/scout_inspector/`. Setup/audit:
+`docs/scout-inspector-architecture.md`; example: `configs/scout_inspector.example.json`;
+explicit GPU export utility: `experiments/export_scout.py`.
+
+Two workers: USB + YOLO TensorRT Scout, serial SmolVLM2-500M Inspector (local
+llama.cpp INT4 text model + separate projector, or optional Transformers FP16).
+Main-thread preview; queue capacity one; replace pending frames, reject stale
+inputs; save exact prompt/settings/images/answers/timing and tegrastats.
+
+**Hardware untested.** No camera/GPU run, downloads, installations or new speedup.
+Read the dated research note for CPU verification. Existing measured baseline:
+October 5 30 images, mean 8.3241 s, footprint 1.8969 GiB, system peak 5400 MB.
+October 22 mean 4.4612 s with changed prompt/input conditions; this is historical
+sequential processing, not proof of live concurrency. Moondream KV caching already
+existed. New pipeline does not claim cross-image cache reuse.
+
+Known blockers: local YOLO engine/Ultralytics and Inspector assets/server must be
+provided; exact 40-character artifact revision required. Optional recipes untested
+with installed stack. Stock COCO labels are vehicle proxies, not construction/PPE
+classes. Shared GPU contention, native-call hangs, driver buffering and OOM remain
+possible. Bounded shutdown preserves partial evidence and reports blocked workers.
+GGUF runtime footprint/server CUDA allocation are unknown, not inferred from file
+size. External server load timing must come from its saved startup log. No full
+video recording in new path. Git HEAD was observed corrupt (empty loose object);
+no repair, commit or push performed.
+
+Next checks (no hardware):
+```bash
+python3 -m unittest discover -s tests -v
+python3 main.py --config configs/scout_inspector.local.json --check
+```
+After setup and explicit camera readiness, the next 60-second command is:
+```bash
+python3 -u main.py --config configs/scout_inspector.local.json --duration 60 --preview
+```
+Tegrastats starts automatically. Timer starts on first delivered camera frame,
+after model initialization; there is no S-key wait. Start source playback when
+preview appears. Server startup/monitoring command is in the setup guide.
+
+---
+
 # Research context — updated 2026-11-05
 
 > **Professor-facing revision:** `docs/meeting-script-2026-11-05-live-concurrency.md`

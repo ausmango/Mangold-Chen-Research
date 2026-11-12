@@ -1,0 +1,18 @@
+test_balanced_order (test_moondream_camera_fast.FastTests) ... ok
+test_failure_preserves_completed_answer (test_moondream_camera_fast.FastTests) ... ok
+test_incomplete_pairs_not_compared (test_moondream_camera_fast.FastTests) ... ok
+test_profiles_persistence_and_timing (test_moondream_camera_fast.FastTests) ... ok
+test_alignment_and_recording_without_model (test_moondream_camera_live.CameraOnlyTests) ... ok
+test_camera_failure_does_not_load_model (test_moondream_camera_live.MainFailureTests) ... ok
+test_cleanup_and_missing_telemetry_preserve_failure (test_moondream_camera_live.MainFailureTests) ... ok
+test_initialization_failure_returns_failure_after_cleanup (test_moondream_camera_live.MainFailureTests) ... ok
+test_latest_frame_and_timings (test_moondream_camera_live.WorkerTests) ... ok
+test_tegrastats_summary (test_moondream_camera_live.WorkerTests) ... ok
+test_worker_failure_preserves_frame (test_moondream_camera_live.WorkerTests) ... ok
+test_cache_pair_and_latest_frame (test_moondream_live_compare.CompareTests) ... ok
+test_partial_error_preservation (test_moondream_live_compare.CompareTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.119s
+
+OK

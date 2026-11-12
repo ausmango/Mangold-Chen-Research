@@ -1,0 +1,20 @@
+Collecting ultralytics==8.3.0
+  Downloading ultralytics-8.3.0-py3-none-any.whl.metadata (34 kB)
+Collecting ultralytics-thop==2.0.9
+  Downloading ultralytics_thop-2.0.9-py3-none-any.whl.metadata (9.3 kB)
+Collecting seaborn==0.13.2
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting onnx==1.17.0
+  Downloading onnx-1.17.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (16 kB)
+Downloading ultralytics-8.3.0-py3-none-any.whl (881 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 881.3/881.3 kB 11.2 MB/s  0:00:00
+Downloading ultralytics_thop-2.0.9-py3-none-any.whl (26 kB)
+Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+Downloading onnx-1.17.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (15.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.9/15.9 MB 7.6 MB/s  0:00:02
+Installing collected packages: ultralytics-thop, ultralytics, seaborn, onnx
+
+Successfully installed onnx-1.17.0 seaborn-0.13.2 ultralytics-8.3.0 ultralytics-thop-2.0.9
+
+[notice] A new release of pip is available: 26.2.1 -> 26.3
+[notice] To update, run: /home/charlotte/research/.venv-scout/bin/python -m pip install --upgrade pip

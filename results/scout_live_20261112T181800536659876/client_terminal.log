@@ -1,0 +1,235 @@
+Results: /home/charlotte/research/results/scout_live_20261112T181800536659876/client
+Startup is excluded from duration. Timer begins with first delivered camera frame. Start source playback when preview appears.
+Loading models/scout/yolo11n-fp16.engine for TensorRT inference...
+[11/12/2026-13:18:13] [TRT] [I] Loaded engine size: 9 MiB
+[11/12/2026-13:18:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 15 (MiB)
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3280 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3280 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 59.999999 
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+{"sequence": 9, "answer": " The image shows a person standing in a room with a large, circular mirror. The person is wearing a white shirt and appears to be looking at the mirror.", "inference_ms": 2792.0905900000434, "frame_age_at_inference_start_ms": 400.5456690001665, "capture_to_completed_answer_ms": 3192.63625900021, "answer_is_stale": true}
+{"sequence": 111, "answer": " The image depicts a dimly lit room with a single light source coming from the top left corner. The light is creating a halo effect around the edges of the", "inference_ms": 1756.4142010005526, "frame_age_at_inference_start_ms": 96.98389799996221, "capture_to_completed_answer_ms": 1853.3980990005148, "answer_is_stale": false}
+{"sequence": 128, "answer": " A person is lying on a bed, seemingly asleep, with a pillow behind them. The room is dimly lit, with a pink wall in the background.", "inference_ms": 1748.7139729992123, "frame_age_at_inference_start_ms": 910.0218110006608, "capture_to_completed_answer_ms": 2658.735783999873, "answer_is_stale": false}
+{"sequence": 170, "answer": " A person is seated in a vehicle, wearing a helmet and a harness, with a large screen in front of them. The person appears to be operating a device", "inference_ms": 1698.201013000471, "frame_age_at_inference_start_ms": 260.48503199945117, "capture_to_completed_answer_ms": 1958.6860449999222, "answer_is_stale": false}
+{"sequence": 209, "answer": " The image captures a moment of a person operating a small excavator in a construction site. The excavator, painted in a vibrant orange, is equipped with a", "inference_ms": 1770.3408240004137, "frame_age_at_inference_start_ms": 54.324320999512565, "capture_to_completed_answer_ms": 1824.6651449999263, "answer_is_stale": false}
+{"sequence": 229, "answer": " A person is operating a large, orange excavator in a construction site. The excavator is equipped with a bucket and a boom, and the person is seen", "inference_ms": 1729.0680020005311, "frame_age_at_inference_start_ms": 725.586352999926, "capture_to_completed_answer_ms": 2454.654355000457, "answer_is_stale": false}
+{"sequence": 292, "answer": " A person is operating an excavator in a residential area, with a house in the background. The excavator is orange and has a large bucket on the end", "inference_ms": 1761.6732430005868, "frame_age_at_inference_start_ms": 60.08091399962723, "capture_to_completed_answer_ms": 1821.754157000214, "answer_is_stale": false}
+{"sequence": 459, "answer": " A person is operating an excavator in a construction site. The excavator is orange and has the word \"AQUA\" on the side.", "inference_ms": 1725.8092609999949, "frame_age_at_inference_start_ms": 66.06618500063632, "capture_to_completed_answer_ms": 1791.8754460006312, "answer_is_stale": false}
+{"sequence": 774, "answer": " The image captures a moment of a construction site, where a large orange and black excavator is in the process of digging a trench. The excavator is positioned", "inference_ms": 1712.9114909994314, "frame_age_at_inference_start_ms": 61.311088999900676, "capture_to_completed_answer_ms": 1774.222579999332, "answer_is_stale": false}
+GST_ARGUS: Cleaning up
+CONSUMER: Done Success
+GST_ARGUS: Done Success
+{
+  "counters": {
+    "captured_frames": 1569,
+    "nominal_frames_discarded": 1543,
+    "scout_frame_budget_misses": 884,
+    "triggered_frames": 26,
+    "queued_frames": 16,
+    "replaced_pending_frames": 4,
+    "completed_answers": 9,
+    "trigger_cooldown_frames": 10,
+    "stale_frames_discarded": 3,
+    "pending_discarded_on_stop": 0
+  },
+  "metadata": {
+    "status": "finished",
+    "created_utc": "2026-11-12T18:18:08.995653+00:00",
+    "system_before": {
+      "MemTotal_bytes": 7989829632,
+      "MemAvailable_bytes": 3756584960,
+      "SwapTotal_bytes": 8589930496,
+      "SwapFree_bytes": 8341942272
+    },
+    "design": "CSI YOLO Scout + latest-triggered-frame Queue(maxsize=1) + serial Inspector",
+    "timestamp_scope": "Host delivery after camera.read, not sensor exposure; capture-to-answer excludes unknown driver buffering",
+    "limitations": "Unverified generated observations, not OSHA compliance findings or validated temporal event detection. GPU contention and native-call blocking can still occur.",
+    "inspector": {
+      "backend": "llama.cpp local HTTP (externally managed CUDA server)",
+      "api_model_id": "models/inspector/model-Q4_K_M.gguf",
+      "model_id": "ggml-org/SmolVLM2-500M-Video-Instruct-GGUF",
+      "model_load_ms": null,
+      "model_footprint_bytes": null,
+      "load_timing_scope": "Client connection/artifact verification only; external server model load time must come from server log",
+      "revision": "ccd7aae53bcb1997355c2f094959e72b3642ce17",
+      "model_artifact": {
+        "path": "/home/charlotte/research/models/inspector/model-Q4_K_M.gguf",
+        "bytes": 303253504,
+        "sha256": "115db45c8dcfc206f831b01f9efe48d65dc183b7bd3f49ea7103acf231ca0fd8"
+      },
+      "projector_artifact": {
+        "path": "/home/charlotte/research/models/inspector/mmproj.gguf",
+        "bytes": 199470624,
+        "sha256": "b5dc8ebe7cbeab66a5369693960a52515d7824f13d4063ceca78431f2a6b59b0"
+      },
+      "note": "Artifact hashes record configured files; server must be launched with these exact files. Projector may remain higher precision. Server memory is not measured by client PyTorch statistics.",
+      "load_ms": 1432.7100020000216
+    },
+    "scout": {
+      "adapter": "ultralytics TensorRT",
+      "ultralytics": "8.3.162",
+      "engine": {
+        "path": "/home/charlotte/research/models/scout/yolo11n-fp16.engine",
+        "bytes": 9463447,
+        "sha256": "c4f2077e55d80731435761ab922c942baca2c864e26c08d01f4e7550510445c9"
+      },
+      "classes": [
+        "person",
+        "bicycle",
+        "car",
+        "motorcycle",
+        "airplane",
+        "bus",
+        "train",
+        "truck",
+        "boat",
+        "traffic light",
+        "fire hydrant",
+        "stop sign",
+        "parking meter",
+        "bench",
+        "bird",
+        "cat",
+        "dog",
+        "horse",
+        "sheep",
+        "cow",
+        "elephant",
+        "bear",
+        "zebra",
+        "giraffe",
+        "backpack",
+        "umbrella",
+        "handbag",
+        "tie",
+        "suitcase",
+        "frisbee",
+        "skis",
+        "snowboard",
+        "sports ball",
+        "kite",
+        "baseball bat",
+        "baseball glove",
+        "skateboard",
+        "surfboard",
+        "tennis racket",
+        "bottle",
+        "wine glass",
+        "cup",
+        "fork",
+        "knife",
+        "spoon",
+        "bowl",
+        "banana",
+        "apple",
+        "sandwich",
+        "orange",
+        "broccoli",
+        "carrot",
+        "hot dog",
+        "pizza",
+        "donut",
+        "cake",
+        "chair",
+        "couch",
+        "potted plant",
+        "bed",
+        "dining table",
+        "toilet",
+        "tv",
+        "laptop",
+        "mouse",
+        "remote",
+        "keyboard",
+        "cell phone",
+        "microwave",
+        "oven",
+        "toaster",
+        "sink",
+        "refrigerator",
+        "book",
+        "clock",
+        "vase",
+        "scissors",
+        "teddy bear",
+        "hair drier",
+        "toothbrush"
+      ],
+      "device": "0",
+      "imgsz": 640,
+      "precision": "See engine export manifest; not inferred from file name",
+      "export_manifest": {
+        "created_utc": "2026-11-12T18:13:09.157411+00:00",
+        "builder": "standalone trtexec, no PyTorch process",
+        "command": [
+          "/usr/src/tensorrt/bin/trtexec",
+          "--onnx=models/scout/source/yolo11n.onnx",
+          "--saveEngine=models/scout/yolo11n-fp16.engine.20261112T181215899329Z.raw.partial",
+          "--fp16",
+          "--memPoolSize=workspace:128",
+          "--builderOptimizationLevel=0",
+          "--avgTiming=1",
+          "--skipInference"
+        ],
+        "precision": "requested FP16, some layers may remain FP32",
+        "source_onnx": "models/scout/source/yolo11n.onnx",
+        "source_onnx_sha256": "d2881ccf75226f377a1ae4a5a535c7b051b6e4ba13350f11dda6b18ddee12c03",
+        "engine": "models/scout/yolo11n-fp16.engine",
+        "engine_sha256": "c4f2077e55d80731435761ab922c942baca2c864e26c08d01f4e7550510445c9",
+        "engine_bytes": 9463447,
+        "note": "Low builder effort/workspace prioritizes a first working test; not a maximal-throughput tuned engine. Build profiling still executes GPU kernels despite skipInference."
+      },
+      "load_ms": 5289.529271999527
+    },
+    "camera": {
+      "backend": "GStreamer CSI",
+      "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+      "reported_width": 640.0,
+      "reported_height": 360.0,
+      "reported_fps": 30.0,
+      "note": "Preserved 1280x720/30 sensor request, 640x360 BGR output; delivered rate measured separately"
+    },
+    "first_frame_utc": "2026-11-12T18:18:17.048762+00:00",
+    "inspector_final_memory": {
+      "cuda_allocated_bytes": null,
+      "cuda_peak_allocated_bytes": null,
+      "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+    },
+    "finished_utc": "2026-11-12T18:19:17.173284+00:00",
+    "stop_reason": "duration",
+    "blocked_workers": [],
+    "camera_metrics": {
+      "delivered_frames": 1569,
+      "first_to_last_seconds": 59.98805837100008,
+      "measured_fps": 26.138535611581247,
+      "max_delivery_gap_ms": 482.5129279997782
+    },
+    "system_ram": {
+      "source": "tegrastats, whole system, 500 ms samples",
+      "samples": 133,
+      "peak_used_mb": 4861,
+      "total_mb": 7620,
+      "error": null
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,11 @@
+{
+  "scope": "Read-only sysfs/symlink enumeration; no camera opened",
+  "devices": [
+    {
+      "device": "/dev/video0",
+      "name": "vi-output, imx219 10-0010",
+      "sysfs_device": "/sys/devices/platform/tegra-capture-vi"
+    }
+  ],
+  "stable_links": []
+}

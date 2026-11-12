@@ -1,0 +1,6 @@
+{
+  "torch_cuda_build": "12.6",
+  "torchvision_cuda_build": 12060,
+  "torchvision_nms_cuda_kernel_registered": true,
+  "scope": "CPU inspection of registered operators only; no CUDA tensor or model inference"
+}

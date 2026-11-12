@@ -1,0 +1,107 @@
+Standalone TensorRT build; PyTorch is not loaded. Camera stays closed.
+Command: /usr/src/tensorrt/bin/trtexec --onnx=models/scout/source/yolo11n.onnx --saveEngine=models/scout/yolo11n-fp16.engine.20261112T181025989564Z.raw.partial --fp16 --memPoolSize=workspace:128 --builderOptimizationLevel=0 --avgTiming=1 --skipInference
+&&&& RUNNING TensorRT.trtexec [TensorRT v100300] # /usr/src/tensorrt/bin/trtexec --onnx=models/scout/source/yolo11n.onnx --saveEngine=models/scout/yolo11n-fp16.engine.20261112T181025989564Z.raw.partial --fp16 --memPoolSize=workspace:128 --builderOptimizationLevel=0 --avgTiming=1 --skipInference
+[11/12/2026-13:10:25] [I] === Model Options ===
+[11/12/2026-13:10:25] [I] Format: ONNX
+[11/12/2026-13:10:25] [I] Model: models/scout/source/yolo11n.onnx
+[11/12/2026-13:10:25] [I] Output:
+[11/12/2026-13:10:25] [I] === Build Options ===
+[11/12/2026-13:10:25] [I] Memory Pools: workspace: 128 MiB, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default, tacticSharedMem: default
+[11/12/2026-13:10:25] [I] avgTiming: 1
+[11/12/2026-13:10:25] [I] Precision: FP32+FP16
+[11/12/2026-13:10:25] [I] LayerPrecisions: 
+[11/12/2026-13:10:25] [I] Layer Device Types: 
+[11/12/2026-13:10:25] [I] Calibration: 
+[11/12/2026-13:10:25] [I] Refit: Disabled
+[11/12/2026-13:10:25] [I] Strip weights: Disabled
+[11/12/2026-13:10:25] [I] Version Compatible: Disabled
+[11/12/2026-13:10:25] [I] ONNX Plugin InstanceNorm: Disabled
+[11/12/2026-13:10:25] [I] TensorRT runtime: full
+[11/12/2026-13:10:25] [I] Lean DLL Path: 
+[11/12/2026-13:10:25] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[11/12/2026-13:10:25] [I] Exclude Lean Runtime: Disabled
+[11/12/2026-13:10:25] [I] Sparsity: Disabled
+[11/12/2026-13:10:25] [I] Safe mode: Disabled
+[11/12/2026-13:10:25] [I] Build DLA standalone loadable: Disabled
+[11/12/2026-13:10:25] [I] Allow GPU fallback for DLA: Disabled
+[11/12/2026-13:10:25] [I] DirectIO mode: Disabled
+[11/12/2026-13:10:25] [I] Restricted mode: Disabled
+[11/12/2026-13:10:25] [I] Skip inference: Enabled
+[11/12/2026-13:10:25] [I] Save engine: models/scout/yolo11n-fp16.engine.20261112T181025989564Z.raw.partial
+[11/12/2026-13:10:25] [I] Load engine: 
+[11/12/2026-13:10:25] [I] Profiling verbosity: 0
+[11/12/2026-13:10:25] [I] Tactic sources: Using default tactic sources
+[11/12/2026-13:10:25] [I] timingCacheMode: local
+[11/12/2026-13:10:25] [I] timingCacheFile: 
+[11/12/2026-13:10:25] [I] Enable Compilation Cache: Enabled
+[11/12/2026-13:10:25] [I] errorOnTimingCacheMiss: Disabled
+[11/12/2026-13:10:25] [I] Preview Features: Use default preview flags.
+[11/12/2026-13:10:25] [I] MaxAuxStreams: -1
+[11/12/2026-13:10:25] [I] BuilderOptimizationLevel: 0
+[11/12/2026-13:10:25] [I] Calibration Profile Index: 0
+[11/12/2026-13:10:25] [I] Weight Streaming: Disabled
+[11/12/2026-13:10:25] [I] Runtime Platform: Same As Build
+[11/12/2026-13:10:25] [I] Debug Tensors: 
+[11/12/2026-13:10:25] [I] Input(s)s format: fp32:CHW
+[11/12/2026-13:10:25] [I] Output(s)s format: fp32:CHW
+[11/12/2026-13:10:25] [I] Input build shapes: model
+[11/12/2026-13:10:25] [I] Input calibration shapes: model
+[11/12/2026-13:10:25] [I] === System Options ===
+[11/12/2026-13:10:25] [I] Device: 0
+[11/12/2026-13:10:25] [I] DLACore: 
+[11/12/2026-13:10:25] [I] Plugins:
+[11/12/2026-13:10:25] [I] setPluginsToSerialize:
+[11/12/2026-13:10:25] [I] dynamicPlugins:
+[11/12/2026-13:10:25] [I] ignoreParsedPluginLibs: 0
+[11/12/2026-13:10:25] [I] 
+[11/12/2026-13:10:25] [I] === Inference Options ===
+[11/12/2026-13:10:25] [I] Batch: Explicit
+[11/12/2026-13:10:25] [I] Input inference shapes: model
+[11/12/2026-13:10:25] [I] Iterations: 10
+[11/12/2026-13:10:25] [I] Duration: 3s (+ 200ms warm up)
+[11/12/2026-13:10:25] [I] Sleep time: 0ms
+[11/12/2026-13:10:25] [I] Idle time: 0ms
+[11/12/2026-13:10:25] [I] Inference Streams: 1
+[11/12/2026-13:10:25] [I] ExposeDMA: Disabled
+[11/12/2026-13:10:25] [I] Data transfers: Enabled
+[11/12/2026-13:10:25] [I] Spin-wait: Disabled
+[11/12/2026-13:10:25] [I] Multithreading: Disabled
+[11/12/2026-13:10:25] [I] CUDA Graph: Disabled
+[11/12/2026-13:10:25] [I] Separate profiling: Disabled
+[11/12/2026-13:10:25] [I] Time Deserialize: Disabled
+[11/12/2026-13:10:25] [I] Time Refit: Disabled
+[11/12/2026-13:10:25] [I] NVTX verbosity: 0
+[11/12/2026-13:10:25] [I] Persistent Cache Ratio: 0
+[11/12/2026-13:10:25] [I] Optimization Profile Index: 0
+[11/12/2026-13:10:25] [I] Weight Streaming Budget: 100.000000%
+[11/12/2026-13:10:25] [I] Inputs:
+[11/12/2026-13:10:25] [I] Debug Tensor Save Destinations:
+[11/12/2026-13:10:25] [I] === Reporting Options ===
+[11/12/2026-13:10:25] [I] Verbose: Disabled
+[11/12/2026-13:10:25] [I] Averages: 10 inferences
+[11/12/2026-13:10:25] [I] Percentiles: 90,95,99
+[11/12/2026-13:10:25] [I] Dump refittable layers:Disabled
+[11/12/2026-13:10:25] [I] Dump output: Disabled
+[11/12/2026-13:10:25] [I] Profile: Disabled
+[11/12/2026-13:10:25] [I] Export timing to JSON file: 
+[11/12/2026-13:10:25] [I] Export output to JSON file: 
+[11/12/2026-13:10:25] [I] Export profile to JSON file: 
+[11/12/2026-13:10:25] [I] 
+[11/12/2026-13:10:25] [I] === Device Information ===
+NvRmMemInitNvmap failed with No such file or directory
+356: Memory Manager Not supported
+
+
+
+****NvRmMemMgrInit failed**** error type: 196626
+
+
+Cuda failure: unknown error
+Traceback (most recent call last):
+  File "/home/charlotte/research/experiments/build_scout_from_onnx.py", line 67, in <module>
+    if __name__=='__main__': main()
+  File "/home/charlotte/research/experiments/build_scout_from_onnx.py", line 51, in main
+    subprocess.run(cmd,check=True,timeout=600)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/src/tensorrt/bin/trtexec', '--onnx=models/scout/source/yolo11n.onnx', '--saveEngine=models/scout/yolo11n-fp16.engine.20261112T181025989564Z.raw.partial', '--fp16', '--memPoolSize=workspace:128', '--builderOptimizationLevel=0', '--avgTiming=1', '--skipInference']' returned non-zero exit status 1.

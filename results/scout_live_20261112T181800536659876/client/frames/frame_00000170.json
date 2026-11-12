@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 170,
+  "frame_path": "frames/frame_00000170.png",
+  "captured_utc": "2026-11-12T18:18:25.150744+00:00",
+  "captured_monotonic": 7145.486566143,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.487548828125,
+      "box": [
+        0.44609376788139343,
+        0.0055555556900799274,
+        0.9789062738418579,
+        0.9430555701255798
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:18:25.411234+00:00",
+  "inference_started_monotonic": 7145.747051175,
+  "submitted_image_path": "frames/frame_00000170.jpg",
+  "answer": " A person is seated in a vehicle, wearing a helmet and a harness, with a large screen in front of them. The person appears to be operating a device",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 224,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 87
+    }
+  },
+  "server_timings": {
+    "cache_n": 87,
+    "prompt_n": 137,
+    "prompt_ms": 714.723,
+    "prompt_per_token_ms": 5.216956204379562,
+    "prompt_per_second": 191.68265188051876,
+    "predicted_n": 32,
+    "predicted_ms": 926.897,
+    "predicted_per_token_ms": 29.899903225806455,
+    "predicted_per_second": 33.444924301189886
+  },
+  "finish_reason": "length",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:18:27.109952+00:00",
+  "completed_monotonic": 7147.445252188,
+  "scout_ms": 61.93868999980623,
+  "inference_ms": 1698.201013000471,
+  "frame_age_at_inference_start_ms": 260.48503199945117,
+  "capture_to_completed_answer_ms": 1958.6860449999222,
+  "answer_is_stale": false,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

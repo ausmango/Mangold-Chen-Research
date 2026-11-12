@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 111,
+  "frame_path": "frames/frame_00000111.png",
+  "captured_utc": "2026-11-12T18:18:21.770576+00:00",
+  "captured_monotonic": 7142.106388366,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.51171875,
+      "box": [
+        0.0005859375232830644,
+        0.0062500000931322575,
+        0.3392578065395355,
+        0.3861111104488373
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:18:21.867552+00:00",
+  "inference_started_monotonic": 7142.203372264,
+  "submitted_image_path": "frames/frame_00000111.jpg",
+  "answer": " The image depicts a dimly lit room with a single light source coming from the top left corner. The light is creating a halo effect around the edges of the",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 224,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 87
+    }
+  },
+  "server_timings": {
+    "cache_n": 87,
+    "prompt_n": 137,
+    "prompt_ms": 745.465,
+    "prompt_per_token_ms": 5.441350364963504,
+    "prompt_per_second": 183.77791043174392,
+    "predicted_n": 32,
+    "predicted_ms": 951.014,
+    "predicted_per_token_ms": 30.677870967741935,
+    "predicted_per_second": 32.59678616718576
+  },
+  "finish_reason": "length",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:18:23.626078+00:00",
+  "completed_monotonic": 7143.959786465,
+  "scout_ms": 76.32222200027172,
+  "inference_ms": 1756.4142010005526,
+  "frame_age_at_inference_start_ms": 96.98389799996221,
+  "capture_to_completed_answer_ms": 1853.3980990005148,
+  "answer_is_stale": false,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

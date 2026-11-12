@@ -1,0 +1,16 @@
+{
+  "models/inspector/model-f16.gguf": {
+    "general.architecture": "llama",
+    "general.name": "SmolVLM2 500M Video Instruct",
+    "llama.context_length": 8192,
+    "general.file_type": 1
+  },
+  "models/inspector/mmproj.gguf": {
+    "general.architecture": "clip",
+    "general.name": "SmolVLM2 500M Video Instruct",
+    "general.file_type": 1,
+    "clip.vision.projection_dim": 960,
+    "clip.vision.image_size": 512,
+    "clip.vision.patch_size": 16
+  }
+}

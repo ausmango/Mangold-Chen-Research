@@ -1,0 +1,3 @@
+torchvision version: 0.23.0
+native operators available: True
+CPU import/extension inspection only; no model or GPU inference.

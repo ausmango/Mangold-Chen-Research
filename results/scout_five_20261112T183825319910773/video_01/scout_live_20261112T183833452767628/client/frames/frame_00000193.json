@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 193,
+  "frame_path": "frames/frame_00000193.png",
+  "captured_utc": "2026-11-12T18:38:52.533205+00:00",
+  "captured_monotonic": 8372.869022955,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.427490234375,
+      "box": [
+        0.599804699420929,
+        0.03437500074505806,
+        0.7876953482627869,
+        0.7878472208976746
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:38:52.886959+00:00",
+  "inference_started_monotonic": 8373.222775836,
+  "submitted_image_path": "frames/frame_00000193.jpg",
+  "answer": " A person is driving a large orange and black construction vehicle through a residential area. The vehicle is surrounded by a group of people, some of whom are wearing helmets",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 224,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "server_timings": {
+    "cache_n": 0,
+    "prompt_n": 224,
+    "prompt_ms": 2280.282,
+    "prompt_per_token_ms": 10.179830357142858,
+    "prompt_per_second": 98.23346410663241,
+    "predicted_n": 32,
+    "predicted_ms": 974.542,
+    "predicted_per_token_ms": 31.43683870967742,
+    "predicted_per_second": 31.809814251207232
+  },
+  "finish_reason": "length",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:38:56.223162+00:00",
+  "completed_monotonic": 8376.558384277,
+  "scout_ms": 36.868728000627016,
+  "inference_ms": 3335.60844099884,
+  "frame_age_at_inference_start_ms": 353.7528810011281,
+  "capture_to_completed_answer_ms": 3689.361321999968,
+  "answer_is_stale": true,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

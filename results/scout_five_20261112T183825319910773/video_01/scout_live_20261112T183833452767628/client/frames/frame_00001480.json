@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 1480,
+  "frame_path": "frames/frame_00001480.png",
+  "captured_utc": "2026-11-12T18:39:36.753430+00:00",
+  "captured_monotonic": 8417.089252751,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.4091796875,
+      "box": [
+        0.5318359732627869,
+        0.27743056416511536,
+        0.691601574420929,
+        0.7475694417953491
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:39:37.331824+00:00",
+  "inference_started_monotonic": 8417.667638273,
+  "submitted_image_path": "frames/frame_00001480.jpg",
+  "answer": " A person is sitting in the cockpit of an excavator, which is parked on a dirt surface.",
+  "usage": {
+    "completion_tokens": 21,
+    "prompt_tokens": 224,
+    "total_tokens": 245,
+    "prompt_tokens_details": {
+      "cached_tokens": 87
+    }
+  },
+  "server_timings": {
+    "cache_n": 87,
+    "prompt_n": 137,
+    "prompt_ms": 692.26,
+    "prompt_per_token_ms": 5.052992700729927,
+    "prompt_per_second": 197.90252217374976,
+    "predicted_n": 21,
+    "predicted_ms": 613.035,
+    "predicted_per_token_ms": 30.65175,
+    "predicted_per_second": 32.62456466596524
+  },
+  "finish_reason": "stop",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:39:38.696612+00:00",
+  "completed_monotonic": 8419.03148473,
+  "scout_ms": 55.17406600120012,
+  "inference_ms": 1363.846456999454,
+  "frame_age_at_inference_start_ms": 578.3855219997349,
+  "capture_to_completed_answer_ms": 1942.2319789991889,
+  "answer_is_stale": false,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

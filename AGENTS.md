@@ -23,3 +23,15 @@
   readiness. After a run, inspect saved logs/results and update the dated
   research note and `docs/context.md` with measurements, failures, and next steps.
 - Do not commit or push unless the user requests it.
+
+## USB Scout & Inspector scope (November 12, 2026)
+
+- New development uses `main.py` and `src/scout_inspector/`; preserve the legacy
+  pinned Moondream/CSI scripts and results as historical baselines.
+- The authorized architectural pivot uses a USB Scout worker and one serial
+  sub-1B Inspector worker, with `queue.Queue(maxsize=1)` replacing stale pending
+  triggered frames. OpenCV remains on the main thread.
+- Follow `docs/scout-inspector-architecture.md`. Treat 30 FPS, present-second
+  answers and a sub-400 MB model runtime as unverified targets until measured.
+- Optional adapters/export recipes do not authorize dependency installation,
+  stack upgrades, model downloads or hardware runs. Preserve the existing stack.

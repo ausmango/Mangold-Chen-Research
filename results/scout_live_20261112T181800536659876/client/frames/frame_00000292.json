@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 292,
+  "frame_path": "frames/frame_00000292.png",
+  "captured_utc": "2026-11-12T18:18:31.534817+00:00",
+  "captured_monotonic": 7151.87063638,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.424560546875,
+      "box": [
+        0.582812488079071,
+        0.15347222983837128,
+        0.84375,
+        0.975694477558136
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:18:31.594900+00:00",
+  "inference_started_monotonic": 7151.930717294,
+  "submitted_image_path": "frames/frame_00000292.jpg",
+  "answer": " A person is operating an excavator in a residential area, with a house in the background. The excavator is orange and has a large bucket on the end",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 224,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 87
+    }
+  },
+  "server_timings": {
+    "cache_n": 87,
+    "prompt_n": 137,
+    "prompt_ms": 738.281,
+    "prompt_per_token_ms": 5.388912408759124,
+    "prompt_per_second": 185.56620040336946,
+    "predicted_n": 32,
+    "predicted_ms": 967.14,
+    "predicted_per_token_ms": 31.198064516129033,
+    "predicted_per_second": 32.053270467564154
+  },
+  "finish_reason": "length",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:18:33.357427+00:00",
+  "completed_monotonic": 7153.692390537,
+  "scout_ms": 31.618400999832375,
+  "inference_ms": 1761.6732430005868,
+  "frame_age_at_inference_start_ms": 60.08091399962723,
+  "capture_to_completed_answer_ms": 1821.754157000214,
+  "answer_is_stale": false,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

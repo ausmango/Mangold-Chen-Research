@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-11-12T16:58:47.118470+00:00",
+  "inspector_id": "ggml-org/SmolVLM2-500M-Video-Instruct-GGUF",
+  "inspector_revision": "ccd7aae53bcb1997355c2f094959e72b3642ce17",
+  "llama_cpp_revision": "2a4daf0e08d6a9b6993ee0d4a9a3cfc35a6f405c",
+  "artifacts": [
+    {
+      "path": "models/inspector/model-f16.gguf",
+      "url": "https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/ccd7aae53bcb1997355c2f094959e72b3642ce17/SmolVLM2-500M-Video-Instruct-f16.gguf",
+      "bytes": 820424704,
+      "sha256": "80f7e3f04bc2d3324ac1a9f52f5776fe13a69912adf74f8e7edacf773d140d77"
+    },
+    {
+      "path": "models/inspector/mmproj.gguf",
+      "url": "https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/ccd7aae53bcb1997355c2f094959e72b3642ce17/mmproj-SmolVLM2-500M-Video-Instruct-f16.gguf",
+      "bytes": 199470624,
+      "sha256": "b5dc8ebe7cbeab66a5369693960a52515d7824f13d4063ceca78431f2a6b59b0"
+    },
+    {
+      "path": "models/scout/source/yolo11n.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt",
+      "bytes": 5613764,
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+    },
+    {
+      "path": "dependencies/llama.cpp-2a4daf0e08d6a9b6993ee0d4a9a3cfc35a6f405c.tar.gz",
+      "url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/2a4daf0e08d6a9b6993ee0d4a9a3cfc35a6f405c",
+      "bytes": 38939831,
+      "sha256": "1adacb8222a4c6a47c02fa16a0623626051c726385f1b96b9da4c700865d83a9"
+    }
+  ],
+  "derived_inspector": {
+    "path": "/home/charlotte/research/models/inspector/model-Q4_K_M.gguf",
+    "bytes": 303253504,
+    "sha256": "115db45c8dcfc206f831b01f9efe48d65dc183b7bd3f49ea7103acf231ca0fd8",
+    "requested_quantization": "Q4_K_M",
+    "actual_quantization": "Mixed tensor encodings: 193/291 tensors needed higher-precision fallback; logged 5.89 bits/weight, not uniformly INT4",
+    "quantizer_source_commit": "2a4daf0e08d6a9b6993ee0d4a9a3cfc35a6f405c",
+    "gpu_inference_run": false,
+    "command": "CUDA_VISIBLE_DEVICES= llama-quantize model-f16.gguf model-Q4_K_M.gguf.partial Q4_K_M 2"
+  }
+}

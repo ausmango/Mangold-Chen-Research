@@ -1,0 +1,15 @@
+Loading models/scout/yolo11n-fp16.engine for TensorRT inference...
+[11/12/2026-13:15:13] [TRT] [I] Loaded engine size: 9 MiB
+[11/12/2026-13:15:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 15 (MiB)
+{
+  "status": "passed",
+  "scope": "Synthetic Scout GPU inference only; no camera or Inspector",
+  "classes": 80,
+  "person_class_present": true,
+  "detections": 0,
+  "engine": {
+    "path": "/home/charlotte/research/models/scout/yolo11n-fp16.engine",
+    "bytes": 9463447,
+    "sha256": "c4f2077e55d80731435761ab922c942baca2c864e26c08d01f4e7550510445c9"
+  }
+}

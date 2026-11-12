@@ -1,0 +1,26 @@
+{
+  "ultralytics": {
+    "version": "8.3.162",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  },
+  "ultralytics-thop": {
+    "version": "2.0.9",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  },
+  "onnx": {
+    "version": "1.17.0",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  },
+  "protobuf": {
+    "version": "4.25.8",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  },
+  "py-cpuinfo": {
+    "version": "9.0.0",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  },
+  "seaborn": {
+    "version": "0.13.2",
+    "location": "/home/charlotte/research/.venv-scout/lib/python3.10/site-packages"
+  }
+}

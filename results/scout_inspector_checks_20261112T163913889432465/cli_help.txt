@@ -1,0 +1,13 @@
+usage: main.py [-h] [--config CONFIG] [--run RUN] [--duration DURATION]
+               [--preview] [--check]
+
+Hardware launches are explicit; --check does not import GPU libraries.
+
+options:
+  -h, --help           show this help message and exit
+  --config CONFIG
+  --run RUN            New results directory; must not already exist
+  --duration DURATION
+  --preview
+  --check              Validate local configuration/assets without camera/GPU
+                       imports

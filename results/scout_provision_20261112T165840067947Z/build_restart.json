@@ -1,0 +1,5 @@
+{
+  "reason": "Increase owned build from two to four jobs, restrict FlashAttention KV compilation to deployed F16 cache; no GPU runtime launched",
+  "root_pid": 10089,
+  "descendants": 13
+}

@@ -1,0 +1,26 @@
+test_capture_continues_during_serial_inspection (test_scout_inspector.Contracts) ... {"sequence": 4, "answer": "Unverified observation", "inference_ms": 80.39092699982575, "frame_age_at_inference_start_ms": 8.486400000037975, "capture_to_completed_answer_ms": 88.87732699986373, "answer_is_stale": false}
+ok
+test_configuration_requires_revision (test_scout_inspector.Contracts) ... ok
+test_http_preserves_exact_submission_and_completed_answer_on_stop (test_scout_inspector.Contracts) ... ok
+test_missing_ppe_labels_rejected (test_scout_inspector.Contracts) ... ok
+test_native_call_has_bounded_join (test_scout_inspector.Contracts) ... ok
+test_nominal_scene_no_trigger (test_scout_inspector.Contracts) ... ok
+test_single_latest_slot (test_scout_inspector.Contracts) ... ok
+test_stale_frames_do_not_reach_model (test_scout_inspector.Contracts) ... ok
+test_tegrastats_peak_distinct_from_cuda (test_scout_inspector.Contracts) ... ok
+test_worker_failure_preserves_partial_run (test_scout_inspector.Contracts) ... SCOUT ERROR:
+Traceback (most recent call last):
+  File "/home/charlotte/research/src/scout_inspector/runtime.py", line 133, in _scout
+    metadata = detector.load()
+  File "/home/charlotte/research/tests/test_scout_inspector.py", line 132, in load
+    raise RuntimeError('intentional fake engine failure')
+RuntimeError: intentional fake engine failure
+
+ok
+test_failure_preserves_exit_and_partial_summary (test_scout_launcher.LauncherTests) ... ok
+test_success_cleans_owned_processes_and_summarizes (test_scout_launcher.LauncherTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.210s
+
+OK

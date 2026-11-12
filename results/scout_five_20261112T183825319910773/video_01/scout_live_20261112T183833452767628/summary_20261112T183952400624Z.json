@@ -1,0 +1,72 @@
+{
+  "source": "/home/charlotte/research/results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628/client",
+  "status": "finished",
+  "completed_answers": 4,
+  "inference_ms": {
+    "samples": 4,
+    "mean": 1927.0374187499328,
+    "min": 1272.0788360002189,
+    "max": 3335.60844099884
+  },
+  "frame_age_at_inference_start_ms": {
+    "samples": 4,
+    "mean": 260.58290350010793,
+    "min": 54.01626099956047,
+    "max": 578.3855219997349
+  },
+  "capture_to_completed_answer_ms": {
+    "samples": 4,
+    "mean": 2187.6203222500408,
+    "min": 1328.255786000227,
+    "max": 3689.361321999968
+  },
+  "stale_answers": 1,
+  "capture_overlap": [
+    {
+      "sequence": 193,
+      "camera_deliveries_during_inference": 77
+    },
+    {
+      "sequence": 1459,
+      "camera_deliveries_during_inference": 29
+    },
+    {
+      "sequence": 1480,
+      "camera_deliveries_during_inference": 22
+    },
+    {
+      "sequence": 1573,
+      "camera_deliveries_during_inference": 22
+    }
+  ],
+  "answers_with_capture_overlap": 4,
+  "camera_metrics": {
+    "delivered_frames": 1720,
+    "first_to_last_seconds": 59.9864053729998,
+    "measured_fps": 28.65649290553641,
+    "max_delivery_gap_ms": 85.68603300045652
+  },
+  "client_system_ram": {
+    "source": "tegrastats, whole system, 500 ms samples",
+    "samples": 145,
+    "peak_used_mb": 5190,
+    "total_mb": 7620,
+    "error": null
+  },
+  "whole_session_peak_system_ram_mb": 5190,
+  "counters": {
+    "alignment_frames": 96,
+    "captured_frames": 1720,
+    "nominal_frames_discarded": 1690,
+    "scout_frame_budget_misses": 771,
+    "triggered_frames": 30,
+    "queued_frames": 12,
+    "replaced_pending_frames": 7,
+    "trigger_cooldown_frames": 18,
+    "completed_answers": 4,
+    "stale_frames_discarded": 1,
+    "pending_discarded_on_stop": 0
+  },
+  "errors": [],
+  "limitations": "Overlap demonstrates host-delivery scheduling, not simultaneous GPU execution, verified accuracy, sensor exposure freshness or guaranteed real-time answers."
+}

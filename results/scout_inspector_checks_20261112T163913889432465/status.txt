@@ -1,0 +1,4 @@
+new_tests_exit=0
+legacy_tests_exit=0
+syntax_exit=0
+example_preflight_exit=2 (expected 2 until revision/assets configured)

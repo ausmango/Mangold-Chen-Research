@@ -1,0 +1,63 @@
+{
+  "camera": {
+    "device": "auto",
+    "width": 640,
+    "height": 480,
+    "fps": 30,
+    "fourcc": "MJPG",
+    "buffer_size": 1,
+    "kind": "usb"
+  },
+  "scout": {
+    "weights": "models/scout/yolo11n-fp16.engine",
+    "imgsz": 640,
+    "device": "0",
+    "confidence": 0.4,
+    "max_detections": 50
+  },
+  "triggers": {
+    "person_classes": [
+      "person"
+    ],
+    "target_classes": [
+      "car",
+      "truck",
+      "bus"
+    ],
+    "proximity_enabled": true,
+    "proximity_gap_fraction": 0.08,
+    "presence_classes": [],
+    "motion_enabled": false,
+    "motion_speed_fraction_per_second": 0.8,
+    "motion_match_fraction": 0.25,
+    "missing_helmet_enabled": false,
+    "helmet_classes": [
+      "helmet"
+    ],
+    "ppe_min_person_height_px": 100,
+    "min_trigger_interval_ms": 250
+  },
+  "inspector": {
+    "backend": "llama_cpp",
+    "base_url": "http://127.0.0.1:8080/v1",
+    "model_id": "ggml-org/SmolVLM2-500M-Video-Instruct-GGUF",
+    "revision": "REPLACE_WITH_EXACT_40_CHARACTER_HF_COMMIT",
+    "model_path": "models/inspector/model-Q4_K_M.gguf",
+    "mmproj_path": "models/inspector/mmproj.gguf",
+    "image_size": 384,
+    "max_frame_age_ms": 1000,
+    "max_answer_age_ms": 3000,
+    "max_tokens": 32,
+    "temperature": 0,
+    "request_timeout_seconds": 30,
+    "generation_timeout_seconds": 20,
+    "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations."
+  },
+  "runtime": {
+    "startup_timeout_seconds": 120,
+    "shutdown_timeout_seconds": 5,
+    "force_exit_on_shutdown_timeout": true,
+    "require_tegrastats": true,
+    "idle_sleep_seconds": 0.01
+  }
+}

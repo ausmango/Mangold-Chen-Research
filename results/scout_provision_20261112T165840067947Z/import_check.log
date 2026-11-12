@@ -1,0 +1,9 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/charlotte/research/dependencies/ultralytics-config/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+Ultralytics: 8.3.162
+ONNX: 1.17.0
+OpenCV: 4.5.4
+TensorRT: 10.3.0
+Imports only; no model constructed, camera opened or inference run.
+nvbufsurftransform: Could not get EGL display connection

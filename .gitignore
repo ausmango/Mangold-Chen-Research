@@ -3,3 +3,8 @@
 dependencies/
 __pycache__/
 references/
+
+# Optional Scout environment and locally supplied model artifacts
+.venv-scout/
+models/
+configs/scout_inspector.local.json

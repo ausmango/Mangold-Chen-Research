@@ -1,0 +1,6 @@
+Session: results/scout_five_20261112T183825319910773/video_02/scout_live_20261112T184001054523277
+Initial local configuration uses person-presence triggering: stand in view for a smoke test. This is not a hazard detector validation.
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+OSError: [Errno 98] Address already in use
+Session preserved: results/scout_five_20261112T183825319910773/video_02/scout_live_20261112T184001054523277 (exit 1)

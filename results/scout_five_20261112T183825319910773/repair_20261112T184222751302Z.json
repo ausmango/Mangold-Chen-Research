@@ -1,0 +1,8 @@
+{
+  "failure": "Video 2 preflight bind on 8080; no camera/model started for Video 2",
+  "evidence": "Video 1 Inspector log records cleaning up before exit and launcher exit 0; current bind checks both succeed",
+  "fix": "SO_REUSEADDR in preflight allows recent closed sockets; still rejects a listening server",
+  "resume": "bash experiments/run_scout_five_videos.sh --resume results/scout_five_20261112T183825319910773 --from-video 2",
+  "preservation": "Video 1 and failed Video 2 retained; subsequent attempts use unique terminal logs",
+  "hardware_relaunched": false
+}

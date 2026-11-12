@@ -1,0 +1,13 @@
+Collecting ultralytics==8.3.162
+  Downloading ultralytics-8.3.162-py3-none-any.whl.metadata (37 kB)
+Downloading ultralytics-8.3.162-py3-none-any.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 27.4 MB/s  0:00:00
+Installing collected packages: ultralytics
+  Attempting uninstall: ultralytics
+    Found existing installation: ultralytics 8.3.0
+    Uninstalling ultralytics-8.3.0:
+      Successfully uninstalled ultralytics-8.3.0
+Successfully installed ultralytics-8.3.162
+
+[notice] A new release of pip is available: 26.2.1 -> 26.3
+[notice] To update, run: /home/charlotte/research/.venv-scout/bin/python -m pip install --upgrade pip

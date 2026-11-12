@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "sequence": 128,
+  "frame_path": "frames/frame_00000128.png",
+  "captured_utc": "2026-11-12T18:18:22.733751+00:00",
+  "captured_monotonic": 7143.069573604,
+  "source_shape": [
+    360,
+    640,
+    3
+  ],
+  "transform": {
+    "method": "letterbox",
+    "scale": 0.6,
+    "left": 0,
+    "top": 84,
+    "output_width": 384,
+    "output_height": 384
+  },
+  "triggers": [
+    {
+      "rule": "class_presence",
+      "label": "person"
+    }
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "confidence": 0.4072265625,
+      "box": [
+        0.00048828125,
+        0.0029513889458030462,
+        0.16396485269069672,
+        0.6248264312744141
+      ]
+    }
+  ],
+  "prompt": "Describe only clearly visible conditions in this construction image. In one short sentence, state the observation, location, and a possible safety concern if supported. If unclear, say so. Treat Scout triggers as unverified hints; do not invent hidden hazards, movement, missing PPE, or OSHA violations.\nScout review hints (not verified findings): [{\"rule\":\"class_presence\",\"label\":\"person\"}]",
+  "settings": {
+    "max_tokens": 32,
+    "temperature": 0
+  },
+  "inference_started_utc": "2026-11-12T18:18:23.643778+00:00",
+  "inference_started_monotonic": 7143.979595415,
+  "submitted_image_path": "frames/frame_00000128.jpg",
+  "answer": " A person is lying on a bed, seemingly asleep, with a pillow behind them. The room is dimly lit, with a pink wall in the background.",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 224,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 87
+    }
+  },
+  "server_timings": {
+    "cache_n": 87,
+    "prompt_n": 137,
+    "prompt_ms": 721.967,
+    "prompt_per_token_ms": 5.269832116788321,
+    "prompt_per_second": 189.7593657327828,
+    "predicted_n": 32,
+    "predicted_ms": 961.128,
+    "predicted_per_token_ms": 31.004129032258067,
+    "predicted_per_second": 32.25376848869245
+  },
+  "finish_reason": "length",
+  "cancelled": false,
+  "stop_requested_during_request": false,
+  "memory": {
+    "cuda_allocated_bytes": null,
+    "cuda_peak_allocated_bytes": null,
+    "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+  },
+  "completed_utc": "2026-11-12T18:18:25.393058+00:00",
+  "completed_monotonic": 7145.728309388,
+  "scout_ms": 50.91274699952919,
+  "inference_ms": 1748.7139729992123,
+  "frame_age_at_inference_start_ms": 910.0218110006608,
+  "capture_to_completed_answer_ms": 2658.735783999873,
+  "answer_is_stale": false,
+  "assessment": "Unverified model-generated observation; not an OSHA violation determination"
+}

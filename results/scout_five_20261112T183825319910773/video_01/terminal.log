@@ -1,0 +1,314 @@
+Session: results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628
+Initial local configuration uses person-presence triggering: stand in view for a smoke test. This is not a hazard detector validation.
+Local preflight passed. Camera, CUDA, server/model compatibility and performance remain untested.
+Starting pinned Inspector. Keep camera/source prepared; capture timer starts after initialization.
+Inspector ready.
+Results: /home/charlotte/research/results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628/client
+Align with source paused. Press S in preview, then start playback; alignment is excluded.
+Loading models/scout/yolo11n-fp16.engine for TensorRT inference...
+[11/12/2026-13:38:40] [TRT] [I] Loaded engine size: 9 MiB
+[11/12/2026-13:38:40] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 15 (MiB)
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3280 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3280 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1640 x 1232 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 59.999999 
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1100) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+Starting timed capture on next delivered frame. Start source playback now.
+{"sequence": 193, "answer": " A person is driving a large orange and black construction vehicle through a residential area. The vehicle is surrounded by a group of people, some of whom are wearing helmets", "inference_ms": 3335.60844099884, "frame_age_at_inference_start_ms": 353.7528810011281, "capture_to_completed_answer_ms": 3689.361321999968, "answer_is_stale": true}
+{"sequence": 1459, "answer": " In the image, a person is operating an excavator in a construction site. The excavator is orange and has a large bucket in the front. The person", "inference_ms": 1736.6159410012187, "frame_age_at_inference_start_ms": 54.01626099956047, "capture_to_completed_answer_ms": 1790.6322020007792, "answer_is_stale": false}
+{"sequence": 1480, "answer": " A person is sitting in the cockpit of an excavator, which is parked on a dirt surface.", "inference_ms": 1363.846456999454, "frame_age_at_inference_start_ms": 578.3855219997349, "capture_to_completed_answer_ms": 1942.2319789991889, "answer_is_stale": false}
+{"sequence": 1573, "answer": " A person is using a large green excavator to dig into a dirt mound.", "inference_ms": 1272.0788360002189, "frame_age_at_inference_start_ms": 56.17695000000822, "capture_to_completed_answer_ms": 1328.255786000227, "answer_is_stale": false}
+GST_ARGUS: Cleaning up
+CONSUMER: Done Success
+GST_ARGUS: Done Success
+{
+  "counters": {
+    "alignment_frames": 96,
+    "captured_frames": 1720,
+    "nominal_frames_discarded": 1690,
+    "scout_frame_budget_misses": 771,
+    "triggered_frames": 30,
+    "queued_frames": 12,
+    "replaced_pending_frames": 7,
+    "trigger_cooldown_frames": 18,
+    "completed_answers": 4,
+    "stale_frames_discarded": 1,
+    "pending_discarded_on_stop": 0
+  },
+  "metadata": {
+    "status": "finished",
+    "created_utc": "2026-11-12T18:38:35.883420+00:00",
+    "system_before": {
+      "MemTotal_bytes": 7989829632,
+      "MemAvailable_bytes": 3210219520,
+      "SwapTotal_bytes": 8589930496,
+      "SwapFree_bytes": 8338272256
+    },
+    "design": "CSI YOLO Scout + latest-triggered-frame Queue(maxsize=1) + serial Inspector",
+    "timestamp_scope": "Host delivery after camera.read, not sensor exposure; capture-to-answer excludes unknown driver buffering",
+    "limitations": "Unverified generated observations, not OSHA compliance findings or validated temporal event detection. GPU contention and native-call blocking can still occur.",
+    "source_label": "Video 1 - Red Machine",
+    "wait_for_start": true,
+    "inspector": {
+      "backend": "llama.cpp local HTTP (externally managed CUDA server)",
+      "api_model_id": "models/inspector/model-Q4_K_M.gguf",
+      "model_id": "ggml-org/SmolVLM2-500M-Video-Instruct-GGUF",
+      "model_load_ms": null,
+      "model_footprint_bytes": null,
+      "load_timing_scope": "Client connection/artifact verification only; external server model load time must come from server log",
+      "revision": "ccd7aae53bcb1997355c2f094959e72b3642ce17",
+      "model_artifact": {
+        "path": "/home/charlotte/research/models/inspector/model-Q4_K_M.gguf",
+        "bytes": 303253504,
+        "sha256": "115db45c8dcfc206f831b01f9efe48d65dc183b7bd3f49ea7103acf231ca0fd8"
+      },
+      "projector_artifact": {
+        "path": "/home/charlotte/research/models/inspector/mmproj.gguf",
+        "bytes": 199470624,
+        "sha256": "b5dc8ebe7cbeab66a5369693960a52515d7824f13d4063ceca78431f2a6b59b0"
+      },
+      "note": "Artifact hashes record configured files; server must be launched with these exact files. Projector may remain higher precision. Server memory is not measured by client PyTorch statistics.",
+      "load_ms": 1350.9237300004315
+    },
+    "scout": {
+      "adapter": "ultralytics TensorRT",
+      "ultralytics": "8.3.162",
+      "engine": {
+        "path": "/home/charlotte/research/models/scout/yolo11n-fp16.engine",
+        "bytes": 9463447,
+        "sha256": "c4f2077e55d80731435761ab922c942baca2c864e26c08d01f4e7550510445c9"
+      },
+      "classes": [
+        "person",
+        "bicycle",
+        "car",
+        "motorcycle",
+        "airplane",
+        "bus",
+        "train",
+        "truck",
+        "boat",
+        "traffic light",
+        "fire hydrant",
+        "stop sign",
+        "parking meter",
+        "bench",
+        "bird",
+        "cat",
+        "dog",
+        "horse",
+        "sheep",
+        "cow",
+        "elephant",
+        "bear",
+        "zebra",
+        "giraffe",
+        "backpack",
+        "umbrella",
+        "handbag",
+        "tie",
+        "suitcase",
+        "frisbee",
+        "skis",
+        "snowboard",
+        "sports ball",
+        "kite",
+        "baseball bat",
+        "baseball glove",
+        "skateboard",
+        "surfboard",
+        "tennis racket",
+        "bottle",
+        "wine glass",
+        "cup",
+        "fork",
+        "knife",
+        "spoon",
+        "bowl",
+        "banana",
+        "apple",
+        "sandwich",
+        "orange",
+        "broccoli",
+        "carrot",
+        "hot dog",
+        "pizza",
+        "donut",
+        "cake",
+        "chair",
+        "couch",
+        "potted plant",
+        "bed",
+        "dining table",
+        "toilet",
+        "tv",
+        "laptop",
+        "mouse",
+        "remote",
+        "keyboard",
+        "cell phone",
+        "microwave",
+        "oven",
+        "toaster",
+        "sink",
+        "refrigerator",
+        "book",
+        "clock",
+        "vase",
+        "scissors",
+        "teddy bear",
+        "hair drier",
+        "toothbrush"
+      ],
+      "device": "0",
+      "imgsz": 640,
+      "precision": "See engine export manifest; not inferred from file name",
+      "export_manifest": {
+        "created_utc": "2026-11-12T18:13:09.157411+00:00",
+        "builder": "standalone trtexec, no PyTorch process",
+        "command": [
+          "/usr/src/tensorrt/bin/trtexec",
+          "--onnx=models/scout/source/yolo11n.onnx",
+          "--saveEngine=models/scout/yolo11n-fp16.engine.20261112T181215899329Z.raw.partial",
+          "--fp16",
+          "--memPoolSize=workspace:128",
+          "--builderOptimizationLevel=0",
+          "--avgTiming=1",
+          "--skipInference"
+        ],
+        "precision": "requested FP16, some layers may remain FP32",
+        "source_onnx": "models/scout/source/yolo11n.onnx",
+        "source_onnx_sha256": "d2881ccf75226f377a1ae4a5a535c7b051b6e4ba13350f11dda6b18ddee12c03",
+        "engine": "models/scout/yolo11n-fp16.engine",
+        "engine_sha256": "c4f2077e55d80731435761ab922c942baca2c864e26c08d01f4e7550510445c9",
+        "engine_bytes": 9463447,
+        "note": "Low builder effort/workspace prioritizes a first working test; not a maximal-throughput tuned engine. Build profiling still executes GPU kernels despite skipInference."
+      },
+      "load_ms": 5837.675560998832
+    },
+    "camera": {
+      "backend": "GStreamer CSI",
+      "pipeline": "nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),width=1280,height=720,framerate=30/1,format=NV12 ! nvvidconv ! video/x-raw,width=640,height=360,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=true max-buffers=1 sync=false",
+      "reported_width": 640.0,
+      "reported_height": 360.0,
+      "reported_fps": 30.0,
+      "note": "Preserved 1280x720/30 sensor request, 640x360 BGR output; delivered rate measured separately"
+    },
+    "armed_utc": "2026-11-12T18:38:49.308844+00:00",
+    "first_frame_utc": "2026-11-12T18:38:49.336549+00:00",
+    "inspector_final_memory": {
+      "cuda_allocated_bytes": null,
+      "cuda_peak_allocated_bytes": null,
+      "note": "External llama.cpp server; client cannot report its CUDA allocation. Use whole-system tegrastats."
+    },
+    "finished_utc": "2026-11-12T18:39:49.437016+00:00",
+    "stop_reason": "duration",
+    "blocked_workers": [],
+    "camera_metrics": {
+      "delivered_frames": 1720,
+      "first_to_last_seconds": 59.9864053729998,
+      "measured_fps": 28.65649290553641,
+      "max_delivery_gap_ms": 85.68603300045652
+    },
+    "system_ram": {
+      "source": "tegrastats, whole system, 500 ms samples",
+      "samples": 145,
+      "peak_used_mb": 5190,
+      "total_mb": 7620,
+      "error": null
+    }
+  },
+  "errors": []
+}
+{
+  "source": "/home/charlotte/research/results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628/client",
+  "status": "finished",
+  "completed_answers": 4,
+  "inference_ms": {
+    "samples": 4,
+    "mean": 1927.0374187499328,
+    "min": 1272.0788360002189,
+    "max": 3335.60844099884
+  },
+  "frame_age_at_inference_start_ms": {
+    "samples": 4,
+    "mean": 260.58290350010793,
+    "min": 54.01626099956047,
+    "max": 578.3855219997349
+  },
+  "capture_to_completed_answer_ms": {
+    "samples": 4,
+    "mean": 2187.6203222500408,
+    "min": 1328.255786000227,
+    "max": 3689.361321999968
+  },
+  "stale_answers": 1,
+  "capture_overlap": [
+    {
+      "sequence": 193,
+      "camera_deliveries_during_inference": 77
+    },
+    {
+      "sequence": 1459,
+      "camera_deliveries_during_inference": 29
+    },
+    {
+      "sequence": 1480,
+      "camera_deliveries_during_inference": 22
+    },
+    {
+      "sequence": 1573,
+      "camera_deliveries_during_inference": 22
+    }
+  ],
+  "answers_with_capture_overlap": 4,
+  "camera_metrics": {
+    "delivered_frames": 1720,
+    "first_to_last_seconds": 59.9864053729998,
+    "measured_fps": 28.65649290553641,
+    "max_delivery_gap_ms": 85.68603300045652
+  },
+  "client_system_ram": {
+    "source": "tegrastats, whole system, 500 ms samples",
+    "samples": 145,
+    "peak_used_mb": 5190,
+    "total_mb": 7620,
+    "error": null
+  },
+  "whole_session_peak_system_ram_mb": 5190,
+  "counters": {
+    "alignment_frames": 96,
+    "captured_frames": 1720,
+    "nominal_frames_discarded": 1690,
+    "scout_frame_budget_misses": 771,
+    "triggered_frames": 30,
+    "queued_frames": 12,
+    "replaced_pending_frames": 7,
+    "trigger_cooldown_frames": 18,
+    "completed_answers": 4,
+    "stale_frames_discarded": 1,
+    "pending_discarded_on_stop": 0
+  },
+  "errors": [],
+  "limitations": "Overlap demonstrates host-delivery scheduling, not simultaneous GPU execution, verified accuracy, sensor exposure freshness or guaranteed real-time answers."
+}
+Summary saved: results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628/summary_20261112T183952400624Z.json
+Session preserved: results/scout_five_20261112T183825319910773/video_01/scout_live_20261112T183833452767628 (exit 0)

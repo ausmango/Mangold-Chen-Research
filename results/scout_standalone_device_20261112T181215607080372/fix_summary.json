@@ -1,0 +1,13 @@
+{
+  "stage": "Scout TensorRT build fixed",
+  "updated_utc": "2026-11-12T18:16:38.439721+00:00",
+  "failed_attempt": "results/scout_live_20261112T180401394542702",
+  "standalone_evidence": "results/scout_standalone_device_20261112T181215607080372",
+  "engine_bytes": 9463447,
+  "standalone_build_sampled_system_ram_peak_mb": 4678,
+  "build_seconds": 46.1992,
+  "scout_synthetic_gpu_check": "passed; 80 labels, person present",
+  "camera_capture": "not launched",
+  "Inspector_live_query": "not tested",
+  "next_command": "bash experiments/run_scout_inspector.sh --camera csi --duration 60 --preview"
+}
