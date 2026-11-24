@@ -1,0 +1,133 @@
+{
+  "source": "/home/charlotte/research/results/scout_five_20261124T160831624025736/video_04/scout_live_20261124T161304754487387/client",
+  "status": "finished",
+  "completed_answers": 19,
+  "inference_ms": {
+    "samples": 19,
+    "mean": 1322.8008604210238,
+    "min": 830.9141129998352,
+    "max": 1631.5473559998281
+  },
+  "frame_age_at_inference_start_ms": {
+    "samples": 19,
+    "mean": 230.5671280000273,
+    "min": 86.75373599999148,
+    "max": 359.75128600011885
+  },
+  "capture_to_completed_answer_ms": {
+    "samples": 19,
+    "mean": 1553.367988421051,
+    "min": 1092.8593019998516,
+    "max": 1991.298641999947
+  },
+  "stale_answers": 0,
+  "capture_overlap": [
+    {
+      "sequence": 116,
+      "camera_deliveries_during_inference": 23
+    },
+    {
+      "sequence": 135,
+      "camera_deliveries_during_inference": 27
+    },
+    {
+      "sequence": 163,
+      "camera_deliveries_during_inference": 26
+    },
+    {
+      "sequence": 191,
+      "camera_deliveries_during_inference": 28
+    },
+    {
+      "sequence": 221,
+      "camera_deliveries_during_inference": 26
+    },
+    {
+      "sequence": 246,
+      "camera_deliveries_during_inference": 25
+    },
+    {
+      "sequence": 275,
+      "camera_deliveries_during_inference": 25
+    },
+    {
+      "sequence": 297,
+      "camera_deliveries_during_inference": 18
+    },
+    {
+      "sequence": 315,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 340,
+      "camera_deliveries_during_inference": 20
+    },
+    {
+      "sequence": 357,
+      "camera_deliveries_during_inference": 14
+    },
+    {
+      "sequence": 373,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 396,
+      "camera_deliveries_during_inference": 26
+    },
+    {
+      "sequence": 419,
+      "camera_deliveries_during_inference": 13
+    },
+    {
+      "sequence": 432,
+      "camera_deliveries_during_inference": 13
+    },
+    {
+      "sequence": 445,
+      "camera_deliveries_during_inference": 20
+    },
+    {
+      "sequence": 469,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 486,
+      "camera_deliveries_during_inference": 20
+    },
+    {
+      "sequence": 508,
+      "camera_deliveries_during_inference": 8
+    }
+  ],
+  "answers_with_capture_overlap": 19,
+  "camera_metrics": {
+    "delivered_frames": 405,
+    "first_to_last_seconds": 24.95464456500008,
+    "measured_fps": 16.189371038633293,
+    "max_delivery_gap_ms": 231.19623200000206
+  },
+  "client_system_ram": {
+    "source": "tegrastats, whole system, 500 ms samples",
+    "samples": 71,
+    "peak_used_mb": 4343,
+    "total_mb": 7620,
+    "last_used_mb": 4324,
+    "error": null
+  },
+  "whole_session_peak_system_ram_mb": 4344,
+  "counters": {
+    "alignment_frames": 115,
+    "captured_frames": 405,
+    "queued_frames": 86,
+    "replaced_pending_frames": 66,
+    "fallback_offers": 2,
+    "scout_frame_budget_misses": 403,
+    "nominal_frames_discarded": 39,
+    "triggered_frames": 364,
+    "trigger_cooldown_frames": 280,
+    "completed_answers": 19,
+    "pending_discarded_on_stop": 1
+  },
+  "errors": [],
+  "limitations": "Overlap demonstrates host-delivery scheduling, not simultaneous GPU execution, verified accuracy, sensor exposure freshness or guaranteed real-time answers."
+}

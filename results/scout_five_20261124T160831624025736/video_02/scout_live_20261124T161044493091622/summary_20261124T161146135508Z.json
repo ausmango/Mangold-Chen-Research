@@ -1,0 +1,157 @@
+{
+  "source": "/home/charlotte/research/results/scout_five_20261124T160831624025736/video_02/scout_live_20261124T161044493091622/client",
+  "status": "finished",
+  "completed_answers": 25,
+  "inference_ms": {
+    "samples": 25,
+    "mean": 1397.0975628799988,
+    "min": 1079.3384890000652,
+    "max": 1706.5543429998797
+  },
+  "frame_age_at_inference_start_ms": {
+    "samples": 25,
+    "mean": 225.81331916001545,
+    "min": 94.59297600005812,
+    "max": 372.2984120001911
+  },
+  "capture_to_completed_answer_ms": {
+    "samples": 25,
+    "mean": 1622.9108820400143,
+    "min": 1229.1570709999178,
+    "max": 1893.6266890000297
+  },
+  "stale_answers": 0,
+  "capture_overlap": [
+    {
+      "sequence": 436,
+      "camera_deliveries_during_inference": 23
+    },
+    {
+      "sequence": 458,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 481,
+      "camera_deliveries_during_inference": 22
+    },
+    {
+      "sequence": 504,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 522,
+      "camera_deliveries_during_inference": 18
+    },
+    {
+      "sequence": 543,
+      "camera_deliveries_during_inference": 19
+    },
+    {
+      "sequence": 561,
+      "camera_deliveries_during_inference": 19
+    },
+    {
+      "sequence": 583,
+      "camera_deliveries_during_inference": 16
+    },
+    {
+      "sequence": 600,
+      "camera_deliveries_during_inference": 26
+    },
+    {
+      "sequence": 623,
+      "camera_deliveries_during_inference": 22
+    },
+    {
+      "sequence": 645,
+      "camera_deliveries_during_inference": 23
+    },
+    {
+      "sequence": 672,
+      "camera_deliveries_during_inference": 25
+    },
+    {
+      "sequence": 695,
+      "camera_deliveries_during_inference": 19
+    },
+    {
+      "sequence": 716,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 739,
+      "camera_deliveries_during_inference": 23
+    },
+    {
+      "sequence": 762,
+      "camera_deliveries_during_inference": 24
+    },
+    {
+      "sequence": 784,
+      "camera_deliveries_during_inference": 25
+    },
+    {
+      "sequence": 811,
+      "camera_deliveries_during_inference": 23
+    },
+    {
+      "sequence": 833,
+      "camera_deliveries_during_inference": 24
+    },
+    {
+      "sequence": 860,
+      "camera_deliveries_during_inference": 25
+    },
+    {
+      "sequence": 883,
+      "camera_deliveries_during_inference": 18
+    },
+    {
+      "sequence": 905,
+      "camera_deliveries_during_inference": 21
+    },
+    {
+      "sequence": 923,
+      "camera_deliveries_during_inference": 20
+    },
+    {
+      "sequence": 945,
+      "camera_deliveries_during_inference": 19
+    },
+    {
+      "sequence": 967,
+      "camera_deliveries_during_inference": 11
+    }
+  ],
+  "answers_with_capture_overlap": 25,
+  "camera_metrics": {
+    "delivered_frames": 545,
+    "first_to_last_seconds": 35.03154598500009,
+    "measured_fps": 15.528860765463547,
+    "max_delivery_gap_ms": 269.90114399995946
+  },
+  "client_system_ram": {
+    "source": "tegrastats, whole system, 500 ms samples",
+    "samples": 114,
+    "peak_used_mb": 4343,
+    "total_mb": 7620,
+    "last_used_mb": 4328,
+    "error": null
+  },
+  "whole_session_peak_system_ram_mb": 4343,
+  "counters": {
+    "alignment_frames": 435,
+    "captured_frames": 545,
+    "queued_frames": 122,
+    "replaced_pending_frames": 96,
+    "fallback_offers": 1,
+    "scout_frame_budget_misses": 543,
+    "nominal_frames_discarded": 9,
+    "triggered_frames": 535,
+    "trigger_cooldown_frames": 414,
+    "completed_answers": 25,
+    "pending_discarded_on_stop": 1
+  },
+  "errors": [],
+  "limitations": "Overlap demonstrates host-delivery scheduling, not simultaneous GPU execution, verified accuracy, sensor exposure freshness or guaranteed real-time answers."
+}

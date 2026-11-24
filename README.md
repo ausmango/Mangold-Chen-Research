@@ -1,22 +1,17 @@
-# Construction-scene analysis on Jetson Orin Nano
+# Live construction-scene analysis on Jetson Orin Nano
 
-The current implementation is a USB **Scout & Inspector** pipeline: YOLO TensorRT
-capture/detection worker → replaceable one-frame queue → one SmolVLM2-500M
-Inspector worker. OpenCV preview runs on the main thread.
+YOLO11n draws object boxes and helps select camera frames. SmolVLM2-500M
+describes selected images while capture continues. In the November 24
+five-video demonstration, camera delivery continued during all 111 completed
+requests. Hazard and fall detection remain unvalidated.
 
-For the provisioned setup, read [the short launch guide](docs/scout-inspector-quickstart.md).
+| Start here | What you'll find |
+|---|---|
+| [Research meeting log](docs/research-log/2026-11-24-meeting-log.md) | Architecture, five MP4s with viewing timestamps, results, and next steps |
+| [Detailed five-video results](docs/research-log/2026-11-24-five-video-results.md) | Run settings, timings, and source images behind example captions |
+| [Architecture and setup](docs/scout-inspector-architecture.md) | Deployment and runtime details |
+| [Research log](docs/research-log/) | Earlier experiments and benchmarks |
 
-Read [architecture, setup and launch instructions](docs/scout-inspector-architecture.md)
-and [current research context](docs/context.md). The new architecture has CPU
-contract tests; hardware throughput, quality and memory use remain untested.
-Historical Moondream experiments and results are preserved under `experiments/`
-and `results/`.
-
-```bash
-python3 -m unittest discover -s tests -v
-python3 main.py --help
-```
-
-No camera or GPU work occurs in these checks. See the setup guide before installing
-optional dependencies or running hardware. Generated safety observations are
-unverified; this is not a validated hazard/event detection system.
+The current pipeline is in `src/scout_inspector/`. Launchers and historical
+Moondream experiments are in `experiments/`. Saved measurements and recordings
+are in `results/`. Local model files and environments are excluded from Git.
