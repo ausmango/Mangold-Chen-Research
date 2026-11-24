@@ -4,12 +4,23 @@ The five recorded clips demonstrate live CSI camera capture, YOLO detection, and
 
 ## How the system works
 
+The pipeline uses **two models, with one VLM**. YOLO11n is a vision-only object detector. It takes an image and returns a trained class label such as `person`, a bounding box, and a confidence score for each detection. SmolVLM2-500M is the vision-language model (VLM). It takes a selected image and a written prompt and generates a caption.
+
+```mermaid
+flowchart LR
+    C[CSI camera and optional source crop] --> Y[YOLO11n detector]
+    Y -->|Live boxes| P[Recorded preview]
+    Y -->|Person trigger or timed fallback| F[Single latest pending frame]
+    F --> V[SmolVLM2 serial inference]
+    V -->|Caption and source thumbnail| P
+```
+
 1. **Capture.** The CSI camera delivers frames while the preview stays live. A selected crop limits both models to the source footage. Clips 1–3 used a crop and clips 4–5 used the full frame.
 2. **Detect and select.** YOLO11n runs through TensorRT and produces object classes, boxes, and confidence scores. Those boxes appear on the live image. A person detection can trigger an analysis offer. After 500 ms without an offer, the focused profile can submit the latest frame through its fallback, so an equipment scene can be sampled even when nobody is detected.
-3. **Describe.** One SmolVLM2-500M worker analyzes one resized image at a time. While it works, the newest offered frame can replace the single pending frame. A frame that has aged out is discarded before inference. This keeps analysis from working through a backlog.
+3. **Describe.** One SmolVLM2-500M worker analyzes one 384×384 image at a time, using the prompt and short Scout hints on detection-triggered requests. The boxes stay on the preview. The selected camera image goes to SmolVLM. While it works, the newest offered frame can replace the single pending frame. A frame that has aged out is discarded before inference. This keeps analysis from working through a backlog.
 4. **Display and record.** The preview shows the current YOLO boxes and camera count. It also shows the last caption with its own source thumbnail, age, and request timing. The boxes show what YOLO sees now. The caption describes the earlier image shown beside it. The recording preserves this view, including the advancing camera count during inference.
 
-**Why keep YOLO?** It provides object locations and a fast signal for choosing which frames merit attention. SmolVLM supplies the language description. Camera capture can overlap inference with either setup. YOLO earns its place when it improves selection or gives useful visual evidence through boxes. Its stock classes have limited construction coverage, and a detected person alone does not establish a hazard.
+**Why use both?** YOLO helps answer “where is a familiar object, and should we offer this frame for analysis?” SmolVLM answers “what does this selected image appear to show?” Without YOLO, periodic sampling can still keep one VLM request running alongside capture. That setup gives up the live boxes and person-based selection. The five-video run demonstrated the two-model pipeline. A matched comparison with SmolVLM alone would tell us whether YOLO improves coverage or reduces VLM workload enough to justify its cost. YOLO's stock classes have limited construction coverage, and a person box does not establish a hazard.
 
 ## Recorded results
 
